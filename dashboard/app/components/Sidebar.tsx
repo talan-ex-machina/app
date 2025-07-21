@@ -67,18 +67,7 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      {/* Bottom Section */}
-      <div className="absolute bottom-0 left-0 right-0 p-4">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-4 text-white">
-          <h3 className="font-semibold mb-2">Premium Features</h3>
-          <p className="text-xs opacity-90 mb-3">
-            Unlock advanced analytics and AI insights
-          </p>
-          <button className="w-full bg-white text-blue-600 py-2 px-4 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
-            Upgrade Now
-          </button>
-        </div>
-      </div>
+      
     </motion.aside>
   );
 }
