@@ -1,0 +1,9 @@
+# requirements.txt
+
+python-dotenv
+google-generativeai
+fastapi
+uvicorn
+langgraph
+bs4
+tavily-python
