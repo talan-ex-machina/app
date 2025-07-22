@@ -9,11 +9,13 @@ import Simple3DScene from './Simple3DScene';
 import ARVRToggle from './ARVRToggle';
 import ChartsSection from './ChartsSection';
 import Enhanced3DView from './Enhanced3DView';
+import DatabaseDashboard from './DatabaseDashboard';
 
 export default function Dashboard() {
   const [darkMode, setDarkMode] = useState(false);
   const [isXRActive, setIsXRActive] = useState(false);
   const [show3DView, setShow3DView] = useState(false);
+  const [showDatabaseHub, setShowDatabaseHub] = useState(false);
 
   useEffect(() => {
     // Check for user preference or system preference
@@ -78,6 +80,14 @@ export default function Dashboard() {
                     >
                       {show3DView ? 'Hide' : 'Launch'} Business Intelligence
                     </motion.button>
+                    <motion.button
+                      onClick={() => setShowDatabaseHub(!showDatabaseHub)}
+                      className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {showDatabaseHub ? 'Hide' : 'Launch'} Database Hub
+                    </motion.button>
                   </div>
                 </div>
               </div>
@@ -104,6 +114,27 @@ export default function Dashboard() {
                   </p>
                 </div>
                 <Enhanced3DView />
+              </motion.div>
+            )}
+
+            {/* Database Intelligence Hub */}
+            {showDatabaseHub && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                    Database Intelligence Hub
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Smart database discovery, schema analysis, and intelligent visualizations
+                  </p>
+                </div>
+                <DatabaseDashboard darkMode={darkMode} />
               </motion.div>
             )}
 

@@ -86,18 +86,39 @@ function SectorPortal({
   isActive: boolean;
 }) {
   const portalRef = useRef<THREE.Group>(null);
+  const planetRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (portalRef.current && isActive) {
-      portalRef.current.rotation.y = state.clock.elapsedTime * 0.5;
-      portalRef.current.position.y = sector.position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.5;
+      portalRef.current.rotation.y = state.clock.elapsedTime * 0.3;
+      portalRef.current.position.y = sector.position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.3;
+    }
+    
+    // Rotate the planet on its axis
+    if (planetRef.current) {
+      planetRef.current.rotation.y = state.clock.elapsedTime * 0.5;
+      planetRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
     }
   });
 
+  // Planet-specific configurations
+  const planetConfigs: Record<string, { baseColor: string; secondaryColor: string; emissive: string; roughness: number; metalness: number }> = {
+    investment: { baseColor: '#4f46e5', secondaryColor: '#06b6d4', emissive: '#1e3a8a', roughness: 0.8, metalness: 0.1 }, // Earth-like blue
+    competitive: { baseColor: '#dc2626', secondaryColor: '#f59e0b', emissive: '#7f1d1d', roughness: 0.9, metalness: 0.2 }, // Mars-like red
+    opportunities: { baseColor: '#10b981', secondaryColor: '#34d399', emissive: '#064e3b', roughness: 0.7, metalness: 0.3 }, // Venus-like green
+    timeline: { baseColor: '#f59e0b', secondaryColor: '#fbbf24', emissive: '#92400e', roughness: 0.6, metalness: 0.4 }, // Jupiter-like yellow
+    geographic: { baseColor: '#8b5cf6', secondaryColor: '#a78bfa', emissive: '#5b21b6', roughness: 0.8, metalness: 0.2 }, // Neptune-like purple
+    agents: { baseColor: '#06b6d4', secondaryColor: '#67e8f9', emissive: '#0c4a6e', roughness: 0.7, metalness: 0.5 }, // Uranus-like cyan
+    scenarios: { baseColor: '#ef4444', secondaryColor: '#fb7185', emissive: '#991b1b', roughness: 0.9, metalness: 0.1 }, // Saturn-like orange-red
+  };
+
+  const config = planetConfigs[sector.id] || planetConfigs.investment;
+
   return (
     <group ref={portalRef} position={sector.position}>
-      {/* Portal Base */}
+      {/* Main Planet Body */}
       <mesh
+        ref={planetRef}
         onClick={() => onEnter(sector.id)}
         onPointerOver={(e) => {
           e.stopPropagation();
@@ -107,29 +128,77 @@ function SectorPortal({
           document.body.style.cursor = 'auto';
         }}
       >
-        <cylinderGeometry args={[3, 3, 0.5, 8]} />
+        <sphereGeometry args={[3, 32, 32]} />
         <meshStandardMaterial 
-          color={sector.color} 
-          emissive={sector.color} 
-          emissiveIntensity={isActive ? 0.3 : 0.1}
-          transparent 
-          opacity={0.8} 
+          color={config.baseColor}
+          emissive={config.emissive}
+          emissiveIntensity={isActive ? 0.4 : 0.2}
+          roughness={config.roughness}
+          metalness={config.metalness}
         />
       </mesh>
 
-      {/* Portal Ring */}
+      {/* Planet Surface Details - Craters/Continents */}
+      <mesh position={[1.2, 0.8, 2.1]}>
+        <sphereGeometry args={[0.4, 16, 16]} />
+        <meshStandardMaterial 
+          color={config.secondaryColor}
+          emissive={config.emissive}
+          emissiveIntensity={0.1}
+          roughness={0.9}
+          metalness={0.1}
+        />
+      </mesh>
+      
+      <mesh position={[-1.8, -0.5, 1.8]}>
+        <sphereGeometry args={[0.6, 16, 16]} />
+        <meshStandardMaterial 
+          color={config.secondaryColor}
+          emissive={config.emissive}
+          emissiveIntensity={0.1}
+          roughness={0.9}
+          metalness={0.1}
+        />
+      </mesh>
+      
+      <mesh position={[0.5, -1.5, 2.3]}>
+        <sphereGeometry args={[0.3, 16, 16]} />
+        <meshStandardMaterial 
+          color={config.secondaryColor}
+          emissive={config.emissive}
+          emissiveIntensity={0.1}
+          roughness={0.9}
+          metalness={0.1}
+        />
+      </mesh>
+
+      {/* Atmospheric Ring */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[4, 0.3, 8, 16]} />
+        <torusGeometry args={[4.5, 0.1, 8, 32]} />
         <meshStandardMaterial 
-          color={sector.color} 
-          emissive={sector.color} 
-          emissiveIntensity={0.5}
+          color={config.baseColor}
+          emissive={config.emissive}
+          emissiveIntensity={0.3}
+          transparent
+          opacity={0.6}
         />
       </mesh>
 
-      {/* Sector Label */}
+      {/* Orbital Ring */}
+      <mesh rotation={[Math.PI / 4, 0, Math.PI / 3]}>
+        <torusGeometry args={[5.2, 0.05, 8, 32]} />
+        <meshStandardMaterial 
+          color={config.secondaryColor}
+          emissive={config.emissive}
+          emissiveIntensity={0.5}
+          transparent
+          opacity={0.4}
+        />
+      </mesh>
+
+      {/* Planet Name Label */}
       <Text
-        position={[0, 5, 0]}
+        position={[0, 6, 0]}
         fontSize={1}
         color="#ffffff"
         anchorX="center"
@@ -138,15 +207,19 @@ function SectorPortal({
         {sector.name}
       </Text>
 
-      {/* Icon representation */}
-      <mesh position={[0, 2, 0]}>
-        <sphereGeometry args={[0.8, 16, 16]} />
-        <meshStandardMaterial 
-          color="#ffffff" 
-          emissive={sector.color} 
-          emissiveIntensity={0.2}
-        />
-      </mesh>
+      {/* Floating Moon/Satellite */}
+      <group rotation={[0, Date.now() * 0.001, 0]}>
+        <mesh position={[6, 0, 0]}>
+          <sphereGeometry args={[0.3, 16, 16]} />
+          <meshStandardMaterial 
+            color="#94a3b8"
+            emissive="#475569"
+            emissiveIntensity={0.2}
+            roughness={0.9}
+            metalness={0.1}
+          />
+        </mesh>
+      </group>
     </group>
   );
 }
@@ -177,22 +250,49 @@ function CompetitiveLandscape() {
 
       {/* Competitor Nodes */}
       {competitors.map((competitor) => (
-        <group key={competitor.id} position={competitor.position}>
-          {/* Company Node */}
+        <group key={competitor.id} position={competitor.position as [number, number, number]}>
+          {/* Company Asteroid/Moon */}
           <mesh>
-            <sphereGeometry args={[competitor.marketShare / 50, 16, 16]} />
+            <dodecahedronGeometry args={[competitor.marketShare / 50]} />
             <meshStandardMaterial 
               color={competitor.color}
               emissive={competitor.color}
-              emissiveIntensity={competitor.innovationIndex / 200}
+              emissiveIntensity={competitor.innovationIndex / 300}
+              roughness={0.8}
+              metalness={0.3}
             />
           </mesh>
 
-          {/* Risk Level Indicator */}
+          {/* Surface craters */}
+          <mesh position={[0.2, 0.3, 0.4]}>
+            <sphereGeometry args={[0.1, 8, 8]} />
+            <meshStandardMaterial 
+              color="#374151"
+              roughness={0.9}
+              metalness={0.1}
+            />
+          </mesh>
+          
+          <mesh position={[-0.3, -0.2, 0.3]}>
+            <sphereGeometry args={[0.15, 8, 8]} />
+            <meshStandardMaterial 
+              color="#374151"
+              roughness={0.9}
+              metalness={0.1}
+            />
+          </mesh>
+
+          {/* Risk Level Indicator - Crystal Formation */}
           <mesh position={[0, competitor.marketShare / 25, 0]}>
-            <coneGeometry args={[0.3, competitor.riskLevel / 20, 8]} />
+            <coneGeometry args={[0.3, competitor.riskLevel / 20, 6]} />
             <meshStandardMaterial 
               color={competitor.riskLevel > 30 ? '#ef4444' : '#10b981'}
+              emissive={competitor.riskLevel > 30 ? '#dc2626' : '#059669'}
+              emissiveIntensity={0.4}
+              transparent
+              opacity={0.8}
+              roughness={0.2}
+              metalness={0.7}
             />
           </mesh>
 
@@ -280,26 +380,44 @@ function OpportunityRadar() {
         />
       </mesh>
 
-      {/* Opportunity Blips */}
+      {/* Opportunity Blips - Comet-like */}
       {opportunities.map((opp) => (
-        <group key={opp.id} position={opp.position}>
-          {/* Opportunity Node */}
+        <group key={opp.id} position={opp.position as [number, number, number]}>
+          {/* Main Opportunity Crystal */}
           <mesh>
-            <sphereGeometry args={[opp.potential / 50, 16, 16]} />
+            <octahedronGeometry args={[opp.potential / 50]} />
             <meshStandardMaterial 
               color={opp.saturation < 40 ? '#10b981' : opp.saturation < 70 ? '#f59e0b' : '#ef4444'}
               emissive={opp.saturation < 40 ? '#10b981' : opp.saturation < 70 ? '#f59e0b' : '#ef4444'}
-              emissiveIntensity={0.4}
+              emissiveIntensity={0.6}
+              transparent
+              opacity={0.9}
+              roughness={0.1}
+              metalness={0.8}
             />
           </mesh>
 
-          {/* Pulse Effect */}
-          <mesh>
-            <sphereGeometry args={[opp.potential / 30, 16, 16]} />
+          {/* Comet Tail Effect */}
+          <mesh position={[-1, -0.5, -0.5]} rotation={[0, 0, Math.PI / 4]}>
+            <coneGeometry args={[0.2, 2, 8]} />
             <meshStandardMaterial 
-              color="#ffffff" 
+              color="#ffffff"
+              emissive={opp.saturation < 40 ? '#10b981' : opp.saturation < 70 ? '#f59e0b' : '#ef4444'}
+              emissiveIntensity={0.3}
               transparent 
-              opacity={0.2}
+              opacity={0.6}
+            />
+          </mesh>
+
+          {/* Energy Aura */}
+          <mesh>
+            <sphereGeometry args={[opp.potential / 35, 16, 16]} />
+            <meshStandardMaterial 
+              color="#ffffff"
+              emissive={opp.saturation < 40 ? '#10b981' : opp.saturation < 70 ? '#f59e0b' : '#ef4444'}
+              emissiveIntensity={0.2}
+              transparent 
+              opacity={0.3}
             />
           </mesh>
 
@@ -339,7 +457,7 @@ function OpportunityRadar() {
   );
 }
 
-// Market Timeline
+// Market Timeline - Asteroid Belt
 function MarketTimeline() {
   const timelineEvents = [
     { year: 2020, event: 'Digital Transformation Boom', position: [-8, 2, 0], impact: 85 },
@@ -352,30 +470,62 @@ function MarketTimeline() {
 
   return (
     <group position={[0, 0, -30]}>
-      {/* Timeline Base */}
-      <mesh position={[2, 0, 0]}>
-        <boxGeometry args={[24, 0.2, 1]} />
-        <meshStandardMaterial color="#374151" />
-      </mesh>
+      {/* Asteroid Belt Base Ring */}
+      {Array.from({ length: 50 }, (_, i) => {
+        const angle = (i / 50) * Math.PI * 2;
+        const radius = 15 + Math.random() * 3;
+        return (
+          <mesh key={i} position={[
+            Math.cos(angle) * radius,
+            Math.sin(angle) * (Math.random() - 0.5) * 2,
+            Math.sin(angle) * radius
+          ]}>
+            <sphereGeometry args={[
+              0.2 + Math.random() * 0.3,
+              8,
+              8
+            ]} />
+            <meshStandardMaterial 
+              color="#78716c"
+              roughness={0.9}
+              metalness={0.1}
+            />
+          </mesh>
+        );
+      })}
 
-      {/* Timeline Events */}
+      {/* Major Timeline Asteroids */}
       {timelineEvents.map((event) => (
         <group key={event.year} position={event.position as [number, number, number]}>
-          {/* Event Marker */}
+          {/* Large Event Asteroid */}
           <mesh>
-            <cylinderGeometry args={[0.3, 0.3, event.impact / 20, 8]} />
+            <sphereGeometry args={[event.impact / 60, 12, 12]} />
             <meshStandardMaterial 
-              color="#3b82f6"
-              emissive="#3b82f6"
-              emissiveIntensity={0.3}
+              color="#57534e"
+              emissive="#dc2626"
+              emissiveIntensity={event.impact / 300}
+              roughness={0.8}
+              metalness={0.2}
             />
           </mesh>
 
-          {/* Year Label */}
+          {/* Asteroid Impact Glow */}
+          <mesh>
+            <sphereGeometry args={[event.impact / 40, 16, 16]} />
+            <meshStandardMaterial 
+              color="#ef4444"
+              emissive="#ef4444"
+              emissiveIntensity={0.4}
+              transparent
+              opacity={0.3}
+            />
+          </mesh>
+
+          {/* Year Hologram */}
           <Text
-            position={[0, -1, 0]}
-            fontSize={0.4}
-            color="#ffffff"
+            position={[0, -2, 0]}
+            fontSize={0.5}
+            color="#fbbf24"
             anchorX="center"
             anchorY="middle"
           >
@@ -384,9 +534,9 @@ function MarketTimeline() {
 
           {/* Event Description */}
           <Text
-            position={[0, event.impact / 20 + 1, 0]}
+            position={[0, event.impact / 30 + 1.5, 0]}
             fontSize={0.3}
-            color="#94a3b8"
+            color="#d97706"
             anchorX="center"
             anchorY="middle"
             maxWidth={4}
@@ -394,10 +544,11 @@ function MarketTimeline() {
             {event.event}
           </Text>
 
-          {/* Impact Visualization */}
+          {/* Impact Data Display */}
           <Html position={[0, event.impact / 40, 2]} transform occlude>
-            <div className="bg-black/80 text-white p-2 rounded text-xs text-center">
+            <div className="bg-orange-900/80 text-orange-100 p-2 rounded text-xs text-center border border-orange-600">
               <div>Impact: {event.impact}/100</div>
+              <div className="text-orange-300">Asteroid Event</div>
             </div>
           </Html>
         </group>
@@ -430,34 +581,86 @@ function GeographicMarketView() {
 
   return (
     <group position={[0, 0, 30]}>
-      {/* Globe Base */}
+      {/* Main Planet Earth */}
       <mesh>
-        <sphereGeometry args={[8, 32, 32]} />
+        <sphereGeometry args={[8, 64, 64]} />
         <meshStandardMaterial 
-          color="#1e40af" 
-          transparent 
-          opacity={0.3}
-          wireframe
+          color="#1e40af"
+          emissive="#1e3a8a"
+          emissiveIntensity={0.2}
+          roughness={0.8}
+          metalness={0.1}
         />
       </mesh>
 
-      {/* Regional Markers */}
+      {/* Continental Landmasses */}
+      <mesh position={[2, 1, 6]}>
+        <sphereGeometry args={[1.5, 16, 16]} />
+        <meshStandardMaterial 
+          color="#065f46"
+          emissive="#064e3b"
+          emissiveIntensity={0.3}
+          roughness={0.9}
+        />
+      </mesh>
+      
+      <mesh position={[-3, 2, 5]}>
+        <sphereGeometry args={[2, 16, 16]} />
+        <meshStandardMaterial 
+          color="#92400e"
+          emissive="#78350f"
+          emissiveIntensity={0.3}
+          roughness={0.9}
+        />
+      </mesh>
+      
+      <mesh position={[1, -2, 7]}>
+        <sphereGeometry args={[1.2, 16, 16]} />
+        <meshStandardMaterial 
+          color="#166534"
+          emissive="#14532d"
+          emissiveIntensity={0.3}
+          roughness={0.9}
+        />
+      </mesh>
+
+      {/* Atmospheric Clouds */}
+      <mesh>
+        <sphereGeometry args={[8.5, 32, 32]} />
+        <meshStandardMaterial 
+          color="#f8fafc"
+          transparent
+          opacity={0.3}
+          roughness={0.1}
+          metalness={0.0}
+        />
+      </mesh>
+
+      {/* Regional Market Indicators */}
       {regions.map((region) => (
         <group key={region.name} position={region.position as [number, number, number]}>
-          {/* Region Node */}
+          {/* Regional Beacon */}
           <mesh>
-            <sphereGeometry args={[region.demand / 50, 16, 16]} />
+            <cylinderGeometry args={[0.2, 0.2, region.demand / 20, 8]} />
+            <meshStandardMaterial 
+              color={region.risk < 40 ? '#10b981' : region.risk < 60 ? '#f59e0b' : '#ef4444'}
+              emissive={region.risk < 40 ? '#10b981' : region.risk < 60 ? '#f59e0b' : '#ef4444'}
+              emissiveIntensity={0.6}
+              transparent
+              opacity={0.8}
+            />
+          </mesh>
+
+          {/* Market Activity Pulse */}
+          <mesh>
+            <sphereGeometry args={[region.demand / 60, 16, 16]} />
             <meshStandardMaterial 
               color={region.risk < 40 ? '#10b981' : region.risk < 60 ? '#f59e0b' : '#ef4444'}
               emissive={region.risk < 40 ? '#10b981' : region.risk < 60 ? '#f59e0b' : '#ef4444'}
               emissiveIntensity={0.4}
+              transparent
+              opacity={0.6}
             />
-          </mesh>
-
-          {/* Demand Indicator */}
-          <mesh position={[0, region.demand / 40, 0]}>
-            <cylinderGeometry args={[0.2, 0.2, region.demand / 20, 8]} />
-            <meshStandardMaterial color="#3b82f6" />
           </mesh>
 
           {/* Region Label */}
@@ -482,6 +685,62 @@ function GeographicMarketView() {
         </group>
       ))}
 
+      {/* Market Data Satellites */}
+      <group>
+        {Array.from({ length: 6 }, (_, i) => {
+          const angle = (i * Math.PI * 2) / 6;
+          const radius = 12;
+          return (
+            <group key={i}>
+              <mesh position={[
+                Math.cos(angle) * radius,
+                Math.sin(angle) * 4,
+                Math.sin(angle) * radius
+              ]}>
+                <boxGeometry args={[0.5, 0.5, 1]} />
+                <meshStandardMaterial 
+                  color="#64748b"
+                  emissive="#475569"
+                  emissiveIntensity={0.3}
+                  metalness={0.8}
+                  roughness={0.2}
+                />
+              </mesh>
+              
+              {/* Solar Panels */}
+              <mesh position={[
+                Math.cos(angle) * radius + 1,
+                Math.sin(angle) * 4,
+                Math.sin(angle) * radius
+              ]}>
+                <boxGeometry args={[2, 0.1, 1]} />
+                <meshStandardMaterial 
+                  color="#1e293b"
+                  metalness={0.9}
+                  roughness={0.1}
+                />
+              </mesh>
+
+              {/* Data Transmission Beam */}
+              <mesh position={[
+                Math.cos(angle) * radius * 0.5,
+                Math.sin(angle) * 2,
+                Math.sin(angle) * radius * 0.5
+              ]}>
+                <cylinderGeometry args={[0.1, 0.1, radius * 0.8, 8]} />
+                <meshStandardMaterial 
+                  color="#22d3ee"
+                  emissive="#22d3ee"
+                  emissiveIntensity={0.4}
+                  transparent
+                  opacity={0.6}
+                />
+              </mesh>
+            </group>
+          );
+        })}
+      </group>
+
       {/* Title */}
       <Text
         position={[0, 12, 0]}
@@ -496,7 +755,7 @@ function GeographicMarketView() {
   );
 }
 
-// Agent Network Visualization
+// Agent Network Visualization - Satellite Constellation
 function AgentNetwork() {
   const agents: Agent[] = [
     { id: 'data-collector', name: 'Data Collector', position: [-4, 2, 0], status: 'active', connections: ['analyzer', 'reporter'] },
@@ -508,12 +767,55 @@ function AgentNetwork() {
 
   return (
     <group position={[-20, 15, -20]}>
-      {/* Agent Nodes */}
+      {/* Agent Satellites */}
       {agents.map((agent) => (
         <group key={agent.id} position={agent.position}>
-          {/* Agent Avatar */}
+          {/* Satellite Main Body */}
           <mesh>
-            <boxGeometry args={[1, 1, 1]} />
+            <cylinderGeometry args={[0.3, 0.3, 1.5, 8]} />
+            <meshStandardMaterial 
+              color="#94a3b8"
+              emissive={
+                agent.status === 'active' ? '#10b981' :
+                agent.status === 'processing' ? '#f59e0b' : '#6b7280'
+              }
+              emissiveIntensity={0.4}
+              metalness={0.8}
+              roughness={0.2}
+            />
+          </mesh>
+
+          {/* Solar Panel Arrays */}
+          <mesh position={[-1.2, 0, 0]}>
+            <boxGeometry args={[2, 0.1, 1]} />
+            <meshStandardMaterial 
+              color="#1e293b"
+              metalness={0.9}
+              roughness={0.1}
+            />
+          </mesh>
+          <mesh position={[1.2, 0, 0]}>
+            <boxGeometry args={[2, 0.1, 1]} />
+            <meshStandardMaterial 
+              color="#1e293b"
+              metalness={0.9}
+              roughness={0.1}
+            />
+          </mesh>
+
+          {/* Communication Dish */}
+          <mesh position={[0, 1, 0]}>
+            <cylinderGeometry args={[0.8, 0.5, 0.2, 16]} />
+            <meshStandardMaterial 
+              color="#f1f5f9"
+              metalness={0.8}
+              roughness={0.1}
+            />
+          </mesh>
+
+          {/* Status Indicator Light */}
+          <mesh position={[0, 0.8, 0]}>
+            <sphereGeometry args={[0.1, 8, 8]} />
             <meshStandardMaterial 
               color={
                 agent.status === 'active' ? '#10b981' :
@@ -523,7 +825,7 @@ function AgentNetwork() {
                 agent.status === 'active' ? '#10b981' :
                 agent.status === 'processing' ? '#f59e0b' : '#6b7280'
               }
-              emissiveIntensity={0.3}
+              emissiveIntensity={0.8}
             />
           </mesh>
 
@@ -591,7 +893,7 @@ function AgentNetwork() {
   );
 }
 
-// Scenario Planning Room
+// Scenario Planning Room - Space Station
 function ScenarioPlanningRoom() {
   const scenarios = [
     { name: 'Price War', impact: -25, probability: 35, position: [-3, 2, 0] },
@@ -602,35 +904,95 @@ function ScenarioPlanningRoom() {
 
   return (
     <group position={[20, 15, 20]}>
-      {/* Room Walls */}
-      <mesh position={[0, 3, -5]}>
-        <planeGeometry args={[12, 6]} />
-        <meshStandardMaterial color="#1f2937" transparent opacity={0.7} />
-      </mesh>
-      
-      <mesh position={[-5, 3, 0]} rotation={[0, Math.PI / 2, 0]}>
-        <planeGeometry args={[10, 6]} />
-        <meshStandardMaterial color="#1f2937" transparent opacity={0.7} />
+      {/* Space Station Core */}
+      <mesh>
+        <cylinderGeometry args={[3, 3, 8, 16]} />
+        <meshStandardMaterial 
+          color="#475569" 
+          emissive="#1e293b"
+          emissiveIntensity={0.2}
+          metalness={0.8}
+          roughness={0.3}
+        />
       </mesh>
 
-      {/* Scenario Panels */}
+      {/* Rotating Ring Section */}
+      <mesh position={[0, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
+        <torusGeometry args={[6, 1, 8, 20]} />
+        <meshStandardMaterial 
+          color="#64748b" 
+          emissive="#334155"
+          emissiveIntensity={0.3}
+          metalness={0.9}
+          roughness={0.2}
+        />
+      </mesh>
+
+      {/* Communication Arrays */}
+      <mesh position={[0, 5, 0]}>
+        <cylinderGeometry args={[0.2, 0.2, 3, 8]} />
+        <meshStandardMaterial 
+          color="#e2e8f0"
+          metalness={0.9}
+          roughness={0.1}
+        />
+      </mesh>
+
+      <mesh position={[0, -5, 0]}>
+        <cylinderGeometry args={[0.2, 0.2, 3, 8]} />
+        <meshStandardMaterial 
+          color="#e2e8f0"
+          metalness={0.9}
+          roughness={0.1}
+        />
+      </mesh>
+
+      {/* Docking Bays */}
+      <mesh position={[5, 0, 0]}>
+        <boxGeometry args={[2, 1, 1]} />
+        <meshStandardMaterial 
+          color="#334155"
+          emissive="#1e293b"
+          emissiveIntensity={0.4}
+        />
+      </mesh>
+
+      <mesh position={[-5, 0, 0]}>
+        <boxGeometry args={[2, 1, 1]} />
+        <meshStandardMaterial 
+          color="#334155"
+          emissive="#1e293b"
+          emissiveIntensity={0.4}
+        />
+      </mesh>
+
+      {/* Scenario Holographic Displays */}
       {scenarios.map((scenario) => (
         <group key={scenario.name} position={scenario.position as [number, number, number]}>
-          {/* Scenario Visualization */}
+          {/* Holographic Panel */}
           <mesh>
-            <boxGeometry args={[2, 1.5, 0.2]} />
+            <planeGeometry args={[3, 2]} />
             <meshStandardMaterial 
               color={scenario.impact > 0 ? '#10b981' : '#ef4444'}
               emissive={scenario.impact > 0 ? '#10b981' : '#ef4444'}
-              emissiveIntensity={0.2}
+              emissiveIntensity={0.6}
+              transparent
+              opacity={0.8}
             />
           </mesh>
 
-          {/* Impact Bar */}
-          <mesh position={[0, -1, 0.2]}>
-            <boxGeometry args={[Math.abs(scenario.impact) / 25, 0.3, 0.1]} />
+          {/* Impact Visualization */}
+          <mesh position={[0, -1.5, 0.1]}>
+            <cylinderGeometry args={[
+              Math.abs(scenario.impact) / 50, 
+              Math.abs(scenario.impact) / 50, 
+              Math.abs(scenario.impact) / 15, 
+              8
+            ]} />
             <meshStandardMaterial 
               color={scenario.impact > 0 ? '#10b981' : '#ef4444'}
+              emissive={scenario.impact > 0 ? '#10b981' : '#ef4444'}
+              emissiveIntensity={0.5}
             />
           </mesh>
 
@@ -697,6 +1059,8 @@ const simulateInvestmentImpact = (
   const impactMultiplier = impactMultipliers[matchedDept];
   const growthRate = growthMultipliers[matchedDept];
   const directImpact = amount * impactMultiplier;
+  
+  console.log(`Investment simulation: ${matchedDept} department, growth rate: ${growthRate}x, impact: ${directImpact}`);
 
   return currentData.map(item => {
     let newValue = item.value;
@@ -1171,11 +1535,239 @@ function Scene3D({
   );
 }
 
+// Investment Simulator Component
+function InvestmentSimulator({ onExit }: { onExit: () => void }) {
+  const [investmentAmount, setInvestmentAmount] = useState(0);
+  const [targetSector, setTargetSector] = useState('');
+  const [command, setCommand] = useState('');
+  const [simulationData, setSimulationData] = useState({
+    revenue: [
+      { id: 'q1', label: 'Q1 Revenue', value: 15.2, color: '#3b82f6', maxValue: 80 },
+      { id: 'q2', label: 'Q2 Revenue', value: 25.8, color: '#10b981', maxValue: 80 },
+      { id: 'q3', label: 'Q3 Revenue', value: 32.1, color: '#8b5cf6', maxValue: 80 },
+      { id: 'q4', label: 'Q4 Revenue', value: 28.5, color: '#f59e0b', maxValue: 80 },
+    ],
+    growth: [
+      { id: 'cyber', label: 'Cybersecurity', value: 15, color: '#10b981', maxValue: 100 },
+      { id: 'cloud', label: 'Cloud', value: 25, color: '#3b82f6', maxValue: 100 },
+      { id: 'ai', label: 'AI/ML', value: 35, color: '#8b5cf6', maxValue: 100 },
+      { id: 'data', label: 'Data Analytics', value: 20, color: '#f59e0b', maxValue: 100 }
+    ],
+    efficiency: [
+      { id: 'jan', label: 'Jan', value: 78, color: '#3b82f6', maxValue: 100 },
+      { id: 'feb', label: 'Feb', value: 82, color: '#3b82f6', maxValue: 100 },
+      { id: 'mar', label: 'Mar', value: 85, color: '#3b82f6', maxValue: 100 },
+      { id: 'apr', label: 'Apr', value: 88, color: '#3b82f6', maxValue: 100 }
+    ]
+  });
+
+  const parseInvestmentCommand = (command: string) => {
+    const amountMatch = command.match(/\$?([\d,]+)/);
+    const amount = amountMatch ? parseInt(amountMatch[1].replace(/,/g, '')) : 0;
+    
+    const sectorKeywords = {
+      'cybersecurity': 'cybersecurity',
+      'security': 'cybersecurity',
+      'cloud': 'cloud',
+      'ai': 'ai/ml',
+      'artificial intelligence': 'ai/ml',
+      'machine learning': 'ai/ml',
+      'ml': 'ai/ml',
+      'data': 'data',
+      'analytics': 'data',
+      'consulting': 'consulting'
+    };
+    
+    const sector = Object.entries(sectorKeywords).find(([keyword]) => 
+      command.toLowerCase().includes(keyword)
+    )?.[1] || 'general';
+    
+    return { amount, sector };
+  };
+
+  const handleInvestmentSimulation = (amount: number, sector: string) => {
+    setInvestmentAmount(amount);
+    setTargetSector(sector);
+
+    // Simulate impact on data
+    const impactFactor = amount / 100000;
+    
+    setSimulationData(prev => ({
+      revenue: prev.revenue.map(item => ({
+        ...item,
+        value: Math.round(item.value * (1 + impactFactor * 0.1))
+      })),
+      growth: prev.growth.map(item => ({
+        ...item,
+        value: item.label.toLowerCase().includes(sector.toLowerCase()) 
+          ? Math.round(item.value * (1 + impactFactor * 0.3))
+          : item.value
+      })),
+      efficiency: prev.efficiency.map(item => ({
+        ...item,
+        value: Math.round(item.value * (1 + impactFactor * 0.05))
+      }))
+    }));
+  };
+
+  const handleSubmitCommand = () => {
+    const { amount, sector } = parseInvestmentCommand(command);
+    if (amount > 0) {
+      handleInvestmentSimulation(amount, sector);
+      setCommand('');
+    }
+  };
+
+  const handleDataChange = (chartType: string, id: string, newValue: number) => {
+    switch (chartType) {
+      case 'revenue':
+        setSimulationData(prev => ({
+          ...prev,
+          revenue: prev.revenue.map(item => 
+            item.id === id ? { ...item, value: newValue } : item
+          )
+        }));
+        break;
+      case 'growth':
+        setSimulationData(prev => ({
+          ...prev,
+          growth: prev.growth.map(item => 
+            item.id === id ? { ...item, value: newValue } : item
+          )
+        }));
+        break;
+      case 'efficiency':
+        setSimulationData(prev => ({
+          ...prev,
+          efficiency: prev.efficiency.map(item => 
+            item.id === id ? { ...item, value: newValue } : item
+          )
+        }));
+        break;
+    }
+  };
+
+  return (
+    <group>
+      {/* Title */}
+      <Text
+        position={[0, 12, 0]}
+        fontSize={1.8}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+      >
+        Investment Portfolio Simulator
+      </Text>
+
+      {/* Revenue Bar Chart */}
+      <group position={[-15, 0, 0]}>
+        <InteractiveBarChart 
+          data={simulationData.revenue} 
+          position={[0, 0, 0]} 
+          onDataChange={(id, newValue) => handleDataChange('revenue', id, newValue)}
+        />
+        <Text
+          position={[0, 6, 0]}
+          fontSize={0.8}
+          color="#ffffff"
+          anchorX="center"
+          anchorY="middle"
+        >
+          Quarterly Revenue (M€)
+        </Text>
+      </group>
+
+      {/* Growth Pie Chart */}
+      <group position={[0, 0, 0]}>
+        <Interactive3DPieChart 
+          data={simulationData.growth} 
+          position={[0, 0, 0]} 
+          onDataChange={(id, newValue) => handleDataChange('growth', id, newValue)}
+        />
+        <Text
+          position={[0, 6, 0]}
+          fontSize={0.8}
+          color="#ffffff"
+          anchorX="center"
+          anchorY="middle"
+        >
+          Sector Growth (%)
+        </Text>
+      </group>
+
+      {/* Efficiency Line Chart */}
+      <group position={[15, 0, 0]}>
+        <Interactive3DLineChart 
+          data={simulationData.efficiency} 
+          position={[0, 0, 0]} 
+          onDataChange={(id, newValue) => handleDataChange('efficiency', id, newValue)}
+        />
+        <Text
+          position={[0, 6, 0]}
+          fontSize={0.8}
+          color="#ffffff"
+          anchorX="center"
+          anchorY="middle"
+        >
+          Operational Efficiency (%)
+        </Text>
+      </group>
+
+      {/* Investment Command Interface */}
+      <Html position={[0, 8, 0]} transform>
+        <div className="bg-black/80 text-white p-4 rounded-lg min-w-[400px]">
+          <h3 className="text-lg font-bold mb-2">Investment Command Center</h3>
+          <div className="space-y-3">
+            <input
+              type="text"
+              value={command}
+              onChange={(e) => setCommand(e.target.value)}
+              placeholder="e.g., 'Talan invest $50000 in cybersecurity'"
+              className="w-full p-2 rounded bg-gray-700 text-white"
+              onKeyPress={(e) => e.key === 'Enter' && handleSubmitCommand()}
+            />
+            <div className="flex space-x-2">
+              <button
+                onClick={handleSubmitCommand}
+                className="flex-1 p-2 bg-blue-600 rounded hover:bg-blue-700"
+              >
+                Execute Investment
+              </button>
+              <button
+                onClick={onExit}
+                className="p-2 bg-gray-600 rounded hover:bg-gray-700"
+              >
+                ← Back to Hub
+              </button>
+            </div>
+          </div>
+          {investmentAmount > 0 && (
+            <div className="mt-3 p-2 bg-green-600/20 rounded text-sm text-green-400">
+              ✓ Simulated: ${investmentAmount.toLocaleString()} invested in {targetSector}
+            </div>
+          )}
+        </div>
+      </Html>
+
+      {/* Instructions */}
+      <Html position={[0, -8, 0]} transform>
+        <div className="bg-black/60 text-white p-3 rounded text-center">
+          <p className="text-sm">
+            <strong>Interactive Controls:</strong> Click on chart elements to adjust values manually
+          </p>
+          <p className="text-xs opacity-70 mt-1">
+            Or use natural language commands like &quot;invest $30000 in AI&quot;
+          </p>
+        </div>
+      </Html>
+    </group>
+  );
+}
+
 // InteractiveCharts3D Component (Original investment simulator)
 function InteractiveCharts3D({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [totalInvestment, setTotalInvestment] = useState(0);
-  const [investmentHistory, setInvestmentHistory] = useState<Investment[]>([]);
 
   // Initial sample data for interactive charts
   const [barData, setBarData] = useState<ChartData[]>([
@@ -1201,7 +1793,7 @@ function InteractiveCharts3D({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   ]);
 
   const handleInvestment = (department: string, amount: number) => {
-    // Create investment record
+    // Create investment record for tracking
     const investment: Investment = {
       id: Date.now().toString(),
       department,
@@ -1210,8 +1802,7 @@ function InteractiveCharts3D({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       projectedROI: Math.random() * 0.3 + 0.1 // 10-40% ROI
     };
 
-    setInvestmentHistory(prev => [...prev, investment]);
-    setTotalInvestment(prev => prev + amount);
+    console.log('Investment processed:', investment);
 
     // Apply investment impact to relevant charts
     if (department.toLowerCase().includes('revenue') || department.toLowerCase().includes('sales')) {
@@ -1277,8 +1868,6 @@ function InteractiveCharts3D({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       { id: 'apr', label: 'Innovation Index', value: 82, color: '#3b82f6', maxValue: 100 },
       { id: 'may', label: 'Revenue Growth', value: 15, color: '#3b82f6', maxValue: 50 },
     ]);
-    setTotalInvestment(0);
-    setInvestmentHistory([]);
   };
 
   return (
@@ -1385,7 +1974,7 @@ function InteractiveCharts3D({ isOpen, onClose }: { isOpen: boolean; onClose: ()
 export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps = { isOpen: true, onClose: () => {} }) {
   const [is3DChartsOpen, setIs3DChartsOpen] = useState(false);
   const [currentSector, setCurrentSector] = useState<string | null>(null);
-  const [activeSector, setActiveSector] = useState<string>('simulation');
+  const [activeSector, setActiveSector] = useState<string>('investment');
 
   const enterSector = (sectorId: string) => {
     setCurrentSector(sectorId);
@@ -1394,7 +1983,7 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
 
   const exitSector = () => {
     setCurrentSector(null);
-    setActiveSector('simulation');
+    setActiveSector('investment');
   };
 
   const renderSectorContent = () => {
@@ -1412,19 +2001,57 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
               />
             ))}
             
-            {/* Central Hub */}
+          {/* Central Hub - Sun/Star */}
+          <group>
+            {/* Main Sun Body */}
             <mesh position={[0, 8, 0]}>
-              <sphereGeometry args={[2, 32, 32]} />
+              <sphereGeometry args={[2.5, 32, 32]} />
               <meshStandardMaterial 
-                color="#06b6d4" 
-                emissive="#06b6d4" 
-                emissiveIntensity={0.3}
-                transparent 
-                opacity={0.8}
+                color="#fbbf24"
+                emissive="#f59e0b"
+                emissiveIntensity={0.6}
+                roughness={0.2}
+                metalness={0.1}
               />
             </mesh>
             
-            <Text
+            {/* Solar Corona */}
+            <mesh position={[0, 8, 0]}>
+              <sphereGeometry args={[3.2, 32, 32]} />
+              <meshStandardMaterial 
+                color="#fde047"
+                emissive="#eab308"
+                emissiveIntensity={0.3}
+                transparent
+                opacity={0.3}
+                roughness={0.1}
+                metalness={0.2}
+              />
+            </mesh>
+            
+            {/* Solar Flares */}
+            <mesh position={[0, 8, 0]} rotation={[0, Date.now() * 0.001, 0]}>
+              <torusGeometry args={[3.8, 0.1, 8, 32]} />
+              <meshStandardMaterial 
+                color="#dc2626"
+                emissive="#b91c1c"
+                emissiveIntensity={0.8}
+                transparent
+                opacity={0.6}
+              />
+            </mesh>
+            
+            <mesh position={[0, 8, 0]} rotation={[Math.PI / 3, Date.now() * 0.0015, 0]}>
+              <torusGeometry args={[4.2, 0.08, 8, 32]} />
+              <meshStandardMaterial 
+                color="#ea580c"
+                emissive="#c2410c"
+                emissiveIntensity={0.7}
+                transparent
+                opacity={0.5}
+              />
+            </mesh>
+          </group>            <Text
               position={[0, 12, 0]}
               fontSize={2}
               color="#ffffff"
@@ -1467,43 +2094,10 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
 
     // Render specific sector view
     switch (currentSector) {
-      case 'simulation':
+      case 'investment':
         return (
           <Suspense fallback={null}>
-            <group>
-              <Text
-                position={[0, 8, 0]}
-                fontSize={1.5}
-                color="#ffffff"
-                anchorX="center"
-                anchorY="middle"
-              >
-                Investment Portfolio Simulator
-              </Text>
-              
-              <Html position={[0, 4, 0]} transform>
-                <div className="bg-black/80 text-white p-6 rounded-lg text-center min-w-[400px]">
-                  <h3 className="text-xl font-bold mb-4">Interactive Investment Simulation</h3>
-                  <p className="text-sm mb-4 opacity-80">
-                    Advanced 3D investment simulation with AI-powered predictions and real-time market analysis.
-                  </p>
-                  <div className="space-y-3">
-                    <button
-                      onClick={() => setIs3DChartsOpen(true)}
-                      className="w-full p-3 bg-blue-600 rounded hover:bg-blue-700 transition-colors"
-                    >
-                      Launch Interactive Charts
-                    </button>
-                    <button
-                      onClick={exitSector}
-                      className="w-full p-2 bg-gray-600 rounded hover:bg-gray-700 transition-colors"
-                    >
-                      Back to Hub
-                    </button>
-                  </div>
-                </div>
-              </Html>
-            </group>
+            <InvestmentSimulator onExit={exitSector} />
           </Suspense>
         );
       case 'competitive':
@@ -1650,10 +2244,22 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
         )}
         
         <Canvas camera={{ position: [0, 10, 20], fov: 75 }}>
-          <ambientLight intensity={0.3} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#4f46e5" />
-          <pointLight position={[0, 20, 0]} intensity={0.5} color="#06b6d4" />
+          {/* Space Environment Lighting */}
+          <ambientLight intensity={0.1} color="#000511" />
+          <pointLight position={[10, 10, 10]} intensity={1.2} color="#ffffff" />
+          <pointLight position={[-10, -10, -10]} intensity={0.8} color="#4338ca" />
+          <pointLight position={[0, 20, 0]} intensity={0.6} color="#0891b2" />
+          
+          {/* Nebula Background */}
+          <mesh position={[0, 0, -100]}>
+            <sphereGeometry args={[150, 32, 32]} />
+            <meshBasicMaterial 
+              color="#1e1b4b"
+              transparent
+              opacity={0.3}
+              side={THREE.BackSide}
+            />
+          </mesh>
           
           {renderSectorContent()}
           
@@ -1661,10 +2267,10 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
             enablePan={true} 
             enableZoom={true} 
             enableRotate={true}
-            maxDistance={60}
-            minDistance={8}
+            maxDistance={80}
+            minDistance={5}
           />
-          <Stars radius={200} depth={100} count={8000} factor={6} saturation={0} fade />
+          <Stars radius={300} depth={150} count={12000} factor={8} saturation={0} fade />
         </Canvas>
 
         <InteractiveCharts3D 
