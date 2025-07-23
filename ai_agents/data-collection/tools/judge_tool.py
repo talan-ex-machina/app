@@ -1,5 +1,5 @@
 from core.base_tool import BaseTool
-from core.llm_interface import GeminiJudge
+from core.llm_interface import GeminiLLM
 from config import GOOGLE_API_KEY, SCRAPE_DO_API_KEY
 
 class JudgeTool(BaseTool):
@@ -8,7 +8,7 @@ class JudgeTool(BaseTool):
             name="judge_structured_data",
             description="LLM judge that summarizes what was retrieved and what is missing."
         )
-        self.judge = GeminiJudge(api_key=GOOGLE_API_KEY)
+        self.judge = GeminiLLM(api_key=GOOGLE_API_KEY)
 
     def run(self, input: dict, context: dict) -> dict:
         # Expect structured_data directly in input
@@ -25,7 +25,7 @@ class JudgeTool(BaseTool):
             "\nData to judge:\n"
             f"{structured_data}"
         )
-        feedback = self.judge.judge(facts=[], prompt=prompt)
+        feedback = self.judge.generate_response(facts=[], prompt=prompt)
 
         return {
             "result": "Judged",

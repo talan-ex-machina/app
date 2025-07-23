@@ -7,3 +7,5 @@ uvicorn
 langgraph
 bs4
 tavily-python
+fake-useragent
+html2text
