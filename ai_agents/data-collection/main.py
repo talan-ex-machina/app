@@ -5,6 +5,7 @@ import os
 from agents.judge_agent import JudgeAgent
 from agents.scraper_agent import ScraperAgent
 from agents.meta_agent import MetaAgent
+from agents.wayback_agent import WaybackAgent
 import uvicorn
 from langgraph.graph import StateGraph, END
 
@@ -13,6 +14,23 @@ app = FastAPI()
 judge_agent = JudgeAgent()
 scraper_agent = ScraperAgent()
 meta_agent = MetaAgent()
+wayback_agent = WaybackAgent()
+# For local testing
+workflow = StateGraph(dict)
+
+def wayback_node(state):
+    wayback_result = wayback_agent.run(state.get("input", {}))
+    return wayback_result
+
+workflow.add_node("wayback", wayback_node)
+workflow.set_entry_point("wayback")
+workflow.add_edge("wayback", END)
+wayback_workflow = workflow.compile()
+
+@app.post("/wayback_report")
+def wayback_report(payload: dict):
+    result = wayback_workflow.invoke({"input": payload})
+    return result
 
 # LangGraph workflow for scraping and judging
 workflow = StateGraph(dict)
