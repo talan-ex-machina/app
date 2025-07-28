@@ -1528,8 +1528,11 @@ function Scene3D({
         enableZoom={true} 
         enablePan={true}
         autoRotate={false}
-        maxDistance={25}
-        minDistance={5}
+        maxDistance={Infinity}
+        minDistance={0.1}
+        zoomSpeed={2}
+        panSpeed={1.5}
+        rotateSpeed={1}
       />
     </>
   );
@@ -2267,8 +2270,11 @@ export default function Enhanced3DView({ isOpen, onClose }: Enhanced3DViewProps 
             enablePan={true} 
             enableZoom={true} 
             enableRotate={true}
-            maxDistance={80}
-            minDistance={5}
+            maxDistance={Infinity}
+            minDistance={0.1}
+            zoomSpeed={2}
+            panSpeed={1.5}
+            rotateSpeed={1}
           />
           <Stars radius={300} depth={150} count={12000} factor={8} saturation={0} fade />
         </Canvas>

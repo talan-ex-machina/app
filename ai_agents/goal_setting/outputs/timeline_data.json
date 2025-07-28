@@ -1,0 +1,27 @@
+[
+  {
+    "task": "Secure Equipment",
+    "start": 1,
+    "end": 2
+  },
+  {
+    "task": "Develop MVP",
+    "start": 1,
+    "end": 3
+  },
+  {
+    "task": "Farmer Training",
+    "start": 3,
+    "end": 5
+  },
+  {
+    "task": "Satellite Data Integration",
+    "start": 4,
+    "end": 6
+  },
+  {
+    "task": "MVP Deployment",
+    "start": 5,
+    "end": 6
+  }
+]
