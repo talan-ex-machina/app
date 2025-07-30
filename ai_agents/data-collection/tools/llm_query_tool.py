@@ -1,6 +1,6 @@
 import logging
 from core.base_tool import BaseTool
-from core.llm_interface import GeminiJudge
+from core.llm_interface import GeminiLLM
 from config import GOOGLE_API_KEY
 import re
 
@@ -14,7 +14,7 @@ class LLMQueryTool(BaseTool):
             name="llm_query",
             description="Uses Gemini 2.0 Flash to generate refined queries and summarize/filter/rank Tavily results."
         )
-        self.llm = GeminiJudge(api_key=GOOGLE_API_KEY)
+        self.llm = GeminiLLM(api_key=GOOGLE_API_KEY)
 
     def run(self, input: dict, context: dict = None) -> dict:
         tavily_results = input.get("top_products", [])
@@ -33,7 +33,7 @@ class LLMQueryTool(BaseTool):
         )
         
         # Get LLM response and log it
-        response = self.llm.judge(facts=[], prompt=prompt)
+        response = self.llm.generate_response(facts=[], prompt=prompt)
         logger.info(f"Raw LLM response: {response}")
         
         # Attempt to validate and clean the response

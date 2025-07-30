@@ -1,13 +1,16 @@
 from core.base_tool import BaseTool
+from core.llm_interface import GeminiLLM
+from config import SCRAPE_DO_API_KEY
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup
-from config import SCRAPE_DO_API_KEY
+import html2text
+import json
 import os
 import logging
 
-logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
 class G2ScraperTool(BaseTool):
     def __init__(self):
@@ -18,12 +21,19 @@ class G2ScraperTool(BaseTool):
         self.token = SCRAPE_DO_API_KEY
         logger.info(f"G2ScraperTool initialized with token: {self.token}")
 
+        # Initialize GeminiLLM with your API key
+        self.llm = GeminiLLM(api_key=os.environ.get("GOOGLE_API_KEY", ""))
+        self.html_converter = html2text.HTML2Text()
+        self.html_converter.ignore_links = True
+        self.html_converter.body_width = 0
+
     def slugify(self, name):
         logger.info(f"Slugifying product name: {name}")
         return name.lower().replace(" ", "-").replace(".", "").replace(",", "")
 
     def fetch_page(self, url_to_scrape):
-        encoded_url = urllib.parse.quote_plus(url_to_scrape)
+        # Use quote instead of quote_plus to avoid issues with + characters
+        encoded_url = urllib.parse.quote(url_to_scrape, safe=':/?#[]@!$&\'()*+,;=')
         api_url = f"https://api.scrape.do/?token={self.token}&url={encoded_url}&geoCode=us"
         logger.info(f"Fetching page: {api_url}")
         try:
@@ -35,73 +45,48 @@ class G2ScraperTool(BaseTool):
             logger.error(f"Failed to fetch page {url_to_scrape}. Error: {e}")
             return None
 
+    def clean_gemini_output(self, text):
+        # Remove markdown JSON code fences if present
+        if text.startswith("```json"):
+            text = text[len("```json"):].strip()
+        if text.endswith("```"):
+            text = text[:-3].strip()
+        return text
+
     def process_single_review(self, review_soup_element):
         logger.info("Processing single review element.")
-        reviewer_name = "Not available"
-        title = "Not available"
-        industry = "Not available"
-        review_title = "Not available"
-        rating = 0.0
-        content_pros = "Not available"
-        content_cons = "Not available"
-        content_problems_solved = "Not available"
+        raw_html = str(review_soup_element)
+        plain_text = self.html_converter.handle(raw_html)
+
+        prompt = f"""
+You are a strict JSON generator.
+
+Extract the following fields from the review below and respond with only valid minified JSON — no markdown, no code blocks, no text. Return just the JSON:
+
+{{
+  "reviewer_name": "",
+  "reviewer_industry": "",
+  "review_date": "",
+  "pros": "",
+  "cons": "",
+  "problems_solved": "",
+  "sentiment": "",
+  "star_rating": ""
+}}
+
+Review:
+{plain_text}
+"""
 
         try:
-            reviewer_name_element = review_soup_element.select_one('div[itemprop="author"] h5')
-            if reviewer_name_element:
-                reviewer_name = reviewer_name_element.text.strip()
-
-            reviewer_info_divs = review_soup_element.select('div[itemprop="author"] + div > div')
-            if len(reviewer_info_divs) > 0:
-                title = reviewer_info_divs[0].text.strip()
-            if len(reviewer_info_divs) > 1:
-                industry = reviewer_info_divs[1].text.strip()
-
-            review_title_element = review_soup_element.select_one('div[itemprop="name"] h5')
-            if review_title_element:
-                review_title = review_title_element.text.strip()
-
-            rating_meta_element = review_soup_element.select_one('span[itemprop="reviewRating"] meta[itemprop="ratingValue"]')
-            if rating_meta_element and 'content' in rating_meta_element.attrs:
-                try:
-                    rating = float(rating_meta_element['content'])
-                except ValueError:
-                    pass
-
-            sections = review_soup_element.find_all('section')
-            for section in sections:
-                header_element = section.find('h5')
-                if header_element:
-                    header_text = header_element.text.strip()
-                    paragraph_element = section.find('p')
-                    if paragraph_element:
-                        content_text = paragraph_element.text.strip().replace("Review collected by and hosted on G2.com.", "").strip()
-                        if "What do you like best about" in header_text:
-                            content_pros = content_text
-                        elif "What do you dislike about" in header_text:
-                            content_cons = content_text
-                        elif "What problems is" in header_text and "solving and how is that benefiting you?" in header_text:
-                            content_problems_solved = content_text
-
+            response_text = self.llm.generate_response([], prompt)
+            cleaned_json = self.clean_gemini_output(response_text)
+            review_data = json.loads(cleaned_json)
+            logger.info(f"Extracted review data: {review_data}")
+            return review_data
         except Exception as e:
-            logger.error(f"Error processing review: {e}")
-            full_review_body_element = review_soup_element.select_one('div[itemprop="reviewBody"]')
-            if full_review_body_element:
-                content_pros = full_review_body_element.text.strip().replace("Review collected by and hosted on G2.com.", "").strip()
-                content_cons = ""
-                content_problems_solved = ""
-
-        logger.info(f"Processed review: Reviewer={reviewer_name}, Title={title}, Industry={industry}, Rating={rating}")
-        return {
-            "Reviewer": reviewer_name,
-            "Title": title,
-            "Industry": industry,
-            "Review Title": review_title,
-            "Rating": rating,
-            "Pros": content_pros,
-            "Cons": content_cons,
-            "Problems Solved": content_problems_solved
-        }
+            logger.error(f"GeminiLLM JSON parse failed: {e}")
+            return None
 
     def run(self, input: dict, context: dict) -> dict:
         logger.info(f"G2ScraperTool.run called with input: {input}")
@@ -192,7 +177,7 @@ class G2ScraperTool(BaseTool):
 
         # Scrape reviews
         reviews = []
-        max_pages_to_scrape = input.get("max_pages", 3)
+        max_pages_to_scrape = input.get("max_pages", 1)
         current_page = 1
         while current_page <= max_pages_to_scrape:
             reviews_page_url = f"{product_base_url}/reviews?page={current_page}"
@@ -208,7 +193,10 @@ class G2ScraperTool(BaseTool):
                 break
             for review in reviews_on_page:
                 review_data = self.process_single_review(review)
-                reviews.append(review_data)
+                if review_data:
+                    reviews.append(review_data)
+                else:
+                    logger.warning("A review failed to parse.")
             current_page += 1
         logger.info(f"Total reviews scraped: {len(reviews)}")
 

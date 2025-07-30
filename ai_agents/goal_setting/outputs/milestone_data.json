@@ -1,0 +1,54 @@
+[
+  {
+    "milestone": "Equipment Orders Placed",
+    "month": 1
+  },
+  {
+    "milestone": "MVP Alpha Release",
+    "month": 2
+  },
+  {
+    "milestone": "Equipment Delivered",
+    "month": 2
+  },
+  {
+    "milestone": "MVP Beta Release",
+    "month": 3
+  },
+  {
+    "milestone": "Training Curriculum Finalized",
+    "month": 3
+  },
+  {
+    "milestone": "First Training Session",
+    "month": 4
+  },
+  {
+    "milestone": "Data API Integration",
+    "month": 4
+  },
+  {
+    "milestone": "50 Farmers Onboarded",
+    "month": 4
+  },
+  {
+    "milestone": "Data Visualization",
+    "month": 5
+  },
+  {
+    "milestone": "100 Farmers Onboarded",
+    "month": 5
+  },
+  {
+    "milestone": "MVP Deployment",
+    "month": 5
+  },
+  {
+    "milestone": "Satellite Data Testing",
+    "month": 6
+  },
+  {
+    "milestone": "Initial Data Collection",
+    "month": 6
+  }
+]

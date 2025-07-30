@@ -1,0 +1,830 @@
+{
+  "face_analysis": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.5471251606941223,
+        "y": 0.24488358199596405
+      },
+      "head_tilt": 3.0519289942803254,
+      "head_nod": 60.1636598918686,
+      "head_turn": 148.5838671072134,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.12569424510002136,
+      "eye_distance": 0.18759766341563308,
+      "eye_level": 0.20060235261917114,
+      "gaze_direction_x": 0.06053246557712555,
+      "gaze_direction_y": -0.19939764738082888,
+      "gaze_distance": 0.2083833034814816,
+      "eye_openness": 0.007275328040122986,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.1124129593372345,
+      "mouth_height": 0.016946643590927124,
+      "lip_separation": 0.021760523319244385,
+      "mouth_curve": -0.009851217269897461,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.15075346909147597,
+      "expression_intensity": 0.05337226390838623,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.2,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.7221676707267761,
+        "y": 0.26440736651420593
+      },
+      "head_tilt": -6.367244793253945,
+      "head_nod": 54.502765560538386,
+      "head_turn": 103.75588867922768,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.20604854822158813,
+      "eye_distance": 0.12736686281419332,
+      "eye_level": 0.21488206833600998,
+      "gaze_direction_x": 0.14309141039848328,
+      "gaze_direction_y": -0.18511793166399004,
+      "gaze_distance": 0.23397393092688948,
+      "eye_openness": 0.0038836821913719177,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.06758463382720947,
+      "mouth_height": 0.000987231731414795,
+      "lip_separation": 0.009068667888641357,
+      "mouth_curve": -0.0043024420738220215,
+      "is_smiling": false,
+      "genuine_smile": false,
+      "slight_smile": false,
+      "neutral_expression": true,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.014607340093589986,
+      "expression_intensity": 0.022439777851104736,
+      "expression_category": "surprised"
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.4,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.6671556830406189,
+        "y": 0.2732999920845032
+      },
+      "head_tilt": -6.561688878570139,
+      "head_nod": 46.43125880980948,
+      "head_turn": 108.43056404420307,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.12959504127502441,
+      "eye_distance": 0.14469189304132118,
+      "eye_level": 0.2200615406036377,
+      "gaze_direction_x": 0.09449100494384766,
+      "gaze_direction_y": -0.17993845939636233,
+      "gaze_distance": 0.20323975788519966,
+      "eye_openness": 0.008925192058086395,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.07701379060745239,
+      "mouth_height": 0.010717958211898804,
+      "lip_separation": 0.016695469617843628,
+      "mouth_curve": -0.006406992673873901,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.13916933743112833,
+      "expression_intensity": 0.03979793190956116,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.6625283360481262,
+        "y": 0.2733912765979767
+      },
+      "head_tilt": -6.409297139023104,
+      "head_nod": 45.97141066476266,
+      "head_turn": 109.73010528776021,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.1228562593460083,
+      "eye_distance": 0.15726623971569012,
+      "eye_level": 0.21957193315029144,
+      "gaze_direction_x": 0.0925646424293518,
+      "gaze_direction_y": -0.18042806684970858,
+      "gaze_distance": 0.20278683471861939,
+      "eye_openness": 0.005068942904472351,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.08883851766586304,
+      "mouth_height": 0.012394040822982788,
+      "lip_separation": 0.018181532621383667,
+      "mouth_curve": -0.005638793110847473,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.13951201740667163,
+      "expression_intensity": 0.04200185835361481,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.8,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.641066312789917,
+        "y": 0.25904425978660583
+      },
+      "head_tilt": -4.865917070482565,
+      "head_nod": 52.70956765742877,
+      "head_turn": 113.84851786310608,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.09786933660507202,
+      "eye_distance": 0.1710079217791818,
+      "eye_level": 0.2120976746082306,
+      "gaze_direction_x": 0.06313535571098328,
+      "gaze_direction_y": -0.18790232539176943,
+      "gaze_distance": 0.19822552062836607,
+      "eye_openness": 0.004430562257766724,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.0992882251739502,
+      "mouth_height": 0.009429335594177246,
+      "lip_separation": 0.014904201030731201,
+      "mouth_curve": -0.005883306264877319,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.09496932368019786,
+      "expression_intensity": 0.03569170832633972,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 150,
+      "timestamp": 6.0,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.5644727349281311,
+        "y": 0.2510659694671631
+      },
+      "head_tilt": 0.3715283174274522,
+      "head_nod": 54.705974870784885,
+      "head_turn": 139.85732488074106,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.08828526735305786,
+      "eye_distance": 0.1910390309766683,
+      "eye_level": 0.2026079222559929,
+      "gaze_direction_x": 0.04996509850025177,
+      "gaze_direction_y": -0.19739207774400713,
+      "gaze_distance": 0.2036176402579993,
+      "eye_openness": 0.00894271582365036,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.11159095168113708,
+      "mouth_height": 0.01627284288406372,
+      "lip_separation": 0.022309929132461548,
+      "mouth_curve": -0.007777750492095947,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.14582582762231627,
+      "expression_intensity": 0.05239760875701904,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 180,
+      "timestamp": 7.2,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.46900635957717896,
+        "y": 0.2545892000198364
+      },
+      "head_tilt": 1.8922596552465927,
+      "head_nod": 52.937772017686626,
+      "head_turn": -158.00020893347656,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": 0.0002783834934234619,
+      "eye_distance": 0.19155076796853107,
+      "eye_level": 0.2060091197490692,
+      "gaze_direction_x": -0.012388691306114197,
+      "gaze_direction_y": -0.1939908802509308,
+      "gaze_distance": 0.19438606249628385,
+      "eye_openness": 0.006253398954868317,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.11382383108139038,
+      "mouth_height": 0.014704316854476929,
+      "lip_separation": 0.020688623189926147,
+      "mouth_curve": -0.007878035306930542,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.12918487029278186,
+      "expression_intensity": 0.04925528168678284,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 210,
+      "timestamp": 8.4,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.6699227094650269,
+        "y": 0.2591969966888428
+      },
+      "head_tilt": -7.890472186663925,
+      "head_nod": 45.77647519443396,
+      "head_turn": 109.82550796793899,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.13656184077262878,
+      "eye_distance": 0.1690059761225597,
+      "eye_level": 0.2111736536026001,
+      "gaze_direction_x": 0.09677642583847046,
+      "gaze_direction_y": -0.18882634639739992,
+      "gaze_distance": 0.212181680858315,
+      "eye_openness": 0.002715080976486206,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.08035844564437866,
+      "mouth_height": 0.004879474639892578,
+      "lip_separation": 0.011579006910324097,
+      "mouth_curve": -0.006262734532356262,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.060721366631285925,
+      "expression_intensity": 0.029420748353004456,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 240,
+      "timestamp": 9.6,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.7353112697601318,
+        "y": 0.25885510444641113
+      },
+      "head_tilt": -10.323815335681717,
+      "head_nod": 46.504042949916546,
+      "head_turn": 101.88536117426412,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.19821494817733765,
+      "eye_distance": 0.13359170631317813,
+      "eye_level": 0.2073548436164856,
+      "gaze_direction_x": 0.1438344419002533,
+      "gaze_direction_y": -0.19264515638351443,
+      "gaze_distance": 0.2404173516092091,
+      "eye_openness": 0.005740635097026825,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.07948678731918335,
+      "mouth_height": 0.012978732585906982,
+      "lip_separation": 0.019072651863098145,
+      "mouth_curve": -0.007360026240348816,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.1632816348934849,
+      "expression_intensity": 0.045505329966545105,
+      "expression_category": "slight_smile"
+    },
+    {
+      "frame": 270,
+      "timestamp": 10.8,
+      "face_detected": true,
+      "confidence": 1.0,
+      "face_center": {
+        "x": 0.6977803111076355,
+        "y": 0.25678160786628723
+      },
+      "head_tilt": -9.976785857507231,
+      "head_nod": 49.053947823887604,
+      "head_turn": 103.82660275592788,
+      "orientation_category": "nod_excessive",
+      "facial_symmetry": -0.1638246476650238,
+      "eye_distance": 0.11531840303687807,
+      "eye_level": 0.20877525955438614,
+      "gaze_direction_x": 0.11850666999816895,
+      "gaze_direction_y": -0.19122474044561388,
+      "gaze_distance": 0.22496829152693346,
+      "eye_openness": 0.005155652761459351,
+      "looking_at_camera": "False",
+      "good_eye_contact": "False",
+      "acceptable_eye_contact": "False",
+      "contact_quality": "eyes_closed",
+      "mouth_width": 0.07391059398651123,
+      "mouth_height": 0.018390923738479614,
+      "lip_separation": 0.024851590394973755,
+      "mouth_curve": -0.008465155959129333,
+      "is_smiling": true,
+      "genuine_smile": false,
+      "slight_smile": true,
+      "neutral_expression": false,
+      "frowning": false,
+      "eyebrow_raised": true,
+      "mouth_openness": 0.24882662615099507,
+      "expression_intensity": 0.05816833674907684,
+      "expression_category": "slight_smile"
+    }
+  ],
+  "pose_analysis": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "shoulder_tilt": -178.21525662372284,
+      "head_tilt": -98.98858742969192,
+      "shoulder_width": 0.6697879301782566,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.2,
+      "shoulder_tilt": 179.4390989416831,
+      "head_tilt": -55.763201543694095,
+      "shoulder_width": 0.6308606959895195,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.4,
+      "shoulder_tilt": 177.69625462103616,
+      "head_tilt": -47.823715710875355,
+      "shoulder_width": 0.6180289616440308,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "shoulder_tilt": 176.86732694382377,
+      "head_tilt": -49.03612927294232,
+      "shoulder_width": 0.6390769249505553,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.8,
+      "shoulder_tilt": 177.13056058026942,
+      "head_tilt": -52.75175286564727,
+      "shoulder_width": 0.6595337520285828,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 150,
+      "timestamp": 6.0,
+      "shoulder_tilt": 177.26170567582267,
+      "head_tilt": -63.52639047615003,
+      "shoulder_width": 0.6688159466626311,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 180,
+      "timestamp": 7.2,
+      "shoulder_tilt": 178.30892303893708,
+      "head_tilt": -88.71699597658694,
+      "shoulder_width": 0.7036008220936628,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 210,
+      "timestamp": 8.4,
+      "shoulder_tilt": 178.0958900196213,
+      "head_tilt": -67.91593508748763,
+      "shoulder_width": 0.6996644016749034,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 240,
+      "timestamp": 9.6,
+      "shoulder_tilt": 178.02943040802262,
+      "head_tilt": -52.993237256871325,
+      "shoulder_width": 0.6862096998462489,
+      "upper_body_confidence": 1.0
+    },
+    {
+      "frame": 270,
+      "timestamp": 10.8,
+      "shoulder_tilt": 177.3963051422787,
+      "head_tilt": -49.15341659246304,
+      "shoulder_width": 0.6679138437412443,
+      "upper_body_confidence": 1.0
+    }
+  ],
+  "hand_analysis": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.08035135181753507,
+          "hand_spread": 0.28133270144462585,
+          "center_x": 0.32637979586919147,
+          "center_y": 0.627039685135796,
+          "center_z": -0.07203688369731746,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.0949533474175213,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.2,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.08825019682903593,
+          "hand_spread": 0.31808286905288696,
+          "center_x": 0.4461480648744674,
+          "center_y": 0.5721843810308547,
+          "center_z": -0.03699795164219007,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.07422671771784098,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.4,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.08464745771048497,
+          "hand_spread": 0.3022612929344177,
+          "center_x": 0.4647355505398342,
+          "center_y": 0.6339009943462554,
+          "center_z": -0.05781058591437302,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.07549147482468221,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.0842834108073139,
+          "hand_spread": 0.2983572483062744,
+          "center_x": 0.45494210436230614,
+          "center_y": 0.639222590696244,
+          "center_z": -0.04331637642012406,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.06935617097544325,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.8,
+      "hands_detected": 2,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.0821182150908518,
+          "hand_spread": 0.31096166372299194,
+          "center_x": 0.4469402801422846,
+          "center_y": 0.5830179027148655,
+          "center_z": -0.050969677065931286,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.07294319854700071,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        },
+        {
+          "hand": "Left",
+          "activity_level": 0.07948472981902349,
+          "hand_spread": 0.3114055395126343,
+          "center_x": 0.44089806931359427,
+          "center_y": 0.596407447542463,
+          "center_z": -0.03385954588839419,
+          "landmarks_count": 21,
+          "fingers_extended": 2,
+          "hand_openness": 0.052229275769719315,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "peace_or_two"
+        }
+      ],
+      "both_hands_visible": true,
+      "gesture_coordination": "independent"
+    },
+    {
+      "frame": 150,
+      "timestamp": 6.0,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.08929377583729615,
+          "hand_spread": 0.32671621441841125,
+          "center_x": 0.43623567053249906,
+          "center_y": 0.5858760930242992,
+          "center_z": -0.03836749625130815,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.07953567587747665,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 210,
+      "timestamp": 8.4,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.09032884664549085,
+          "hand_spread": 0.3141886293888092,
+          "center_x": 0.4458728375889006,
+          "center_y": 0.5365829396815527,
+          "center_z": -0.05266873830225634,
+          "landmarks_count": 21,
+          "fingers_extended": 1,
+          "hand_openness": 0.07870963036936618,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "pointing"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    },
+    {
+      "frame": 240,
+      "timestamp": 9.6,
+      "hands_detected": 1,
+      "hands_data": [
+        {
+          "hand": "Left",
+          "activity_level": 0.06425681706495608,
+          "hand_spread": 0.23631489276885986,
+          "center_x": 0.4491878492491586,
+          "center_y": 0.7312127891040984,
+          "center_z": -0.03892946070392002,
+          "landmarks_count": 21,
+          "fingers_extended": 0,
+          "hand_openness": 0.03932017784558166,
+          "comfort_zone": "comfort_zone",
+          "gesture_type": "fist"
+        }
+      ],
+      "both_hands_visible": false,
+      "gesture_coordination": "single_hand"
+    }
+  ],
+  "eye_contact": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.06053246557712555,
+      "eye_direction_y": -0.19939764738082888
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.2,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.14309141039848328,
+      "eye_direction_y": -0.18511793166399004
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.4,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.09449100494384766,
+      "eye_direction_y": -0.17993845939636233
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.0925646424293518,
+      "eye_direction_y": -0.18042806684970858
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.8,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.06313535571098328,
+      "eye_direction_y": -0.18790232539176943
+    },
+    {
+      "frame": 150,
+      "timestamp": 6.0,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.04996509850025177,
+      "eye_direction_y": -0.19739207774400713
+    },
+    {
+      "frame": 180,
+      "timestamp": 7.2,
+      "looking_at_camera": "False",
+      "eye_direction_x": -0.012388691306114197,
+      "eye_direction_y": -0.1939908802509308
+    },
+    {
+      "frame": 210,
+      "timestamp": 8.4,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.09677642583847046,
+      "eye_direction_y": -0.18882634639739992
+    },
+    {
+      "frame": 240,
+      "timestamp": 9.6,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.1438344419002533,
+      "eye_direction_y": -0.19264515638351443
+    },
+    {
+      "frame": 270,
+      "timestamp": 10.8,
+      "looking_at_camera": "False",
+      "eye_direction_x": 0.11850666999816895,
+      "eye_direction_y": -0.19122474044561388
+    }
+  ],
+  "facial_expressions": [
+    {
+      "frame": 0,
+      "timestamp": 0.0,
+      "is_smiling": true,
+      "mouth_width": 0.1124129593372345,
+      "mouth_height": 0.016946643590927124,
+      "mouth_curve": -0.009851217269897461
+    },
+    {
+      "frame": 30,
+      "timestamp": 1.2,
+      "is_smiling": false,
+      "mouth_width": 0.06758463382720947,
+      "mouth_height": 0.000987231731414795,
+      "mouth_curve": -0.0043024420738220215
+    },
+    {
+      "frame": 60,
+      "timestamp": 2.4,
+      "is_smiling": true,
+      "mouth_width": 0.07701379060745239,
+      "mouth_height": 0.010717958211898804,
+      "mouth_curve": -0.006406992673873901
+    },
+    {
+      "frame": 90,
+      "timestamp": 3.6,
+      "is_smiling": true,
+      "mouth_width": 0.08883851766586304,
+      "mouth_height": 0.012394040822982788,
+      "mouth_curve": -0.005638793110847473
+    },
+    {
+      "frame": 120,
+      "timestamp": 4.8,
+      "is_smiling": true,
+      "mouth_width": 0.0992882251739502,
+      "mouth_height": 0.009429335594177246,
+      "mouth_curve": -0.005883306264877319
+    },
+    {
+      "frame": 150,
+      "timestamp": 6.0,
+      "is_smiling": true,
+      "mouth_width": 0.11159095168113708,
+      "mouth_height": 0.01627284288406372,
+      "mouth_curve": -0.007777750492095947
+    },
+    {
+      "frame": 180,
+      "timestamp": 7.2,
+      "is_smiling": true,
+      "mouth_width": 0.11382383108139038,
+      "mouth_height": 0.014704316854476929,
+      "mouth_curve": -0.007878035306930542
+    },
+    {
+      "frame": 210,
+      "timestamp": 8.4,
+      "is_smiling": true,
+      "mouth_width": 0.08035844564437866,
+      "mouth_height": 0.004879474639892578,
+      "mouth_curve": -0.006262734532356262
+    },
+    {
+      "frame": 240,
+      "timestamp": 9.6,
+      "is_smiling": true,
+      "mouth_width": 0.07948678731918335,
+      "mouth_height": 0.012978732585906982,
+      "mouth_curve": -0.007360026240348816
+    },
+    {
+      "frame": 270,
+      "timestamp": 10.8,
+      "is_smiling": true,
+      "mouth_width": 0.07391059398651123,
+      "mouth_height": 0.018390923738479614,
+      "mouth_curve": -0.008465155959129333
+    }
+  ],
+  "metadata": {
+    "fps": 25.0,
+    "total_frames": 277,
+    "duration": 11.08
+  },
+  "movement_metrics": {
+    "eye_contact_percentage": 0.0,
+    "head_movement": {
+      "tilt_variance": 20.811575443043186,
+      "nod_variance": 21.394539205790707,
+      "average_tilt": -4.707950429422826
+    },
+    "smile_percentage": 90.0,
+    "hands_visible_percentage": 100.0,
+    "posture_stability": {
+      "shoulder_stability": 0,
+      "body_stability": 100.0
+    }
+  }
+}

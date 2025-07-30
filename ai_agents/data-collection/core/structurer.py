@@ -1,8 +1,8 @@
-from core.llm_interface import GeminiJudge
+from core.llm_interface import GeminiLLM
 
 class DataStructurer:
     def __init__(self, api_key: str):
-        self.llm = GeminiJudge(api_key)
+        self.llm = GeminiLLM(api_key)
 
     def structure(self, raw_text_list: list[str]) -> dict:
         prompt = (
@@ -12,5 +12,5 @@ class DataStructurer:
             "Raw Inputs:\n"
         )
         combined_input = "\n".join(f"- {item}" for item in raw_text_list)
-        result = self.llm.judge([], prompt + combined_input)
+        result = self.llm.generate_response([], prompt + combined_input)
         return result  # assumed to be a JSON string or object
