@@ -1,0 +1,54 @@
+{
+  "demographic_characteristics": {
+    "age_range": "28-55 ans",
+    "education": "Diplôme universitaire minimum (Baccalauréat), souvent des études supérieures (Maîtrise, MBA)",
+    "gender": "Mixte"
+  },
+  "psychographics": {
+    "values": [
+      "Développement professionnel",
+      "Efficacité",
+      "Reconnaissance",
+      "Amélioration des compétences"
+    ],
+    "lifestyle": [
+      "Professionnels actifs et ambitieux",
+      "Soucieux de leur carrière",
+      "À la recherche d'équilibre vie pro/vie perso",
+      "Adepte de la formation continue"
+    ]
+  },
+  "behavioral_traits": {
+    "purchase_habits": [
+      "Achats basés sur la qualité du contenu et la réputation des formateurs",
+      "Décisions influencées par les certifications et la reconnaissance de l'industrie"
+    ],
+    "online_behaviors": [
+      "Présence active sur LinkedIn pour le réseautage et la veille sectorielle",
+      "Participation à des webinaires et des conférences en ligne",
+      "Consultation de forums et de blogs spécialisés en RH et en développement professionnel"
+    ]
+  },
+  "needs_and_pain_points": {
+    "needs": [
+      "Développer des compétences spécifiques pour progresser dans leur carrière",
+      "Se tenir à jour sur les dernières tendances et technologies dans leur domaine",
+      "Obtenir une certification reconnue pour améliorer leur crédibilité"
+    ],
+    "pain_points": [
+      "Manque de temps pour suivre des formations traditionnelles",
+      "Difficulté à trouver des formations de qualité et à jour",
+      "Coût élevé des formations en présentiel"
+    ]
+  },
+  "communication_channels": [
+    "LinkedIn (publicités ciblées et contenu de qualité)",
+    "Marketing par e-mail (campagnes personnalisées et newsletters)",
+    "Webinaires et événements en ligne (démonstrations et témoignages)"
+  ],
+  "strategic_recommendations": [
+    "Mettre en avant la flexibilité de la plateforme et la possibilité d'apprendre à son propre rythme",
+    "Créer du contenu qui répond directement aux besoins spécifiques des professionnels (ex: études de cas, tutoriels)",
+    "Développer des partenariats avec des entreprises pour offrir des formations personnalisées et des certifications reconnues"
+  ]
+}

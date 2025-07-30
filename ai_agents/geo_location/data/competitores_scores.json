@@ -1,0 +1,38 @@
+{
+  "France": {
+    "analysis": "Analyse : Menace\n\nJustification concise de cette analyse : Le marché du conseil en transformation digitale et solutions IA en France est dominé par un très petit nombre (4) de concurrents multinationaux extrêmement grands, établis et positionnés sur le segment premium. Ces géants disposent de ressources colossales (financières, humaines, de R&D), d'une clientèle établie et d'une notoriété immense, rendant l'entrée et la concurrence directe pour une nouvelle entreprise extrêmement difficile, coûteuse et risquée. Les barrières à l'entrée sont très élevées.\n\nScore : 2/10",
+    "score": 2
+  },
+  "United Kingdom": {
+    "analysis": "Analyse : Menace\n\nJustification concise de cette analyse : Le marché est dominé par seulement deux concurrents multinationaux extrêmement grands et bien établis, générant des revenus colossaux et positionnés sur le segment premium. Ils ont une maturité \"dominante\", ce qui signifie qu'ils contrôlent probablement la grande majorité du marché et des clients B2B importants. Une nouvelle entreprise ferait face à des barrières à l'entrée insurmontables en termes de ressources, de réputation, de portefeuille clients et de capacité à rivaliser sur des projets de grande envergure pour un positionnement premium.\n\nScore : 2/10",
+    "score": 2
+  },
+  "USA": {
+    "analysis": "Analyse : Menace\n\nJustification concise : Le marché est dominé par un très petit nombre de concurrents multinationaux colossaux, bien établis avec un positionnement premium et un niveau de maturité \"dominant\". Leur taille moyenne et leurs revenus astronomiques indiquent des ressources immenses et des relations clients solides, rendant l'entrée et la concurrence extrêmement difficiles pour une nouvelle entreprise, malgré l'attractivité du domaine.\n\nScore : 2/10",
+    "score": 2
+  },
+  "Ireland": {
+    "analysis": "Analyse : Menace\nJustification concise de cette analyse : La présence d'un seul concurrent, mais d'une taille colossale (738 000 employés, 64,1 milliards USD de revenus), de type multinational, dominant et positionné sur le segment premium, indique une quasi-monopolisation du marché. Ce géant dispose de ressources financières, humaines et d'un portefeuille clients inatteignables pour une nouvelle entreprise. Entrer sur un tel marché où un acteur unique est si dominant et bien établi représente un obstacle insurmontable et une menace directe, car il peut écraser toute concurrence émergente par son échelle, ses prix, et sa capacité d'investissement.\nScore : 2/10",
+    "score": 2
+  },
+  "Netherlands": {
+    "analysis": "Analyse : Menace\nJustification concise : Le marché est dominé par deux concurrents multinationaux géants et ultra-ressourcés, positionnés sur le segment premium. Leur taille, leurs revenus massifs et leur position \"dominante\" créent des barrières à l'entrée insurmontables pour une nouvelle entreprise cherchant à rivaliser directement sur ce terrain mature et saturé.\nScore : 2/10",
+    "score": 2
+  },
+  "India": {
+    "analysis": "Analyse : Menace\n\nJustification concise de cette analyse : Le marché indien du conseil numérique et des solutions d'IA est dominé par un petit nombre de concurrents multinationaux d'une taille et d'un chiffre d'affaires colossaux (moyenne de 192 699 employés et 9,6 milliards USD de revenus). Ces géants sont déjà positionnés sur le segment B2B avec une stratégie dominante de \"low-cost\", dans un marché mature. Pour une nouvelle entreprise, il serait extrêmement difficile de concurrencer ces acteurs établis sur le prix, l'échelle, la réputation ou les ressources, créant des barrières à l'entrée quasi insurmontables et un environnement très hostile.\n\nScore : 2/10",
+    "score": 2
+  },
+  "Germany": {
+    "analysis": "Analyse : Opportunité.\n\nJustification concise de cette analyse : La présence d'un seul concurrent dans un marché à forte valeur (1,1 milliard USD de revenu annuel pour le concurrent) et un positionnement premium en Allemagne, dans les domaines de la transformation digitale et des solutions IA, indique un manque significatif d'alternatives pour les clients B2B. Bien que le concurrent soit une multinationale établie et de grande taille, ce quasi-monopole crée une opportunité substantielle pour une nouvelle entreprise de capter une part de marché en offrant une proposition de valeur différenciée, une expertise spécialisée ou simplement une option alternative aux clients à la recherche de diversité ou d'innovation. Le marché étant mature, la demande est prouvée.\n\nScore : 8/10",
+    "score": 8
+  },
+  "Canada": {
+    "analysis": "Analyse : Menace\n\nJustification concise de cette analyse : La présence d'un unique concurrent, mais d'une taille colossale (90 000 employés, 14,8 Md USD de revenus), multinational, établi et généraliste, représente un obstacle majeur. Ce géant domine probablement déjà une part écrasante du marché B2B du conseil et de la transformation digitale, y compris les solutions d'IA. Il dispose de ressources immenses, d'une reconnaissance de marque inégalée et d'un portefeuille client établi, rendant l'entrée et la compétition extrêmement difficiles pour une nouvelle entreprise, même sur des niches. L'absence d'autres concurrents visibles suggère une barrière à l'entrée très élevée ou un marché déjà saturé par ce seul acteur.\n\nScore : 3/10",
+    "score": 3
+  },
+  "Japan": {
+    "analysis": "Analyse : Opportunité\n\nJustification concise de cette analyse : Malgré la présence d'un unique concurrent gigantesque (147 000 employés, 23 Md USD de chiffre d'affaires) et dominant, sa nature de \"généraliste\" ouvre une brèche significative pour une nouvelle entreprise spécialisée. Dans un domaine aussi pointu et en évolution rapide que le \"digital consulting and AI solutions\", un géant généraliste aura du mal à égaler l'agilité, l'expertise de niche et l'innovation continue d'une entreprise focalisée. Le fait qu'il n'y ait pas d'autres concurrents majeurs indique un marché potentiellement sous-servi ou que l'incumbent est perçu comme le seul acteur capable de répondre à une large gamme de besoins, laissant des opportunités pour des solutions plus ciblées et performantes en IA. Le segment B2B est vaste, et même un acteur dominant ne peut pas couvrir toutes les spécificités et les besoins émergents. C'est une opportunité de se positionner comme l'expert de référence en IA, en évitant une confrontation frontale sur le terrain généraliste.\n\nScore : 8/10",
+    "score": 8
+  }
+}

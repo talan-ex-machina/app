@@ -103,7 +103,7 @@ class HandAnalyzer:
     def _analyze_hand_position_zone(x, y):
         """
         Détermine la zone où se situe la main dans l'image.
-        Zones : comfort_zone, above_head, below_waist, far_left, far_right, extended_zone.
+        Zones: comfort_zone, above_head, below_waist, far_left, far_right, extended_zone.
         """
         if 0.3 <= x <= 0.7 and 0.4 <= y <= 0.8:
             return "comfort_zone"

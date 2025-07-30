@@ -1,0 +1,2381 @@
+{
+  "Afghanistan": {
+    "location": {
+      "latitude": 33.93911,
+      "longitude": 67.709953
+    },
+    "economic_score": 1.24,
+    "education_score": 10,
+    "digital_infrastructure_score": 3.33,
+    "general_infrastructure_score": 7.29,
+    "competition_score": 5,
+    "overall_country_score": 5.37,
+    "market_potential_score": 5.37
+  },
+  "Albania": {
+    "location": {
+      "latitude": 41.153332,
+      "longitude": 20.168331
+    },
+    "economic_score": 4.81,
+    "education_score": 8.05,
+    "digital_infrastructure_score": 9.93,
+    "general_infrastructure_score": 8.05,
+    "competition_score": 5,
+    "overall_country_score": 7.17,
+    "market_potential_score": 7.17
+  },
+  "Algeria": {
+    "location": {
+      "latitude": 28.033886,
+      "longitude": 1.659626
+    },
+    "economic_score": 6.34,
+    "education_score": 10,
+    "digital_infrastructure_score": 7.15,
+    "general_infrastructure_score": 7.99,
+    "competition_score": 5,
+    "overall_country_score": 7.3,
+    "market_potential_score": 7.3
+  },
+  "Andorra": {
+    "location": {
+      "latitude": 42.506285,
+      "longitude": 1.521801
+    },
+    "economic_score": 6.68,
+    "education_score": 4.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.3,
+    "competition_score": 5,
+    "overall_country_score": 6.81,
+    "market_potential_score": 6.81
+  },
+  "Angola": {
+    "location": {
+      "latitude": -11.202692,
+      "longitude": 17.873887
+    },
+    "economic_score": 6.06,
+    "education_score": 8.1,
+    "digital_infrastructure_score": 3.91,
+    "general_infrastructure_score": 5.42,
+    "competition_score": 5,
+    "overall_country_score": 5.7,
+    "market_potential_score": 5.7
+  },
+  "Antigua_and_Barbuda": {
+    "location": {
+      "latitude": 17.060816,
+      "longitude": -61.796428
+    },
+    "economic_score": 6.15,
+    "education_score": 4.1,
+    "digital_infrastructure_score": 8.78,
+    "general_infrastructure_score": 7.62,
+    "competition_score": 5,
+    "overall_country_score": 6.33,
+    "market_potential_score": 6.33
+  },
+  "Argentina": {
+    "location": {
+      "latitude": -38.416097,
+      "longitude": -63.616672
+    },
+    "economic_score": 5.8,
+    "education_score": 10,
+    "digital_infrastructure_score": 9.48,
+    "general_infrastructure_score": 8.43,
+    "competition_score": 5,
+    "overall_country_score": 7.74,
+    "market_potential_score": 7.74
+  },
+  "Armenia": {
+    "location": {
+      "latitude": 40.069099,
+      "longitude": 45.038189
+    },
+    "economic_score": 6.03,
+    "education_score": 6.3,
+    "digital_infrastructure_score": 9.23,
+    "general_infrastructure_score": 8.05,
+    "competition_score": 5,
+    "overall_country_score": 6.92,
+    "market_potential_score": 6.92
+  },
+  "Australia": {
+    "location": {
+      "latitude": -25.274398,
+      "longitude": 133.775136
+    },
+    "economic_score": 6.5,
+    "education_score": 7.15,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.1,
+    "competition_score": 5,
+    "overall_country_score": 7.55,
+    "market_potential_score": 7.55
+  },
+  "Austria": {
+    "location": {
+      "latitude": 47.516231,
+      "longitude": 14.550072
+    },
+    "economic_score": 6.27,
+    "education_score": 6.1,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.17,
+    "market_potential_score": 7.17
+  },
+  "Azerbaijan": {
+    "location": {
+      "latitude": 40.143105,
+      "longitude": 47.576927
+    },
+    "economic_score": 4.13,
+    "education_score": 7.55,
+    "digital_infrastructure_score": 8.0,
+    "general_infrastructure_score": 7.3,
+    "competition_score": 5,
+    "overall_country_score": 6.4,
+    "market_potential_score": 6.4
+  },
+  "Bahamas": {
+    "location": {
+      "latitude": 25.03428,
+      "longitude": -77.39628
+    },
+    "economic_score": 7.05,
+    "education_score": 4.05,
+    "digital_infrastructure_score": 9.0,
+    "general_infrastructure_score": 8.05,
+    "competition_score": 5,
+    "overall_country_score": 6.63,
+    "market_potential_score": 6.63
+  },
+  "Bahrain": {
+    "location": {
+      "latitude": 25.930414,
+      "longitude": 50.637772
+    },
+    "economic_score": 6.08,
+    "education_score": 5.7,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.05,
+    "competition_score": 5,
+    "overall_country_score": 6.97,
+    "market_potential_score": 6.97
+  },
+  "Bangladesh": {
+    "location": {
+      "latitude": 23.684994,
+      "longitude": 90.356331
+    },
+    "economic_score": 6.61,
+    "education_score": 10,
+    "digital_infrastructure_score": 5.97,
+    "general_infrastructure_score": 7.76,
+    "competition_score": 5,
+    "overall_country_score": 7.07,
+    "market_potential_score": 7.07
+  },
+  "Barbados": {
+    "location": {
+      "latitude": 13.193887,
+      "longitude": -59.543198
+    },
+    "economic_score": 5.9,
+    "education_score": 4.1,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.65,
+    "competition_score": 5,
+    "overall_country_score": 6.53,
+    "market_potential_score": 6.53
+  },
+  "Belarus": {
+    "location": {
+      "latitude": 53.709807,
+      "longitude": 27.953389
+    },
+    "economic_score": 4.09,
+    "education_score": 7.55,
+    "digital_infrastructure_score": 9.48,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.72,
+    "market_potential_score": 6.72
+  },
+  "Belgium": {
+    "location": {
+      "latitude": 50.503887,
+      "longitude": 4.469936
+    },
+    "economic_score": 6.64,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.09,
+    "market_potential_score": 7.09
+  },
+  "Belize": {
+    "location": {
+      "latitude": 17.189877,
+      "longitude": -88.49765
+    },
+    "economic_score": 6.34,
+    "education_score": 4.05,
+    "digital_infrastructure_score": 6.8,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 5.94,
+    "market_potential_score": 5.94
+  },
+  "Benin": {
+    "location": {
+      "latitude": 9.30769,
+      "longitude": 2.315834
+    },
+    "economic_score": 6.21,
+    "education_score": 5.55,
+    "digital_infrastructure_score": 3.95,
+    "general_infrastructure_score": 5.73,
+    "competition_score": 5,
+    "overall_country_score": 5.29,
+    "market_potential_score": 5.29
+  },
+  "Bhutan": {
+    "location": {
+      "latitude": 27.514162,
+      "longitude": 90.433601
+    },
+    "economic_score": 4.58,
+    "education_score": 5.6,
+    "digital_infrastructure_score": 8.08,
+    "general_infrastructure_score": 7.4,
+    "competition_score": 5,
+    "overall_country_score": 6.13,
+    "market_potential_score": 6.13
+  },
+  "Bolivia": {
+    "location": {
+      "latitude": -16.290154,
+      "longitude": -63.588653
+    },
+    "economic_score": 5.89,
+    "education_score": 9.75,
+    "digital_infrastructure_score": 7.09,
+    "general_infrastructure_score": 7.13,
+    "competition_score": 5,
+    "overall_country_score": 6.97,
+    "market_potential_score": 6.97
+  },
+  "Bosnia_and_Herzegovina": {
+    "location": {
+      "latitude": 43.915886,
+      "longitude": 17.679076
+    },
+    "economic_score": 4.97,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 8.98,
+    "general_infrastructure_score": 7.8,
+    "competition_score": 5,
+    "overall_country_score": 6.43,
+    "market_potential_score": 6.43
+  },
+  "Botswana": {
+    "location": {
+      "latitude": -22.328474,
+      "longitude": 24.684866
+    },
+    "economic_score": 6.17,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 7.59,
+    "general_infrastructure_score": 6.83,
+    "competition_score": 5,
+    "overall_country_score": 6.14,
+    "market_potential_score": 6.14
+  },
+  "Brunei": {
+    "location": {
+      "latitude": 4.535277,
+      "longitude": 114.727669
+    },
+    "economic_score": 6.4,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.9,
+    "competition_score": 5,
+    "overall_country_score": 6.89,
+    "market_potential_score": 6.89
+  },
+  "Bulgaria": {
+    "location": {
+      "latitude": 42.733883,
+      "longitude": 25.48583
+    },
+    "economic_score": 4.66,
+    "education_score": 7.55,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.94,
+    "market_potential_score": 6.94
+  },
+  "Burkina_Faso": {
+    "location": {
+      "latitude": 12.238333,
+      "longitude": -1.561593
+    },
+    "economic_score": 5.39,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 3.55,
+    "general_infrastructure_score": 4.89,
+    "competition_score": 5,
+    "overall_country_score": 4.82,
+    "market_potential_score": 4.82
+  },
+  "Burundi": {
+    "location": {
+      "latitude": -3.373056,
+      "longitude": 29.918886
+    },
+    "economic_score": 4.89,
+    "education_score": 5.45,
+    "digital_infrastructure_score": 2.88,
+    "general_infrastructure_score": 4.58,
+    "competition_score": 5,
+    "overall_country_score": 4.56,
+    "market_potential_score": 4.56
+  },
+  "Brazil": {
+    "location": {
+      "latitude": -14.235004,
+      "longitude": -51.92528
+    },
+    "economic_score": 5.5,
+    "education_score": 10,
+    "digital_infrastructure_score": 9.27,
+    "general_infrastructure_score": 8.45,
+    "competition_score": 5,
+    "overall_country_score": 7.64,
+    "market_potential_score": 7.64
+  },
+  "Canada": {
+    "location": {
+      "latitude": 56.130366,
+      "longitude": -106.346771
+    },
+    "economic_score": 6.29,
+    "education_score": 9.9,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.8,
+    "competition_score": 3,
+    "overall_country_score": 7.6,
+    "market_potential_score": 7.6
+  },
+  "Cambodia": {
+    "location": {
+      "latitude": 12.565679,
+      "longitude": 104.990963
+    },
+    "economic_score": 6.14,
+    "education_score": 10,
+    "digital_infrastructure_score": 6.94,
+    "general_infrastructure_score": 7.33,
+    "competition_score": 5,
+    "overall_country_score": 7.08,
+    "market_potential_score": 7.08
+  },
+  "Cameroon": {
+    "location": {
+      "latitude": 7.369722,
+      "longitude": 12.354722
+    },
+    "economic_score": 5.9,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 3.83,
+    "general_infrastructure_score": 5.95,
+    "competition_score": 5,
+    "overall_country_score": 5.22,
+    "market_potential_score": 5.22
+  },
+  "Cape_Verde": {
+    "location": {
+      "latitude": 16.002082,
+      "longitude": -24.013197
+    },
+    "economic_score": 6.42,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 7.8,
+    "general_infrastructure_score": 7.61,
+    "competition_score": 5,
+    "overall_country_score": 6.38,
+    "market_potential_score": 6.38
+  },
+  "Central_African_Republic": {
+    "location": {
+      "latitude": 6.611111,
+      "longitude": 20.939444
+    },
+    "economic_score": 4.96,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 1.98,
+    "general_infrastructure_score": 4.65,
+    "competition_score": 5,
+    "overall_country_score": 4.33,
+    "market_potential_score": 4.33
+  },
+  "Chad": {
+    "location": {
+      "latitude": 15.454166,
+      "longitude": 18.732207
+    },
+    "economic_score": 5.31,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 2.91,
+    "general_infrastructure_score": 4.52,
+    "competition_score": 5,
+    "overall_country_score": 4.58,
+    "market_potential_score": 4.58
+  },
+  "Chile": {
+    "location": {
+      "latitude": -35.675147,
+      "longitude": -71.542969
+    },
+    "economic_score": 5.25,
+    "education_score": 8.0,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.74,
+    "competition_score": 5,
+    "overall_country_score": 7.2,
+    "market_potential_score": 7.2
+  },
+  "China": {
+    "location": {
+      "latitude": 35.86166,
+      "longitude": 104.195397
+    },
+    "economic_score": 5.08,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.3,
+    "competition_score": 5,
+    "overall_country_score": 7.88,
+    "market_potential_score": 7.88
+  },
+  "Colombia": {
+    "location": {
+      "latitude": 4.570868,
+      "longitude": -74.297333
+    },
+    "economic_score": 6.11,
+    "education_score": 10,
+    "digital_infrastructure_score": 8.61,
+    "general_infrastructure_score": 7.73,
+    "competition_score": 5,
+    "overall_country_score": 7.49,
+    "market_potential_score": 7.49
+  },
+  "Comoros": {
+    "location": {
+      "latitude": -11.875001,
+      "longitude": 43.872219
+    },
+    "economic_score": 4.96,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.09,
+    "general_infrastructure_score": 6.04,
+    "competition_score": 5,
+    "overall_country_score": 4.83,
+    "market_potential_score": 4.83
+  },
+  "Congo_Democratic_Republic": {
+    "location": {
+      "latitude": -4.038333,
+      "longitude": 21.758664
+    },
+    "economic_score": 5.22,
+    "education_score": 7.5,
+    "digital_infrastructure_score": 2.96,
+    "general_infrastructure_score": 4.88,
+    "competition_score": 5,
+    "overall_country_score": 5.11,
+    "market_potential_score": 5.11
+  },
+  "Congo_Republic": {
+    "location": {
+      "latitude": -0.228021,
+      "longitude": 15.827659
+    },
+    "economic_score": 5.79,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.22,
+    "general_infrastructure_score": 6.17,
+    "competition_score": 5,
+    "overall_country_score": 5.05,
+    "market_potential_score": 5.05
+  },
+  "Costa_Rica": {
+    "location": {
+      "latitude": 9.748917,
+      "longitude": -83.753428
+    },
+    "economic_score": 6.49,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.64,
+    "competition_score": 5,
+    "overall_country_score": 6.88,
+    "market_potential_score": 6.88
+  },
+  "Cote_dIvoire": {
+    "location": {
+      "latitude": 7.539989,
+      "longitude": -5.54708
+    },
+    "economic_score": 5.57,
+    "education_score": 5.65,
+    "digital_infrastructure_score": 6.7,
+    "general_infrastructure_score": 6.96,
+    "competition_score": 5,
+    "overall_country_score": 5.98,
+    "market_potential_score": 5.98
+  },
+  "Croatia": {
+    "location": {
+      "latitude": 45.1,
+      "longitude": 15.2
+    },
+    "economic_score": 5.99,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.78,
+    "market_potential_score": 6.78
+  },
+  "Cuba": {
+    "location": {
+      "latitude": 21.521757,
+      "longitude": -77.781167
+    },
+    "economic_score": 6.51,
+    "education_score": 8.35,
+    "digital_infrastructure_score": 5.03,
+    "general_infrastructure_score": 7.15,
+    "competition_score": 5,
+    "overall_country_score": 6.41,
+    "market_potential_score": 6.41
+  },
+  "Cyprus": {
+    "location": {
+      "latitude": 35.126413,
+      "longitude": 33.429859
+    },
+    "economic_score": 6.95,
+    "education_score": 5.6,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.65,
+    "competition_score": 5,
+    "overall_country_score": 7.04,
+    "market_potential_score": 7.04
+  },
+  "Czech_Republic": {
+    "location": {
+      "latitude": 49.817492,
+      "longitude": 15.472962
+    },
+    "economic_score": 6.0,
+    "education_score": 6.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.16,
+    "market_potential_score": 7.16
+  },
+  "Denmark": {
+    "location": {
+      "latitude": 56.26392,
+      "longitude": 9.501785
+    },
+    "economic_score": 7.07,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.5,
+    "competition_score": 5,
+    "overall_country_score": 7.39,
+    "market_potential_score": 7.39
+  },
+  "Djibouti": {
+    "location": {
+      "latitude": 11.825138,
+      "longitude": 42.590275
+    },
+    "economic_score": 4.42,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 5.48,
+    "general_infrastructure_score": 5.45,
+    "competition_score": 5,
+    "overall_country_score": 5.08,
+    "market_potential_score": 5.08
+  },
+  "Dominica": {
+    "location": {
+      "latitude": 15.414999,
+      "longitude": -61.370976
+    },
+    "economic_score": 6.05,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 7.31,
+    "general_infrastructure_score": 7.01,
+    "competition_score": 5,
+    "overall_country_score": 6.08,
+    "market_potential_score": 6.08
+  },
+  "Dominican_Republic": {
+    "location": {
+      "latitude": 18.735693,
+      "longitude": -70.162651
+    },
+    "economic_score": 7.48,
+    "education_score": 7.3,
+    "digital_infrastructure_score": 9.12,
+    "general_infrastructure_score": 7.2,
+    "competition_score": 5,
+    "overall_country_score": 7.22,
+    "market_potential_score": 7.22
+  },
+  "Egypt": {
+    "location": {
+      "latitude": 26.820553,
+      "longitude": 30.802498
+    },
+    "economic_score": 5.04,
+    "education_score": 8.05,
+    "digital_infrastructure_score": 7.68,
+    "general_infrastructure_score": 7.25,
+    "competition_score": 5,
+    "overall_country_score": 6.6,
+    "market_potential_score": 6.6
+  },
+  "Ecuador": {
+    "location": {
+      "latitude": -1.831239,
+      "longitude": -78.183406
+    },
+    "economic_score": 5.94,
+    "education_score": 8.0,
+    "digital_infrastructure_score": 7.43,
+    "general_infrastructure_score": 7.98,
+    "competition_score": 5,
+    "overall_country_score": 6.87,
+    "market_potential_score": 6.87
+  },
+  "El_Salvador": {
+    "location": {
+      "latitude": 13.794185,
+      "longitude": -88.89653
+    },
+    "economic_score": 6.45,
+    "education_score": 6.25,
+    "digital_infrastructure_score": 7.51,
+    "general_infrastructure_score": 7.56,
+    "competition_score": 5,
+    "overall_country_score": 6.55,
+    "market_potential_score": 6.55
+  },
+  "Equatorial_Guinea": {
+    "location": {
+      "latitude": 1.650801,
+      "longitude": 10.267895
+    },
+    "economic_score": 5.97,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.91,
+    "general_infrastructure_score": 6.12,
+    "competition_score": 5,
+    "overall_country_score": 5.21,
+    "market_potential_score": 5.21
+  },
+  "Eritrea": {
+    "location": {
+      "latitude": 15.179384,
+      "longitude": 39.782334
+    },
+    "economic_score": 5.77,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.08,
+    "general_infrastructure_score": 5.07,
+    "competition_score": 5,
+    "overall_country_score": 4.79,
+    "market_potential_score": 4.79
+  },
+  "Estonia": {
+    "location": {
+      "latitude": 58.595272,
+      "longitude": 25.013607
+    },
+    "economic_score": 6.55,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 7.02,
+    "market_potential_score": 7.02
+  },
+  "Eswatini": {
+    "location": {
+      "latitude": -26.522503,
+      "longitude": 31.465866
+    },
+    "economic_score": 6.57,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 7.1,
+    "general_infrastructure_score": 7.38,
+    "competition_score": 5,
+    "overall_country_score": 6.22,
+    "market_potential_score": 6.22
+  },
+  "Ethiopia": {
+    "location": {
+      "latitude": 9.145,
+      "longitude": 40.489673
+    },
+    "economic_score": 6.24,
+    "education_score": 7.25,
+    "digital_infrastructure_score": 4.78,
+    "general_infrastructure_score": 5.96,
+    "competition_score": 5,
+    "overall_country_score": 5.85,
+    "market_potential_score": 5.85
+  },
+  "France": {
+    "location": {
+      "latitude": 46.227638,
+      "longitude": 2.213749
+    },
+    "economic_score": 6.06,
+    "education_score": 8.6,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.45,
+    "competition_score": 2,
+    "overall_country_score": 7.02,
+    "market_potential_score": 7.02
+  },
+  "Fiji": {
+    "location": {
+      "latitude": -16.578193,
+      "longitude": 179.414413
+    },
+    "economic_score": 3.7,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 7.61,
+    "general_infrastructure_score": 8.16,
+    "competition_score": 5,
+    "overall_country_score": 5.92,
+    "market_potential_score": 5.92
+  },
+  "Finland": {
+    "location": {
+      "latitude": 61.92411,
+      "longitude": 25.748151
+    },
+    "economic_score": 6.55,
+    "education_score": 5.65,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.6,
+    "competition_score": 5,
+    "overall_country_score": 7.16,
+    "market_potential_score": 7.16
+  },
+  "Germany": {
+    "location": {
+      "latitude": 51.165691,
+      "longitude": 10.451526
+    },
+    "economic_score": 6.12,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.1,
+    "competition_score": 8,
+    "overall_country_score": 8.64,
+    "market_potential_score": 8.64
+  },
+  "Gabon": {
+    "location": {
+      "latitude": -0.803689,
+      "longitude": 11.609444
+    },
+    "economic_score": 6.4,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 6.8,
+    "general_infrastructure_score": 6.93,
+    "competition_score": 5,
+    "overall_country_score": 6.05,
+    "market_potential_score": 6.05
+  },
+  "Gambia": {
+    "location": {
+      "latitude": 13.443182,
+      "longitude": -15.310139
+    },
+    "economic_score": 6.13,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.75,
+    "general_infrastructure_score": 5.85,
+    "competition_score": 5,
+    "overall_country_score": 5.16,
+    "market_potential_score": 5.16
+  },
+  "Georgia": {
+    "location": {
+      "latitude": 42.315407,
+      "longitude": 43.356892
+    },
+    "economic_score": 4.79,
+    "education_score": 6.1,
+    "digital_infrastructure_score": 9.86,
+    "general_infrastructure_score": 7.8,
+    "competition_score": 5,
+    "overall_country_score": 6.71,
+    "market_potential_score": 6.71
+  },
+  "Ghana": {
+    "location": {
+      "latitude": 7.946527,
+      "longitude": -1.023194
+    },
+    "economic_score": 5.33,
+    "education_score": 5.5,
+    "digital_infrastructure_score": 6.95,
+    "general_infrastructure_score": 7.32,
+    "competition_score": 5,
+    "overall_country_score": 6.02,
+    "market_potential_score": 6.02
+  },
+  "Greece": {
+    "location": {
+      "latitude": 39.074208,
+      "longitude": 21.824312
+    },
+    "economic_score": 6.35,
+    "education_score": 6.2,
+    "digital_infrastructure_score": 9.95,
+    "general_infrastructure_score": 7.75,
+    "competition_score": 5,
+    "overall_country_score": 7.05,
+    "market_potential_score": 7.05
+  },
+  "Grenada": {
+    "location": {
+      "latitude": 12.262776,
+      "longitude": -61.604171
+    },
+    "economic_score": 6.73,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 7.72,
+    "general_infrastructure_score": 7.68,
+    "competition_score": 5,
+    "overall_country_score": 6.44,
+    "market_potential_score": 6.44
+  },
+  "Guatemala": {
+    "location": {
+      "latitude": 15.783471,
+      "longitude": -90.230759
+    },
+    "economic_score": 6.1,
+    "education_score": 5.7,
+    "digital_infrastructure_score": 7.04,
+    "general_infrastructure_score": 7.4,
+    "competition_score": 5,
+    "overall_country_score": 6.25,
+    "market_potential_score": 6.25
+  },
+  "Guinea": {
+    "location": {
+      "latitude": 9.945587,
+      "longitude": -9.696645
+    },
+    "economic_score": 5.39,
+    "education_score": 5.2,
+    "digital_infrastructure_score": 3.45,
+    "general_infrastructure_score": 5.53,
+    "competition_score": 5,
+    "overall_country_score": 4.91,
+    "market_potential_score": 4.91
+  },
+  "Guinea_Bissau": {
+    "location": {
+      "latitude": 11.803749,
+      "longitude": -15.180413
+    },
+    "economic_score": 5.61,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 2.85,
+    "general_infrastructure_score": 4.83,
+    "competition_score": 5,
+    "overall_country_score": 4.67,
+    "market_potential_score": 4.67
+  },
+  "Guyana": {
+    "location": {
+      "latitude": 4.860416,
+      "longitude": -58.93018
+    },
+    "economic_score": 10,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 6.92,
+    "general_infrastructure_score": 6.91,
+    "competition_score": 5,
+    "overall_country_score": 6.78,
+    "market_potential_score": 6.78
+  },
+  "Haiti": {
+    "location": {
+      "latitude": 18.971187,
+      "longitude": -72.285215
+    },
+    "economic_score": 4.47,
+    "education_score": 5.75,
+    "digital_infrastructure_score": 3.81,
+    "general_infrastructure_score": 5.25,
+    "competition_score": 5,
+    "overall_country_score": 4.86,
+    "market_potential_score": 4.86
+  },
+  "Honduras": {
+    "location": {
+      "latitude": 15.199999,
+      "longitude": -86.241905
+    },
+    "economic_score": 7.06,
+    "education_score": 5.95,
+    "digital_infrastructure_score": 6.45,
+    "general_infrastructure_score": 7.14,
+    "competition_score": 5,
+    "overall_country_score": 6.32,
+    "market_potential_score": 6.32
+  },
+  "Hungary": {
+    "location": {
+      "latitude": 47.162494,
+      "longitude": 19.503304
+    },
+    "economic_score": 6.1,
+    "education_score": 8.25,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 7.52,
+    "market_potential_score": 7.52
+  },
+  "India": {
+    "location": {
+      "latitude": 20.593684,
+      "longitude": 78.96288
+    },
+    "economic_score": 4.36,
+    "education_score": 10,
+    "digital_infrastructure_score": 8.0,
+    "general_infrastructure_score": 8.23,
+    "competition_score": 2,
+    "overall_country_score": 6.52,
+    "market_potential_score": 6.52
+  },
+  "Iceland": {
+    "location": {
+      "latitude": 64.963051,
+      "longitude": -19.020835
+    },
+    "economic_score": 7.65,
+    "education_score": 5.35,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.4,
+    "competition_score": 5,
+    "overall_country_score": 7.28,
+    "market_potential_score": 7.28
+  },
+  "Indonesia": {
+    "location": {
+      "latitude": -0.789275,
+      "longitude": 113.921327
+    },
+    "economic_score": 5.07,
+    "education_score": 10,
+    "digital_infrastructure_score": 7.87,
+    "general_infrastructure_score": 7.77,
+    "competition_score": 5,
+    "overall_country_score": 7.14,
+    "market_potential_score": 7.14
+  },
+  "Iran": {
+    "location": {
+      "latitude": 32.427908,
+      "longitude": 53.688046
+    },
+    "economic_score": 5.75,
+    "education_score": 7.7,
+    "digital_infrastructure_score": 7.73,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.74,
+    "market_potential_score": 6.74
+  },
+  "Iraq": {
+    "location": {
+      "latitude": 33.223191,
+      "longitude": 43.679291
+    },
+    "economic_score": 6.89,
+    "education_score": 6.75,
+    "digital_infrastructure_score": 6.77,
+    "general_infrastructure_score": 6.19,
+    "competition_score": 5,
+    "overall_country_score": 6.32,
+    "market_potential_score": 6.32
+  },
+  "Ireland": {
+    "location": {
+      "latitude": 53.41291,
+      "longitude": -8.24389
+    },
+    "economic_score": 9.93,
+    "education_score": 5.35,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 2,
+    "overall_country_score": 7.11,
+    "market_potential_score": 7.11
+  },
+  "Palestine": {
+    "location": {
+      "latitude": 31.046051,
+      "longitude": 34.851612
+    },
+    "economic_score": 7.66,
+    "education_score": 5.45,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.35,
+    "competition_score": 5,
+    "overall_country_score": 7.29,
+    "market_potential_score": 7.29
+  },
+  "Italy": {
+    "location": {
+      "latitude": 41.87194,
+      "longitude": 12.56738
+    },
+    "economic_score": 6.76,
+    "education_score": 9.85,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.8,
+    "competition_score": 5,
+    "overall_country_score": 8.08,
+    "market_potential_score": 8.08
+  },
+  "Japan": {
+    "location": {
+      "latitude": 36.204824,
+      "longitude": 138.252924
+    },
+    "economic_score": 5.93,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.95,
+    "competition_score": 8,
+    "overall_country_score": 8.58,
+    "market_potential_score": 8.58
+  },
+  "Jamaica": {
+    "location": {
+      "latitude": 18.109581,
+      "longitude": -77.297508
+    },
+    "economic_score": 5.03,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 7.63,
+    "general_infrastructure_score": 7.6,
+    "competition_score": 5,
+    "overall_country_score": 6.1,
+    "market_potential_score": 6.1
+  },
+  "Jordan": {
+    "location": {
+      "latitude": 30.585164,
+      "longitude": 36.238414
+    },
+    "economic_score": 4.51,
+    "education_score": 6.6,
+    "digital_infrastructure_score": 8.54,
+    "general_infrastructure_score": 7.75,
+    "competition_score": 5,
+    "overall_country_score": 6.48,
+    "market_potential_score": 6.48
+  },
+  "Kazakhstan": {
+    "location": {
+      "latitude": 48.019573,
+      "longitude": 66.923684
+    },
+    "economic_score": 4.11,
+    "education_score": 10,
+    "digital_infrastructure_score": 9.55,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 7.23,
+    "market_potential_score": 7.23
+  },
+  "Kiribati": {
+    "location": {
+      "latitude": -3.370417,
+      "longitude": -168.734039
+    },
+    "economic_score": 4.94,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.6,
+    "general_infrastructure_score": 6.68,
+    "competition_score": 5,
+    "overall_country_score": 5.25,
+    "market_potential_score": 5.25
+  },
+  "Kuwait": {
+    "location": {
+      "latitude": 29.31166,
+      "longitude": 47.481766
+    },
+    "economic_score": 7.01,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.0,
+    "competition_score": 5,
+    "overall_country_score": 7.08,
+    "market_potential_score": 7.08
+  },
+  "Kyrgyzstan": {
+    "location": {
+      "latitude": 41.20438,
+      "longitude": 74.766098
+    },
+    "economic_score": 4.17,
+    "education_score": 7.6,
+    "digital_infrastructure_score": 6.58,
+    "general_infrastructure_score": 7.4,
+    "competition_score": 5,
+    "overall_country_score": 6.15,
+    "market_potential_score": 6.15
+  },
+  "Kenya": {
+    "location": {
+      "latitude": -0.023559,
+      "longitude": 37.906193
+    },
+    "economic_score": 4.13,
+    "education_score": 8.7,
+    "digital_infrastructure_score": 7.8,
+    "general_infrastructure_score": 7.32,
+    "competition_score": 5,
+    "overall_country_score": 6.59,
+    "market_potential_score": 6.59
+  },
+  "Laos": {
+    "location": {
+      "latitude": 19.85627,
+      "longitude": 102.495496
+    },
+    "economic_score": 5.48,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 5.89,
+    "general_infrastructure_score": 7.22,
+    "competition_score": 5,
+    "overall_country_score": 5.77,
+    "market_potential_score": 5.77
+  },
+  "Latvia": {
+    "location": {
+      "latitude": 56.879635,
+      "longitude": 24.603189
+    },
+    "economic_score": 2.77,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 6.26,
+    "market_potential_score": 6.26
+  },
+  "Lebanon": {
+    "location": {
+      "latitude": 33.854721,
+      "longitude": 35.862285
+    },
+    "economic_score": 0.55,
+    "education_score": 7.25,
+    "digital_infrastructure_score": 7.21,
+    "general_infrastructure_score": 6.3,
+    "competition_score": 5,
+    "overall_country_score": 5.26,
+    "market_potential_score": 5.26
+  },
+  "Lesotho": {
+    "location": {
+      "latitude": -29.609988,
+      "longitude": 28.233608
+    },
+    "economic_score": 4.78,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 5.22,
+    "general_infrastructure_score": 6.12,
+    "competition_score": 5,
+    "overall_country_score": 5.23,
+    "market_potential_score": 5.23
+  },
+  "Liberia": {
+    "location": {
+      "latitude": 6.428055,
+      "longitude": -9.429499
+    },
+    "economic_score": 5.73,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 3.18,
+    "general_infrastructure_score": 5.25,
+    "competition_score": 5,
+    "overall_country_score": 4.89,
+    "market_potential_score": 4.89
+  },
+  "Libya": {
+    "location": {
+      "latitude": 26.3351,
+      "longitude": 17.228331
+    },
+    "economic_score": -0.49,
+    "education_score": 5.6,
+    "digital_infrastructure_score": 3.79,
+    "general_infrastructure_score": 5.95,
+    "competition_score": 5,
+    "overall_country_score": 3.97,
+    "market_potential_score": 3.97
+  },
+  "Liechtenstein": {
+    "location": {
+      "latitude": 47.166,
+      "longitude": 9.555373
+    },
+    "economic_score": 10,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.71,
+    "market_potential_score": 7.71
+  },
+  "Lithuania": {
+    "location": {
+      "latitude": 55.169438,
+      "longitude": 23.881275
+    },
+    "economic_score": 5.0,
+    "education_score": 5.7,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 6.79,
+    "market_potential_score": 6.79
+  },
+  "Luxembourg": {
+    "location": {
+      "latitude": 49.815273,
+      "longitude": 6.129583
+    },
+    "economic_score": 10,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.6,
+    "competition_score": 5,
+    "overall_country_score": 7.73,
+    "market_potential_score": 7.73
+  },
+  "Mexico": {
+    "location": {
+      "latitude": 23.634501,
+      "longitude": -102.552784
+    },
+    "economic_score": 4.57,
+    "education_score": 10,
+    "digital_infrastructure_score": 8.38,
+    "general_infrastructure_score": 8.38,
+    "competition_score": 5,
+    "overall_country_score": 7.27,
+    "market_potential_score": 7.27
+  },
+  "Madagascar": {
+    "location": {
+      "latitude": -18.766947,
+      "longitude": 46.869107
+    },
+    "economic_score": 5.28,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 3.12,
+    "general_infrastructure_score": 4.97,
+    "competition_score": 5,
+    "overall_country_score": 4.73,
+    "market_potential_score": 4.73
+  },
+  "Malawi": {
+    "location": {
+      "latitude": -13.254308,
+      "longitude": 34.301525
+    },
+    "economic_score": 3.84,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 3.34,
+    "general_infrastructure_score": 4.68,
+    "competition_score": 5,
+    "overall_country_score": 4.42,
+    "market_potential_score": 4.42
+  },
+  "Malaysia": {
+    "location": {
+      "latitude": 4.210484,
+      "longitude": 101.975766
+    },
+    "economic_score": 4.31,
+    "education_score": 6.0,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.54,
+    "competition_score": 5,
+    "overall_country_score": 6.77,
+    "market_potential_score": 6.77
+  },
+  "Maldives": {
+    "location": {
+      "latitude": 3.202778,
+      "longitude": 73.22068
+    },
+    "economic_score": -1.95,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 8.46,
+    "general_infrastructure_score": 7.75,
+    "competition_score": 5,
+    "overall_country_score": 4.86,
+    "market_potential_score": 4.86
+  },
+  "Mali": {
+    "location": {
+      "latitude": 17.570692,
+      "longitude": -3.996166
+    },
+    "economic_score": 4.82,
+    "education_score": 5.2,
+    "digital_infrastructure_score": 3.33,
+    "general_infrastructure_score": 5.11,
+    "competition_score": 5,
+    "overall_country_score": 4.69,
+    "market_potential_score": 4.69
+  },
+  "Malta": {
+    "location": {
+      "latitude": 35.937496,
+      "longitude": 14.375416
+    },
+    "economic_score": 8.65,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.4,
+    "competition_score": 5,
+    "overall_country_score": 7.42,
+    "market_potential_score": 7.42
+  },
+  "Marshall_Islands": {
+    "location": {
+      "latitude": 7.131474,
+      "longitude": 171.184478
+    },
+    "economic_score": 6.31,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.22,
+    "general_infrastructure_score": 7.39,
+    "competition_score": 5,
+    "overall_country_score": 5.59,
+    "market_potential_score": 5.59
+  },
+  "Mauritania": {
+    "location": {
+      "latitude": 21.00789,
+      "longitude": -10.940835
+    },
+    "economic_score": 3.99,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.52,
+    "general_infrastructure_score": 4.95,
+    "competition_score": 5,
+    "overall_country_score": 4.5,
+    "market_potential_score": 4.5
+  },
+  "Mauritius": {
+    "location": {
+      "latitude": -20.348404,
+      "longitude": 57.552152
+    },
+    "economic_score": 0.12,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 9.75,
+    "general_infrastructure_score": 8.4,
+    "competition_score": 5,
+    "overall_country_score": 5.67,
+    "market_potential_score": 5.67
+  },
+  "Micronesia": {
+    "location": {
+      "latitude": 7.425554,
+      "longitude": 150.550812
+    },
+    "economic_score": 5.94,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.13,
+    "general_infrastructure_score": 7.19,
+    "competition_score": 5,
+    "overall_country_score": 5.46,
+    "market_potential_score": 5.46
+  },
+  "Moldova": {
+    "location": {
+      "latitude": 47.411631,
+      "longitude": 28.369885
+    },
+    "economic_score": 6.28,
+    "education_score": 6.55,
+    "digital_infrastructure_score": 9.4,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.95,
+    "market_potential_score": 6.95
+  },
+  "Monaco": {
+    "location": {
+      "latitude": 43.750298,
+      "longitude": 7.412841
+    },
+    "economic_score": 10,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.9,
+    "competition_score": 5,
+    "overall_country_score": 7.79,
+    "market_potential_score": 7.79
+  },
+  "Mongolia": {
+    "location": {
+      "latitude": 46.862496,
+      "longitude": 103.846656
+    },
+    "economic_score": 4.45,
+    "education_score": 9.75,
+    "digital_infrastructure_score": 7.47,
+    "general_infrastructure_score": 7.7,
+    "competition_score": 5,
+    "overall_country_score": 6.87,
+    "market_potential_score": 6.87
+  },
+  "Montenegro": {
+    "location": {
+      "latitude": 42.708678,
+      "longitude": 19.37439
+    },
+    "economic_score": 6.2,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 9.3,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.62,
+    "market_potential_score": 6.62
+  },
+  "Morocco": {
+    "location": {
+      "latitude": 31.791702,
+      "longitude": -7.09262
+    },
+    "economic_score": 5.17,
+    "education_score": 5.75,
+    "digital_infrastructure_score": 7.87,
+    "general_infrastructure_score": 7.49,
+    "competition_score": 5,
+    "overall_country_score": 6.26,
+    "market_potential_score": 6.26
+  },
+  "Mozambique": {
+    "location": {
+      "latitude": -18.665695,
+      "longitude": 35.529562
+    },
+    "economic_score": 4.42,
+    "education_score": 7.5,
+    "digital_infrastructure_score": 3.69,
+    "general_infrastructure_score": 5.17,
+    "competition_score": 5,
+    "overall_country_score": 5.16,
+    "market_potential_score": 5.16
+  },
+  "Myanmar": {
+    "location": {
+      "latitude": 21.913965,
+      "longitude": 95.956223
+    },
+    "economic_score": 0.96,
+    "education_score": 10,
+    "digital_infrastructure_score": 3.84,
+    "general_infrastructure_score": 5.08,
+    "competition_score": 5,
+    "overall_country_score": 4.98,
+    "market_potential_score": 4.98
+  },
+  "Nigeria": {
+    "location": {
+      "latitude": 9.081999,
+      "longitude": 8.675277
+    },
+    "economic_score": 5.14,
+    "education_score": 10,
+    "digital_infrastructure_score": 6.55,
+    "general_infrastructure_score": 5.63,
+    "competition_score": 5,
+    "overall_country_score": 6.46,
+    "market_potential_score": 6.46
+  },
+  "Namibia": {
+    "location": {
+      "latitude": -22.95764,
+      "longitude": 18.49041
+    },
+    "economic_score": 3.24,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 6.78,
+    "general_infrastructure_score": 6.1,
+    "competition_score": 5,
+    "overall_country_score": 5.25,
+    "market_potential_score": 5.25
+  },
+  "Nauru": {
+    "location": {
+      "latitude": -0.522778,
+      "longitude": 166.931503
+    },
+    "economic_score": 5.66,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.92,
+    "general_infrastructure_score": 7.1,
+    "competition_score": 5,
+    "overall_country_score": 5.55,
+    "market_potential_score": 5.55
+  },
+  "Nepal": {
+    "location": {
+      "latitude": 28.394857,
+      "longitude": 84.124008
+    },
+    "economic_score": 4.69,
+    "education_score": 5.55,
+    "digital_infrastructure_score": 6.97,
+    "general_infrastructure_score": 7.17,
+    "competition_score": 5,
+    "overall_country_score": 5.88,
+    "market_potential_score": 5.88
+  },
+  "Netherlands": {
+    "location": {
+      "latitude": 52.132633,
+      "longitude": 5.291266
+    },
+    "economic_score": 7.49,
+    "education_score": 5.7,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.0,
+    "competition_score": 2,
+    "overall_country_score": 6.84,
+    "market_potential_score": 6.84
+  },
+  "New_Zealand": {
+    "location": {
+      "latitude": -40.900557,
+      "longitude": 174.885971
+    },
+    "economic_score": 6.46,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.07,
+    "market_potential_score": 7.07
+  },
+  "Nicaragua": {
+    "location": {
+      "latitude": 12.865416,
+      "longitude": -85.207229
+    },
+    "economic_score": 3.76,
+    "education_score": 7.9,
+    "digital_infrastructure_score": 6.12,
+    "general_infrastructure_score": 6.72,
+    "competition_score": 5,
+    "overall_country_score": 5.9,
+    "market_potential_score": 5.9
+  },
+  "Niger": {
+    "location": {
+      "latitude": 17.607789,
+      "longitude": 8.081666
+    },
+    "economic_score": 4.58,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 2.86,
+    "general_infrastructure_score": 4.76,
+    "competition_score": 5,
+    "overall_country_score": 4.46,
+    "market_potential_score": 4.46
+  },
+  "North_Korea": {
+    "location": {
+      "latitude": 40.339852,
+      "longitude": 127.510093
+    },
+    "economic_score": 4.15,
+    "education_score": 10,
+    "digital_infrastructure_score": 2.5,
+    "general_infrastructure_score": 5.15,
+    "competition_score": 5,
+    "overall_country_score": 5.36,
+    "market_potential_score": 5.36
+  },
+  "North_Macedonia": {
+    "location": {
+      "latitude": 41.608635,
+      "longitude": 21.745275
+    },
+    "economic_score": 3.76,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.31,
+    "market_potential_score": 6.31
+  },
+  "Oman": {
+    "location": {
+      "latitude": 21.512583,
+      "longitude": 55.923255
+    },
+    "economic_score": 3.8,
+    "education_score": 5.45,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.0,
+    "competition_score": 5,
+    "overall_country_score": 6.45,
+    "market_potential_score": 6.45
+  },
+  "Pakistan": {
+    "location": {
+      "latitude": 30.375321,
+      "longitude": 69.345116
+    },
+    "economic_score": 5.13,
+    "education_score": 10,
+    "digital_infrastructure_score": 6.15,
+    "general_infrastructure_score": 7.22,
+    "competition_score": 5,
+    "overall_country_score": 6.7,
+    "market_potential_score": 6.7
+  },
+  "Palau": {
+    "location": {
+      "latitude": 7.51498,
+      "longitude": 134.58252
+    },
+    "economic_score": 3.65,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 6.53,
+    "general_infrastructure_score": 8.03,
+    "competition_score": 5,
+    "overall_country_score": 5.65,
+    "market_potential_score": 5.65
+  },
+  "Panama": {
+    "location": {
+      "latitude": 8.537981,
+      "longitude": -80.782127
+    },
+    "economic_score": 7.8,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 8.49,
+    "general_infrastructure_score": 7.67,
+    "competition_score": 5,
+    "overall_country_score": 6.87,
+    "market_potential_score": 6.87
+  },
+  "Papua_New_Guinea": {
+    "location": {
+      "latitude": -6.314993,
+      "longitude": 143.95555
+    },
+    "economic_score": 3.05,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 3.49,
+    "general_infrastructure_score": 5.53,
+    "competition_score": 5,
+    "overall_country_score": 4.47,
+    "market_potential_score": 4.47
+  },
+  "Paraguay": {
+    "location": {
+      "latitude": -23.442503,
+      "longitude": -58.443832
+    },
+    "economic_score": 5.93,
+    "education_score": 7.65,
+    "digital_infrastructure_score": 7.78,
+    "general_infrastructure_score": 7.75,
+    "competition_score": 5,
+    "overall_country_score": 6.82,
+    "market_potential_score": 6.82
+  },
+  "Peru": {
+    "location": {
+      "latitude": -9.189967,
+      "longitude": -75.015152
+    },
+    "economic_score": 6.85,
+    "education_score": 10,
+    "digital_infrastructure_score": 8.0,
+    "general_infrastructure_score": 7.95,
+    "competition_score": 5,
+    "overall_country_score": 7.56,
+    "market_potential_score": 7.56
+  },
+  "Philippines": {
+    "location": {
+      "latitude": 12.879721,
+      "longitude": 121.774017
+    },
+    "economic_score": 5.55,
+    "education_score": 10,
+    "digital_infrastructure_score": 7.5,
+    "general_infrastructure_score": 7.47,
+    "competition_score": 5,
+    "overall_country_score": 7.1,
+    "market_potential_score": 7.1
+  },
+  "Poland": {
+    "location": {
+      "latitude": 51.919438,
+      "longitude": 19.145136
+    },
+    "economic_score": 5.56,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 7.76,
+    "market_potential_score": 7.76
+  },
+  "Portugal": {
+    "location": {
+      "latitude": 39.399872,
+      "longitude": -8.224454
+    },
+    "economic_score": 5.09,
+    "education_score": 5.75,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 6.82,
+    "market_potential_score": 6.82
+  },
+  "Qatar": {
+    "location": {
+      "latitude": 25.354826,
+      "longitude": 51.183884
+    },
+    "economic_score": 7.81,
+    "education_score": 5.5,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.75,
+    "competition_score": 5,
+    "overall_country_score": 7.41,
+    "market_potential_score": 7.41
+  },
+  "Romania": {
+    "location": {
+      "latitude": 45.943161,
+      "longitude": 24.96676
+    },
+    "economic_score": 5.17,
+    "education_score": 7.8,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.8,
+    "competition_score": 5,
+    "overall_country_score": 7.15,
+    "market_potential_score": 7.15
+  },
+  "Russia": {
+    "location": {
+      "latitude": 61.52401,
+      "longitude": 105.318756
+    },
+    "economic_score": 4.36,
+    "education_score": 10,
+    "digital_infrastructure_score": 9.62,
+    "general_infrastructure_score": 8.2,
+    "competition_score": 5,
+    "overall_country_score": 7.44,
+    "market_potential_score": 7.44
+  },
+  "Rwanda": {
+    "location": {
+      "latitude": -1.940278,
+      "longitude": 29.873888
+    },
+    "economic_score": 4.77,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 6.75,
+    "general_infrastructure_score": 6.4,
+    "competition_score": 5,
+    "overall_country_score": 5.66,
+    "market_potential_score": 5.66
+  },
+  "Saint_Kitts_and_Nevis": {
+    "location": {
+      "latitude": 17.357822,
+      "longitude": -62.782998
+    },
+    "economic_score": 2.96,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 8.79,
+    "general_infrastructure_score": 8.2,
+    "competition_score": 5,
+    "overall_country_score": 6.01,
+    "market_potential_score": 6.01
+  },
+  "Saint_Lucia": {
+    "location": {
+      "latitude": 13.909444,
+      "longitude": -60.978893
+    },
+    "economic_score": 0.57,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 7.52,
+    "general_infrastructure_score": 7.99,
+    "competition_score": 5,
+    "overall_country_score": 5.24,
+    "market_potential_score": 5.24
+  },
+  "Saint_Vincent_and_the_Grenadines": {
+    "location": {
+      "latitude": 12.984305,
+      "longitude": -61.287228
+    },
+    "economic_score": 4.23,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 7.47,
+    "general_infrastructure_score": 8.07,
+    "competition_score": 5,
+    "overall_country_score": 5.97,
+    "market_potential_score": 5.97
+  },
+  "Samoa": {
+    "location": {
+      "latitude": -13.759029,
+      "longitude": -172.104629
+    },
+    "economic_score": 3.55,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 6.09,
+    "general_infrastructure_score": 7.96,
+    "competition_score": 5,
+    "overall_country_score": 5.53,
+    "market_potential_score": 5.53
+  },
+  "San_Marino": {
+    "location": {
+      "latitude": 43.94236,
+      "longitude": 12.457777
+    },
+    "economic_score": 5.9,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.45,
+    "competition_score": 5,
+    "overall_country_score": 6.88,
+    "market_potential_score": 6.88
+  },
+  "Sao_Tome_and_Principe": {
+    "location": {
+      "latitude": 0.18636,
+      "longitude": 6.613081
+    },
+    "economic_score": 4.93,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.0,
+    "general_infrastructure_score": 6.5,
+    "competition_score": 5,
+    "overall_country_score": 5.1,
+    "market_potential_score": 5.1
+  },
+  "Saudi_Arabia": {
+    "location": {
+      "latitude": 23.885942,
+      "longitude": 45.079162
+    },
+    "economic_score": 5.81,
+    "education_score": 6.75,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 7.16,
+    "market_potential_score": 7.16
+  },
+  "Senegal": {
+    "location": {
+      "latitude": 14.497401,
+      "longitude": -14.452362
+    },
+    "economic_score": 5.54,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 5.89,
+    "general_infrastructure_score": 6.55,
+    "competition_score": 5,
+    "overall_country_score": 5.66,
+    "market_potential_score": 5.66
+  },
+  "Serbia": {
+    "location": {
+      "latitude": 44.016521,
+      "longitude": 21.005859
+    },
+    "economic_score": 5.05,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.59,
+    "market_potential_score": 6.59
+  },
+  "Seychelles": {
+    "location": {
+      "latitude": -4.679574,
+      "longitude": 55.491977
+    },
+    "economic_score": 2.25,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 8.34,
+    "general_infrastructure_score": 8.6,
+    "competition_score": 5,
+    "overall_country_score": 5.85,
+    "market_potential_score": 5.85
+  },
+  "Sierra_Leone": {
+    "location": {
+      "latitude": 8.460555,
+      "longitude": -11.779889
+    },
+    "economic_score": 5.3,
+    "education_score": 5.2,
+    "digital_infrastructure_score": 3.06,
+    "general_infrastructure_score": 4.7,
+    "competition_score": 5,
+    "overall_country_score": 4.65,
+    "market_potential_score": 4.65
+  },
+  "Slovakia": {
+    "location": {
+      "latitude": 48.669026,
+      "longitude": 19.699024
+    },
+    "economic_score": 5.28,
+    "education_score": 6.0,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 6.91,
+    "market_potential_score": 6.91
+  },
+  "Slovenia": {
+    "location": {
+      "latitude": 46.151241,
+      "longitude": 14.995463
+    },
+    "economic_score": 7.08,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.25,
+    "competition_score": 5,
+    "overall_country_score": 7.1,
+    "market_potential_score": 7.1
+  },
+  "Solomon_Islands": {
+    "location": {
+      "latitude": -9.64571,
+      "longitude": 160.156194
+    },
+    "economic_score": 2.19,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 3.17,
+    "general_infrastructure_score": 6.07,
+    "competition_score": 5,
+    "overall_country_score": 4.3,
+    "market_potential_score": 4.3
+  },
+  "Somalia": {
+    "location": {
+      "latitude": 5.152149,
+      "longitude": 46.199616
+    },
+    "economic_score": 5.59,
+    "education_score": 5.2,
+    "digital_infrastructure_score": 2.67,
+    "general_infrastructure_score": 5.2,
+    "competition_score": 5,
+    "overall_country_score": 4.73,
+    "market_potential_score": 4.73
+  },
+  "South_Africa": {
+    "location": {
+      "latitude": -30.559482,
+      "longitude": 22.937506
+    },
+    "economic_score": 5.3,
+    "education_score": 6.3,
+    "digital_infrastructure_score": 9.83,
+    "general_infrastructure_score": 6.61,
+    "competition_score": 5,
+    "overall_country_score": 6.61,
+    "market_potential_score": 6.61
+  },
+  "South_Korea": {
+    "location": {
+      "latitude": 35.907757,
+      "longitude": 127.766922
+    },
+    "economic_score": 5.49,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.75,
+    "competition_score": 5,
+    "overall_country_score": 7.85,
+    "market_potential_score": 7.85
+  },
+  "South_Sudan": {
+    "location": {
+      "latitude": 6.876991,
+      "longitude": 31.306978
+    },
+    "economic_score": 5.97,
+    "education_score": 5.25,
+    "digital_infrastructure_score": 2.83,
+    "general_infrastructure_score": 4.48,
+    "competition_score": 5,
+    "overall_country_score": 4.71,
+    "market_potential_score": 4.71
+  },
+  "Spain": {
+    "location": {
+      "latitude": 40.463667,
+      "longitude": -3.74922
+    },
+    "economic_score": 5.7,
+    "education_score": 9.2,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.68,
+    "market_potential_score": 7.68
+  },
+  "Sri_Lanka": {
+    "location": {
+      "latitude": 7.873054,
+      "longitude": 80.771797
+    },
+    "economic_score": 3.99,
+    "education_score": 5.85,
+    "digital_infrastructure_score": 6.85,
+    "general_infrastructure_score": 7.0,
+    "competition_score": 5,
+    "overall_country_score": 5.74,
+    "market_potential_score": 5.74
+  },
+  "Sudan": {
+    "location": {
+      "latitude": 12.862807,
+      "longitude": 30.217636
+    },
+    "economic_score": 3.93,
+    "education_score": 6.65,
+    "digital_infrastructure_score": 3.95,
+    "general_infrastructure_score": 5.01,
+    "competition_score": 5,
+    "overall_country_score": 4.91,
+    "market_potential_score": 4.91
+  },
+  "Suriname": {
+    "location": {
+      "latitude": 3.919305,
+      "longitude": -56.027783
+    },
+    "economic_score": 2.09,
+    "education_score": 5.1,
+    "digital_infrastructure_score": 7.58,
+    "general_infrastructure_score": 7.17,
+    "competition_score": 5,
+    "overall_country_score": 5.39,
+    "market_potential_score": 5.39
+  },
+  "Sweden": {
+    "location": {
+      "latitude": 60.128161,
+      "longitude": 18.643501
+    },
+    "economic_score": 6.46,
+    "education_score": 6.95,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.5,
+    "competition_score": 5,
+    "overall_country_score": 7.38,
+    "market_potential_score": 7.38
+  },
+  "Switzerland": {
+    "location": {
+      "latitude": 46.818188,
+      "longitude": 8.227512
+    },
+    "economic_score": 8.33,
+    "education_score": 5.6,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.75,
+    "competition_score": 5,
+    "overall_country_score": 7.54,
+    "market_potential_score": 7.54
+  },
+  "Syria": {
+    "location": {
+      "latitude": 34.802075,
+      "longitude": 38.996815
+    },
+    "economic_score": 4.99,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 3.73,
+    "general_infrastructure_score": 6.55,
+    "competition_score": 5,
+    "overall_country_score": 5.11,
+    "market_potential_score": 5.11
+  },
+  "Taiwan": {
+    "location": {
+      "latitude": 23.69781,
+      "longitude": 120.960515
+    },
+    "economic_score": 5.56,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.75,
+    "competition_score": 5,
+    "overall_country_score": 7.86,
+    "market_potential_score": 7.86
+  },
+  "Tajikistan": {
+    "location": {
+      "latitude": 38.861034,
+      "longitude": 71.276093
+    },
+    "economic_score": 5.79,
+    "education_score": 6.7,
+    "digital_infrastructure_score": 4.8,
+    "general_infrastructure_score": 6.95,
+    "competition_score": 5,
+    "overall_country_score": 5.85,
+    "market_potential_score": 5.85
+  },
+  "Tanzania": {
+    "location": {
+      "latitude": -6.369028,
+      "longitude": 34.888822
+    },
+    "economic_score": 5.62,
+    "education_score": 7.15,
+    "digital_infrastructure_score": 5.88,
+    "general_infrastructure_score": 5.02,
+    "competition_score": 5,
+    "overall_country_score": 5.73,
+    "market_potential_score": 5.73
+  },
+  "Thailand": {
+    "location": {
+      "latitude": 15.870032,
+      "longitude": 100.992541
+    },
+    "economic_score": 3.43,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 7.19,
+    "market_potential_score": 7.19
+  },
+  "Timor_Leste": {
+    "location": {
+      "latitude": -8.874217,
+      "longitude": 125.727539
+    },
+    "economic_score": 3.76,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 4.69,
+    "general_infrastructure_score": 6.48,
+    "competition_score": 5,
+    "overall_country_score": 5.02,
+    "market_potential_score": 5.02
+  },
+  "Togo": {
+    "location": {
+      "latitude": 8.619543,
+      "longitude": 0.824782
+    },
+    "economic_score": 4.83,
+    "education_score": 5.15,
+    "digital_infrastructure_score": 4.56,
+    "general_infrastructure_score": 5.3,
+    "competition_score": 5,
+    "overall_country_score": 4.97,
+    "market_potential_score": 4.97
+  },
+  "Tonga": {
+    "location": {
+      "latitude": -21.178986,
+      "longitude": -175.198242
+    },
+    "economic_score": 4.19,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 6.25,
+    "general_infrastructure_score": 7.76,
+    "competition_score": 5,
+    "overall_country_score": 5.65,
+    "market_potential_score": 5.65
+  },
+  "Trinidad_and_Tobago": {
+    "location": {
+      "latitude": 10.691803,
+      "longitude": -61.222503
+    },
+    "economic_score": 3.64,
+    "education_score": 5.2,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 7.65,
+    "competition_score": 5,
+    "overall_country_score": 6.3,
+    "market_potential_score": 6.3
+  },
+  "Tunisia": {
+    "location": {
+      "latitude": 33.886917,
+      "longitude": 9.537499
+    },
+    "economic_score": 4.89,
+    "education_score": 5.65,
+    "digital_infrastructure_score": 8.11,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 6.23,
+    "market_potential_score": 6.23
+  },
+  "Turkey": {
+    "location": {
+      "latitude": 38.963745,
+      "longitude": 35.243322
+    },
+    "economic_score": 5.63,
+    "education_score": 10,
+    "digital_infrastructure_score": 9.9,
+    "general_infrastructure_score": 7.5,
+    "competition_score": 5,
+    "overall_country_score": 7.61,
+    "market_potential_score": 7.61
+  },
+  "Turkmenistan": {
+    "location": {
+      "latitude": 38.969719,
+      "longitude": 59.556278
+    },
+    "economic_score": 6.44,
+    "education_score": 6.2,
+    "digital_infrastructure_score": 4.95,
+    "general_infrastructure_score": 7.35,
+    "competition_score": 5,
+    "overall_country_score": 5.99,
+    "market_potential_score": 5.99
+  },
+  "Tuvalu": {
+    "location": {
+      "latitude": -7.109535,
+      "longitude": 177.64933
+    },
+    "economic_score": 8.31,
+    "education_score": 5.05,
+    "digital_infrastructure_score": 4.48,
+    "general_infrastructure_score": 7.58,
+    "competition_score": 5,
+    "overall_country_score": 6.08,
+    "market_potential_score": 6.08
+  },
+  "Norway": {
+    "location": {
+      "latitude": 60.472024,
+      "longitude": 8.468946
+    },
+    "economic_score": 7.06,
+    "education_score": 5.4,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.85,
+    "competition_score": 5,
+    "overall_country_score": 7.26,
+    "market_potential_score": 7.26
+  },
+  "Singapore": {
+    "location": {
+      "latitude": 1.352083,
+      "longitude": 103.819836
+    },
+    "economic_score": 6.75,
+    "education_score": 5.3,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.85,
+    "competition_score": 5,
+    "overall_country_score": 7.18,
+    "market_potential_score": 7.18
+  },
+  "United_Kingdom": {
+    "location": {
+      "latitude": 55.378051,
+      "longitude": -3.435973
+    },
+    "economic_score": 5.68,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 8.55,
+    "competition_score": 5,
+    "overall_country_score": 7.85,
+    "market_potential_score": 7.85
+  },
+  "United_States": {
+    "location": {
+      "latitude": 37.09024,
+      "longitude": -95.712891
+    },
+    "economic_score": 6.66,
+    "education_score": 10,
+    "digital_infrastructure_score": 10,
+    "general_infrastructure_score": 9.1,
+    "competition_score": 5,
+    "overall_country_score": 8.15,
+    "market_potential_score": 8.15
+  }
+}
