@@ -1,0 +1,113 @@
+{
+  "Germany": {
+    "location": {
+      "latitude": 51.165691,
+      "longitude": 10.451526
+    },
+    "economic_factors": {
+      "average_income": 46560,
+      "GDP_growth_rate": 1.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 22
+    },
+    "number_of_universities": {
+      "total": 426,
+      "relevant_study_fields": [
+        "Engineering",
+        "Medicine",
+        "Business",
+        "Technology",
+        "Manufacturing"
+      ]
+    },
+    "general_infrastructure": {
+      "transport_network": "World-class autobahn and rail system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free higher education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 89.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Japan": {
+    "location": {
+      "latitude": 36.204824,
+      "longitude": 138.252924
+    },
+    "economic_factors": {
+      "average_income": 39290,
+      "GDP_growth_rate": 0.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 29
+    },
+    "number_of_universities": {
+      "total": 795,
+      "relevant_study_fields": [
+        "Engineering",
+        "Technology",
+        "Medicine",
+        "Business",
+        "Robotics"
+      ]
+    },
+    "general_infrastructure": {
+      "transport_network": "World's best high-speed rail system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and excellent education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 83.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "75 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "United_States": {
+    "location": {
+      "latitude": 37.09024,
+      "longitude": -95.712891
+    },
+    "economic_factors": {
+      "average_income": 63080,
+      "GDP_growth_rate": 2.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 6
+    },
+    "number_of_universities": {
+      "total": 5300,
+      "relevant_study_fields": [
+        "Engineering",
+        "Medicine",
+        "Business",
+        "Technology",
+        "Sciences"
+      ]
+    },
+    "general_infrastructure": {
+      "transport_network": "Extensive highway system, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Mixed healthcare system, free K-12 education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 87.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "80 Mbps",
+      "digital_maturity": "high"
+    }
+  }
+}

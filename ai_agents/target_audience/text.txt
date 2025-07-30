@@ -1,0 +1,82 @@
+data 
+{
+  "domain": "string",                    // e.g. "education", "health", "finance"
+  "product_or_service": "string",       // e.g. "e-learning platform", "mobile payment app"
+  "country": "string|null",              // e.g. "Senegal" or null if global
+
+  "competitors": {
+    "1": {
+      "name": "string",                 // Competitor name, e.g. "DoctoLib"
+      "location": {
+        "address": "string",           // e.g. "Dakar, Senegal"
+        "latitude": 14.6928,           // e.g. latitude coordinate
+        "longitude": -17.4467          // e.g. longitude coordinate
+      },
+      "type": "startup | SME | multinational | public institution",
+      "target_segment": "B2B | B2C | B2B2C",
+      "positioning": "low-cost | premium | niche | generalist",
+      "maturity": "early-stage | scale-up | established | dominant",
+      "digital_presence": "low | medium | high",
+      "partnerships": ["public", "private", "none"],
+      "coverage": "local | national | regional | international",
+      "differentiation": "string",
+      "known_gaps_or_weaknesses": "string",
+      "website": "string",
+      "notes": "string",
+
+      "annual_revenue_usd": null,
+      "number_of_users": null,
+      "number_of_employees": null,
+      "last_funding_amount_usd": null,
+      "last_funding_round": "Seed | Series A | Series B | IPO | Unknown | null"
+    }
+  }
+
+   country-name: {
+      "location": {
+        "latitude": number,            // e.g. latitude coordinate
+        "longitude": number           // e.g. longitude coordinate
+      },
+
+      "economic_factors": {
+        "average_income": "number",              // Revenu moyen annuel (ex: 35000)
+        "GDP_growth_rate": "number (percentage)",// Taux de croissance du PIB, ex: 3.5 (pour 3.5%)
+        "purchasing_power": "enum: low | medium | high",     // Niveau de pouvoir d'achat
+        "economic_stability": "enum: low | moderate | high", // Stabilité économique
+        "doing_business_index": "number (0–100)"             // Indice Doing Business
+        }
+
+      "number_of_universities": {
+        "total": number,
+        "relevant_study_fields": string[]
+       },
+      
+      "general_infrastructure": {
+        "transport_network": string ,
+        "energy": {
+          "electrification_rate": "number (percentage)",
+          "stability": "enum: poor | fair | good | excellent"
+        },
+
+        "public_services": "String"
+      },
+      "digital_infrastructure": {
+        "internet_penetration_rate": "number (percentage)",
+        "mobile_coverage": "enum: 2G |3G | 4G",
+        "average_internet_speed": "20 Mbps",
+        "digital_maturity":"enum: low | moderate | high",
+      }
+  }
+ 
+}
+
+
+
+output 
+{
+  propositions{
+    1:{
+      
+    }
+  }
+}

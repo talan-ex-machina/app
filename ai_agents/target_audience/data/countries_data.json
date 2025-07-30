@@ -1,0 +1,5678 @@
+{
+  "Afghanistan": {
+    "location": {
+      "latitude": 33.93911,
+      "longitude": 67.709953
+    },
+    "economic_factors": {
+      "average_income": 500,
+      "GDP_growth_rate": -2.4,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 25
+    },
+    "number_of_universities": {
+      "total": 150,
+      "relevant_study_fields": ["Islamic Studies", "Medicine", "Engineering", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited railway system",
+      "energy": {
+        "electrification_rate": 97.7,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education services"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 18.1,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Albania": {
+    "location": {
+      "latitude": 41.153332,
+      "longitude": 20.168331
+    },
+    "economic_factors": {
+      "average_income": 5210,
+      "GDP_growth_rate": 2.8,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 82
+    },
+    "number_of_universities": {
+      "total": 61,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 72.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Algeria": {
+    "location": {
+      "latitude": 28.033886,
+      "longitude": 1.659626
+    },
+    "economic_factors": {
+      "average_income": 4000,
+      "GDP_growth_rate": 3.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 157
+    },
+    "number_of_universities": {
+      "total": 106,
+      "relevant_study_fields": ["Engineering", "Medicine", "Economics", "Arabic Literature", "Petroleum Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and railway network",
+      "energy": {
+        "electrification_rate": 99.4,
+        "stability": "good"
+      },
+      "public_services": "Subsidized healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 61.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Andorra": {
+    "location": {
+      "latitude": 42.506285,
+      "longitude": 1.521801
+    },
+    "economic_factors": {
+      "average_income": 42030,
+      "GDP_growth_rate": 2.5,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 45
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Business", "Computer Science", "Education", "Health Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "High-quality healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 97.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Angola": {
+    "location": {
+      "latitude": -11.202692,
+      "longitude": 17.873887
+    },
+    "economic_factors": {
+      "average_income": 3450,
+      "GDP_growth_rate": 2.9,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 177
+    },
+    "number_of_universities": {
+      "total": 62,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Oil & Gas", "Economics"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 43.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education services"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 26.2,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Antigua_and_Barbuda": {
+    "location": {
+      "latitude": 17.060816,
+      "longitude": -61.796428
+    },
+    "economic_factors": {
+      "average_income": 16240,
+      "GDP_growth_rate": 4.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 113
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Medicine", "Business", "Tourism", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 99.0,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 76.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Argentina": {
+    "location": {
+      "latitude": -38.416097,
+      "longitude": -63.616672
+    },
+    "economic_factors": {
+      "average_income": 9120,
+      "GDP_growth_rate": 2.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 126
+    },
+    "number_of_universities": {
+      "total": 131,
+      "relevant_study_fields": ["Business", "Medicine", "Engineering", "Agriculture", "Social Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Well-developed road and railway system",
+      "energy": {
+        "electrification_rate": 99.2,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free public education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 74.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Armenia": {
+    "location": {
+      "latitude": 40.069099,
+      "longitude": 45.038189
+    },
+    "economic_factors": {
+      "average_income": 4220,
+      "GDP_growth_rate": 12.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 47
+    },
+    "number_of_universities": {
+      "total": 26,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Arts", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 69.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Australia": {
+    "location": {
+      "latitude": -25.274398,
+      "longitude": 133.775136
+    },
+    "economic_factors": {
+      "average_income": 55060,
+      "GDP_growth_rate": 2.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 14
+    },
+    "number_of_universities": {
+      "total": 43,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Information Technology", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road, rail and air transport",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "High-quality public healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 86.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Austria": {
+    "location": {
+      "latitude": 47.516231,
+      "longitude": 14.550072
+    },
+    "economic_factors": {
+      "average_income": 48780,
+      "GDP_growth_rate": 1.0,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 26
+    },
+    "number_of_universities": {
+      "total": 22,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 88.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "60 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Azerbaijan": {
+    "location": {
+      "latitude": 40.143105,
+      "longitude": 47.576927
+    },
+    "economic_factors": {
+      "average_income": 4760,
+      "GDP_growth_rate": 4.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 34
+    },
+    "number_of_universities": {
+      "total": 51,
+      "relevant_study_fields": ["Engineering", "Oil & Gas", "Medicine", "IT", "Economics"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 79.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Bahamas": {
+    "location": {
+      "latitude": 25.03428,
+      "longitude": -77.39628
+    },
+    "economic_factors": {
+      "average_income": 27340,
+      "GDP_growth_rate": 2.9,
+      "purchasing_power": "high",
+      "economic_stability": "moderate",
+      "doing_business_index": 119
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Business", "Tourism", "Marine Sciences", "Medicine"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, maritime transport",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 85.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Bahrain": {
+    "location": {
+      "latitude": 25.930414,
+      "longitude": 50.637772
+    },
+    "economic_factors": {
+      "average_income": 23504,
+      "GDP_growth_rate": 3.4,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 43
+    },
+    "number_of_universities": {
+      "total": 14,
+      "relevant_study_fields": ["Business", "Engineering", "Medicine", "Finance", "IT"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road network and causeway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 99.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Bangladesh": {
+    "location": {
+      "latitude": 23.684994,
+      "longitude": 90.356331
+    },
+    "economic_factors": {
+      "average_income": 1855,
+      "GDP_growth_rate": 6.9,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 168
+    },
+    "number_of_universities": {
+      "total": 155,
+      "relevant_study_fields": ["Engineering", "Medicine", "Textiles", "Agriculture", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 92.2,
+        "stability": "fair"
+      },
+      "public_services": "Universal primary healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 28.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Barbados": {
+    "location": {
+      "latitude": 13.193887,
+      "longitude": -59.543198
+    },
+    "economic_factors": {
+      "average_income": 17100,
+      "GDP_growth_rate": 1.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 129
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Medicine", "Business", "Tourism", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 81.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Belarus": {
+    "location": {
+      "latitude": 53.709807,
+      "longitude": 27.953389
+    },
+    "economic_factors": {
+      "average_income": 6330,
+      "GDP_growth_rate": 2.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 49
+    },
+    "number_of_universities": {
+      "total": 51,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Agriculture", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 79.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Belgium": {
+    "location": {
+      "latitude": 50.503887,
+      "longitude": 4.469936
+    },
+    "economic_factors": {
+      "average_income": 46420,
+      "GDP_growth_rate": 1.4,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 45
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 87.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Belize": {
+    "location": {
+      "latitude": 17.189877,
+      "longitude": -88.49765
+    },
+    "economic_factors": {
+      "average_income": 4884,
+      "GDP_growth_rate": 5.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 135
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Tourism", "Marine Sciences", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 92.2,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 47.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Benin": {
+    "location": {
+      "latitude": 9.30769,
+      "longitude": 2.315834
+    },
+    "economic_factors": {
+      "average_income": 1219,
+      "GDP_growth_rate": 6.9,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 149
+    },
+    "number_of_universities": {
+      "total": 11,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 41.4,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 28.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Bhutan": {
+    "location": {
+      "latitude": 27.514162,
+      "longitude": 90.433601
+    },
+    "economic_factors": {
+      "average_income": 3122,
+      "GDP_growth_rate": 4.4,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 89
+    },
+    "number_of_universities": {
+      "total": 12,
+      "relevant_study_fields": ["Agriculture", "Engineering", "Medicine", "Buddhist Studies", "Environment"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited mountain roads, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 48.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Bolivia": {
+    "location": {
+      "latitude": -16.290154,
+      "longitude": -63.588653
+    },
+    "economic_factors": {
+      "average_income": 3143,
+      "GDP_growth_rate": 4.8,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 150
+    },
+    "number_of_universities": {
+      "total": 95,
+      "relevant_study_fields": ["Engineering", "Medicine", "Mining", "Agriculture", "Social Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 93.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 43.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Bosnia_and_Herzegovina": {
+    "location": {
+      "latitude": 43.915886,
+      "longitude": 17.679076
+    },
+    "economic_factors": {
+      "average_income": 5180,
+      "GDP_growth_rate": 2.8,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 90
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Social Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 69.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "28 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Botswana": {
+    "location": {
+      "latitude": -22.328474,
+      "longitude": 24.684866
+    },
+    "economic_factors": {
+      "average_income": 7348,
+      "GDP_growth_rate": 5.7,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 87
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Mining", "Agriculture", "Medicine", "Engineering", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 63.3,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 43.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "22 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Brunei": {
+    "location": {
+      "latitude": 4.535277,
+      "longitude": 114.727669
+    },
+    "economic_factors": {
+      "average_income": 31087,
+      "GDP_growth_rate": 1.2,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 66
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Engineering", "Business", "Medicine", "Islamic Studies", "IT"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 94.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "40 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Bulgaria": {
+    "location": {
+      "latitude": 42.733883,
+      "longitude": 25.48583
+    },
+    "economic_factors": {
+      "average_income": 9540,
+      "GDP_growth_rate": 3.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 61
+    },
+    "number_of_universities": {
+      "total": 51,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 67.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Burkina_Faso": {
+    "location": {
+      "latitude": 12.238333,
+      "longitude": -1.561593
+    },
+    "economic_factors": {
+      "average_income": 790,
+      "GDP_growth_rate": 5.7,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 151
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 19.7,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 22.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Burundi": {
+    "location": {
+      "latitude": -3.373056,
+      "longitude": 29.918886
+    },
+    "economic_factors": {
+      "average_income": 261,
+      "GDP_growth_rate": 1.8,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 166
+    },
+    "number_of_universities": {
+      "total": 9,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Engineering", "Social Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 11.1,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 5.1,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "4 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Brazil": {
+    "location": {
+      "latitude": -14.235004,
+      "longitude": -51.92528
+    },
+    "economic_factors": {
+      "average_income": 8560,
+      "GDP_growth_rate": 1.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 124
+    },
+    "number_of_universities": {
+      "total": 2608,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Mixed quality, good in urban areas",
+      "energy": {
+        "electrification_rate": 99.8,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare system, free public education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 70.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Canada": {
+    "location": {
+      "latitude": 56.130366,
+      "longitude": -106.346771
+    },
+    "economic_factors": {
+      "average_income": 46260,
+      "GDP_growth_rate": 1.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 23
+    },
+    "number_of_universities": {
+      "total": 98,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Computer Science", "Natural Resources"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent transportation network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare, high-quality education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 91.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "65 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Cambodia": {
+    "location": {
+      "latitude": 12.565679,
+      "longitude": 104.990963
+    },
+    "economic_factors": {
+      "average_income": 1512,
+      "GDP_growth_rate": 7.0,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 144
+    },
+    "number_of_universities": {
+      "total": 119,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 89.1,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 52.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Cameroon": {
+    "location": {
+      "latitude": 7.369722,
+      "longitude": 12.354722
+    },
+    "economic_factors": {
+      "average_income": 1400,
+      "GDP_growth_rate": 3.5,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 167
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Oil & Gas", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 62.1,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 23.2,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Cape_Verde": {
+    "location": {
+      "latitude": 16.002082,
+      "longitude": -24.013197
+    },
+    "economic_factors": {
+      "average_income": 3603,
+      "GDP_growth_rate": 5.7,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 137
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Marine Sciences", "Tourism", "Engineering", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 92.6,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 62.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Central_African_Republic": {
+    "location": {
+      "latitude": 6.611111,
+      "longitude": 20.939444
+    },
+    "economic_factors": {
+      "average_income": 468,
+      "GDP_growth_rate": 0.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 184
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Mining", "Forestry", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 14.0,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 4.3,
+      "mobile_coverage": "2G",
+      "average_internet_speed": "3 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Chad": {
+    "location": {
+      "latitude": 15.454166,
+      "longitude": 18.732207
+    },
+    "economic_factors": {
+      "average_income": 640,
+      "GDP_growth_rate": 2.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 181
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Oil & Gas", "Education", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 8.8,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 6.5,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "4 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Chile": {
+    "location": {
+      "latitude": -35.675147,
+      "longitude": -71.542969
+    },
+    "economic_factors": {
+      "average_income": 15346,
+      "GDP_growth_rate": 2.3,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 59
+    },
+    "number_of_universities": {
+      "total": 60,
+      "relevant_study_fields": ["Engineering", "Medicine", "Mining", "Agriculture", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 99.6,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 82.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "40 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "China": {
+    "location": {
+      "latitude": 35.86166,
+      "longitude": 104.195397
+    },
+    "economic_factors": {
+      "average_income": 10500,
+      "GDP_growth_rate": 5.2,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 31
+    },
+    "number_of_universities": {
+      "total": 2956,
+      "relevant_study_fields": ["Engineering", "Technology", "Medicine", "Business", "Manufacturing"]
+    },
+    "general_infrastructure": {
+      "transport_network": "World-class high-speed rail and road network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Rapidly improving healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 73.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Colombia": {
+    "location": {
+      "latitude": 4.570868,
+      "longitude": -74.297333
+    },
+    "economic_factors": {
+      "average_income": 6131,
+      "GDP_growth_rate": 10.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 67
+    },
+    "number_of_universities": {
+      "total": 288,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Oil & Gas"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 97.0,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 69.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Comoros": {
+    "location": {
+      "latitude": -11.875001,
+      "longitude": 43.872219
+    },
+    "economic_factors": {
+      "average_income": 1390,
+      "GDP_growth_rate": 2.1,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 164
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Marine Sciences", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 77.8,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, basic education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 8.5,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Congo_Democratic_Republic": {
+    "location": {
+      "latitude": -4.038333,
+      "longitude": 21.758664
+    },
+    "economic_factors": {
+      "average_income": 580,
+      "GDP_growth_rate": 1.7,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 183
+    },
+    "number_of_universities": {
+      "total": 50,
+      "relevant_study_fields": ["Mining", "Medicine", "Agriculture", "Engineering", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 19.1,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 8.6,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "4 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Congo_Republic": {
+    "location": {
+      "latitude": -0.228021,
+      "longitude": 15.827659
+    },
+    "economic_factors": {
+      "average_income": 1830,
+      "GDP_growth_rate": 1.6,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 180
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Oil & Gas", "Medicine", "Agriculture", "Engineering", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 70.8,
+        "stability": "fair"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 8.7,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Costa_Rica": {
+    "location": {
+      "latitude": 9.748917,
+      "longitude": -83.753428
+    },
+    "economic_factors": {
+      "average_income": 12238,
+      "GDP_growth_rate": 7.6,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 74
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Tourism", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 99.5,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 81.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Cote_dIvoire": {
+    "location": {
+      "latitude": 7.539989,
+      "longitude": -5.54708
+    },
+    "economic_factors": {
+      "average_income": 2280,
+      "GDP_growth_rate": 7.4,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 110
+    },
+    "number_of_universities": {
+      "total": 13,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 70.4,
+        "stability": "fair"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 58.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Croatia": {
+    "location": {
+      "latitude": 45.1,
+      "longitude": 15.2
+    },
+    "economic_factors": {
+      "average_income": 13295,
+      "GDP_growth_rate": 10.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 51
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Tourism", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 72.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "40 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Cuba": {
+    "location": {
+      "latitude": 21.521757,
+      "longitude": -77.781167
+    },
+    "economic_factors": {
+      "average_income": 8821,
+      "GDP_growth_rate": 1.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 175
+    },
+    "number_of_universities": {
+      "total": 67,
+      "relevant_study_fields": ["Medicine", "Engineering", "Agriculture", "Education", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road and rail network",
+      "energy": {
+        "electrification_rate": 99.8,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 71.1,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Cyprus": {
+    "location": {
+      "latitude": 35.126413,
+      "longitude": 33.429859
+    },
+    "economic_factors": {
+      "average_income": 27858,
+      "GDP_growth_rate": 5.5,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 57
+    },
+    "number_of_universities": {
+      "total": 12,
+      "relevant_study_fields": ["Business", "Engineering", "Medicine", "Tourism", "Finance"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 84.4,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Czech_Republic": {
+    "location": {
+      "latitude": 49.817492,
+      "longitude": 15.472962
+    },
+    "economic_factors": {
+      "average_income": 23111,
+      "GDP_growth_rate": 3.3,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 41
+    },
+    "number_of_universities": {
+      "total": 26,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 81.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Denmark": {
+    "location": {
+      "latitude": 56.26392,
+      "longitude": 9.501785
+    },
+    "economic_factors": {
+      "average_income": 60170,
+      "GDP_growth_rate": 4.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 4
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Design", "Maritime"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road, rail and bridge network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "World-class universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 97.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Djibouti": {
+    "location": {
+      "latitude": 11.825138,
+      "longitude": 42.590275
+    },
+    "economic_factors": {
+      "average_income": 3601,
+      "GDP_growth_rate": 1.2,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 112
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Medicine", "Engineering", "Business", "Marine Sciences", "Languages"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, railway to Ethiopia",
+      "energy": {
+        "electrification_rate": 42.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 59.1,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Dominica": {
+    "location": {
+      "latitude": 15.414999,
+      "longitude": -61.370976
+    },
+    "economic_factors": {
+      "average_income": 7690,
+      "GDP_growth_rate": 6.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 98
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Medicine", "Agriculture", "Tourism", "Marine Sciences", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 96.5,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 67.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Dominican_Republic": {
+    "location": {
+      "latitude": 18.735693,
+      "longitude": -70.162651
+    },
+    "economic_factors": {
+      "average_income": 8050,
+      "GDP_growth_rate": 12.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 115
+    },
+    "number_of_universities": {
+      "total": 46,
+      "relevant_study_fields": ["Medicine", "Business", "Engineering", "Tourism", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 98.1,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free public education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 74.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "28 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Egypt": {
+    "location": {
+      "latitude": 26.820553,
+      "longitude": 30.802498
+    },
+    "economic_factors": {
+      "average_income": 3000,
+      "GDP_growth_rate": 4.2,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 114
+    },
+    "number_of_universities": {
+      "total": 61,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Arabic Studies", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing transport infrastructure",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "fair"
+      },
+      "public_services": "Subsidized healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 57.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Ecuador": {
+    "location": {
+      "latitude": -1.831239,
+      "longitude": -78.183406
+    },
+    "economic_factors": {
+      "average_income": 6080,
+      "GDP_growth_rate": 4.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 123
+    },
+    "number_of_universities": {
+      "total": 60,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Oil & Gas", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 97.2,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 57.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "El_Salvador": {
+    "location": {
+      "latitude": 13.794185,
+      "longitude": -88.89653
+    },
+    "economic_factors": {
+      "average_income": 4187,
+      "GDP_growth_rate": 10.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 91
+    },
+    "number_of_universities": {
+      "total": 25,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 96.4,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 50.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Equatorial_Guinea": {
+    "location": {
+      "latitude": 1.650801,
+      "longitude": 10.267895
+    },
+    "economic_factors": {
+      "average_income": 8131,
+      "GDP_growth_rate": -1.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 178
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Oil & Gas", "Medicine", "Engineering", "Agriculture", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 66.8,
+        "stability": "fair"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 26.2,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Eritrea": {
+    "location": {
+      "latitude": 15.179384,
+      "longitude": 39.782334
+    },
+    "economic_factors": {
+      "average_income": 650,
+      "GDP_growth_rate": 3.8,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 189
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 47.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 8.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Estonia": {
+    "location": {
+      "latitude": 58.595272,
+      "longitude": 25.013607
+    },
+    "economic_factors": {
+      "average_income": 23313,
+      "GDP_growth_rate": 8.3,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 18
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["IT", "Engineering", "Business", "Medicine", "Digital Technologies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 90.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "65 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Eswatini": {
+    "location": {
+      "latitude": -26.522503,
+      "longitude": 31.465866
+    },
+    "economic_factors": {
+      "average_income": 4211,
+      "GDP_growth_rate": 7.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 121
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, railway to South Africa",
+      "energy": {
+        "electrification_rate": 83.0,
+        "stability": "good"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 59.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Ethiopia": {
+    "location": {
+      "latitude": 9.145,
+      "longitude": 40.489673
+    },
+    "economic_factors": {
+      "average_income": 925,
+      "GDP_growth_rate": 6.1,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 159
+    },
+    "number_of_universities": {
+      "total": 45,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 44.3,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 21.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "10 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "France": {
+    "location": {
+      "latitude": 46.227638,
+      "longitude": 2.213749
+    },
+    "economic_factors": {
+      "average_income": 39030,
+      "GDP_growth_rate": 1.3,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 32
+    },
+    "number_of_universities": {
+      "total": 72,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent TGV and road network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 85.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "60 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Fiji": {
+    "location": {
+      "latitude": -16.578193,
+      "longitude": 179.414413
+    },
+    "economic_factors": {
+      "average_income": 6049,
+      "GDP_growth_rate": -4.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 102
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Tourism", "Agriculture", "Marine Sciences", "Medicine", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, maritime transport",
+      "energy": {
+        "electrification_rate": 98.6,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 64.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Finland": {
+    "location": {
+      "latitude": 61.92411,
+      "longitude": 25.748151
+    },
+    "economic_factors": {
+      "average_income": 48810,
+      "GDP_growth_rate": 3.0,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 20
+    },
+    "number_of_universities": {
+      "total": 13,
+      "relevant_study_fields": ["Engineering", "IT", "Medicine", "Design", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "World-class healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 94.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "75 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Germany": {
+    "location": {
+      "latitude": 51.165691,
+      "longitude": 10.451526
+    },
+    "economic_factors": {
+      "average_income": 46560,
+      "GDP_growth_rate": 1.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 22
+    },
+    "number_of_universities": {
+      "total": 426,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Technology", "Manufacturing"]
+    },
+    "general_infrastructure": {
+      "transport_network": "World-class autobahn and rail system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free higher education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 89.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Gabon": {
+    "location": {
+      "latitude": -0.803689,
+      "longitude": 11.609444
+    },
+    "economic_factors": {
+      "average_income": 7952,
+      "GDP_growth_rate": 1.5,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 169
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Oil & Gas", "Medicine", "Forestry", "Engineering", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, railway",
+      "energy": {
+        "electrification_rate": 89.3,
+        "stability": "good"
+      },
+      "public_services": "Basic healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 62.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Gambia": {
+    "location": {
+      "latitude": 13.443182,
+      "longitude": -15.310139
+    },
+    "economic_factors": {
+      "average_income": 772,
+      "GDP_growth_rate": 6.0,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 155
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Business", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 60.0,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 19.8,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Georgia": {
+    "location": {
+      "latitude": 42.315407,
+      "longitude": 43.356892
+    },
+    "economic_factors": {
+      "average_income": 4290,
+      "GDP_growth_rate": 10.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 7
+    },
+    "number_of_universities": {
+      "total": 22,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 69.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Ghana": {
+    "location": {
+      "latitude": 7.946527,
+      "longitude": -1.023194
+    },
+    "economic_factors": {
+      "average_income": 2202,
+      "GDP_growth_rate": 5.4,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 118
+    },
+    "number_of_universities": {
+      "total": 10,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Mining", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 85.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare, free basic education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 53.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Greece": {
+    "location": {
+      "latitude": 39.074208,
+      "longitude": 21.824312
+    },
+    "economic_factors": {
+      "average_income": 17676,
+      "GDP_growth_rate": 8.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 79
+    },
+    "number_of_universities": {
+      "total": 24,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Maritime", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 72.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Grenada": {
+    "location": {
+      "latitude": 12.262776,
+      "longitude": -61.604171
+    },
+    "economic_factors": {
+      "average_income": 9240,
+      "GDP_growth_rate": 5.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 146
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Medicine", "Agriculture", "Tourism", "Marine Sciences", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 95.3,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 59.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Guatemala": {
+    "location": {
+      "latitude": 15.783471,
+      "longitude": -90.230759
+    },
+    "economic_factors": {
+      "average_income": 4603,
+      "GDP_growth_rate": 8.0,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 96
+    },
+    "number_of_universities": {
+      "total": 14,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 92.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 41.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Guinea": {
+    "location": {
+      "latitude": 9.945587,
+      "longitude": -9.696645
+    },
+    "economic_factors": {
+      "average_income": 855,
+      "GDP_growth_rate": 5.2,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 156
+    },
+    "number_of_universities": {
+      "total": 4,
+      "relevant_study_fields": ["Mining", "Agriculture", "Medicine", "Education", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 45.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 18.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Guinea_Bissau": {
+    "location": {
+      "latitude": 11.803749,
+      "longitude": -15.180413
+    },
+    "economic_factors": {
+      "average_income": 698,
+      "GDP_growth_rate": 4.5,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 174
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Marine Sciences", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 21.0,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 3.9,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "4 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Guyana": {
+    "location": {
+      "latitude": 4.860416,
+      "longitude": -58.93018
+    },
+    "economic_factors": {
+      "average_income": 4648,
+      "GDP_growth_rate": 43.5,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 134
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Oil & Gas", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 84.2,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 52.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Haiti": {
+    "location": {
+      "latitude": 18.971187,
+      "longitude": -72.285215
+    },
+    "economic_factors": {
+      "average_income": 1177,
+      "GDP_growth_rate": -1.8,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 179
+    },
+    "number_of_universities": {
+      "total": 15,
+      "relevant_study_fields": ["Medicine", "Agriculture", "Education", "Engineering", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 38.0,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 32.5,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Honduras": {
+    "location": {
+      "latitude": 15.199999,
+      "longitude": -86.241905
+    },
+    "economic_factors": {
+      "average_income": 2574,
+      "GDP_growth_rate": 12.5,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 133
+    },
+    "number_of_universities": {
+      "total": 19,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 93.6,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 48.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Hungary": {
+    "location": {
+      "latitude": 47.162494,
+      "longitude": 19.503304
+    },
+    "economic_factors": {
+      "average_income": 15899,
+      "GDP_growth_rate": 7.1,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 52
+    },
+    "number_of_universities": {
+      "total": 65,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 79.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "India": {
+    "location": {
+      "latitude": 20.593684,
+      "longitude": 78.96288
+    },
+    "economic_factors": {
+      "average_income": 1900,
+      "GDP_growth_rate": 6.1,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 63
+    },
+    "number_of_universities": {
+      "total": 1000,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Agriculture", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Large railway network, developing roads",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare initiative, subsidized education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 45.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Iceland": {
+    "location": {
+      "latitude": 64.963051,
+      "longitude": -19.020835
+    },
+    "economic_factors": {
+      "average_income": 68792,
+      "GDP_growth_rate": 4.4,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 21
+    },
+    "number_of_universities": {
+      "total": 7,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Marine Sciences", "Renewable Energy"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 99.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "95 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Indonesia": {
+    "location": {
+      "latitude": -0.789275,
+      "longitude": 113.921327
+    },
+    "economic_factors": {
+      "average_income": 3869,
+      "GDP_growth_rate": 5.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 73
+    },
+    "number_of_universities": {
+      "total": 4621,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 98.9,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 64.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Iran": {
+    "location": {
+      "latitude": 32.427908,
+      "longitude": 53.688046
+    },
+    "economic_factors": {
+      "average_income": 3191,
+      "GDP_growth_rate": 3.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 127
+    },
+    "number_of_universities": {
+      "total": 54,
+      "relevant_study_fields": ["Engineering", "Medicine", "Oil & Gas", "Agriculture", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 84.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Iraq": {
+    "location": {
+      "latitude": 33.223191,
+      "longitude": 43.679291
+    },
+    "economic_factors": {
+      "average_income": 4157,
+      "GDP_growth_rate": 7.4,
+      "purchasing_power": "medium",
+      "economic_stability": "low",
+      "doing_business_index": 172
+    },
+    "number_of_universities": {
+      "total": 35,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Agriculture", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Damaged road and rail network",
+      "energy": {
+        "electrification_rate": 99.6,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 70.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "10 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Ireland": {
+    "location": {
+      "latitude": 53.41291,
+      "longitude": -8.24389
+    },
+    "economic_factors": {
+      "average_income": 78661,
+      "GDP_growth_rate": 13.5,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 24
+    },
+    "number_of_universities": {
+      "total": 7,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Pharmaceuticals"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 90.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "70 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Palestine": {
+    "location": {
+      "latitude": 31.046051,
+      "longitude": 34.851612
+    },
+    "economic_factors": {
+      "average_income": 43592,
+      "GDP_growth_rate": 8.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 35
+    },
+    "number_of_universities": {
+      "total": 9,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Agriculture", "Defense Technology"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 84.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Italy": {
+    "location": {
+      "latitude": 41.87194,
+      "longitude": 12.56738
+    },
+    "economic_factors": {
+      "average_income": 31953,
+      "GDP_growth_rate": 6.6,
+      "purchasing_power": "high",
+      "economic_stability": "moderate",
+      "doing_business_index": 58
+    },
+    "number_of_universities": {
+      "total": 97,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Design"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and high-speed rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 74.4,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Japan": {
+    "location": {
+      "latitude": 36.204824,
+      "longitude": 138.252924
+    },
+    "economic_factors": {
+      "average_income": 39290,
+      "GDP_growth_rate": 0.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 29
+    },
+    "number_of_universities": {
+      "total": 795,
+      "relevant_study_fields": ["Engineering", "Technology", "Medicine", "Business", "Robotics"]
+    },
+    "general_infrastructure": {
+      "transport_network": "World's best high-speed rail system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and excellent education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 83.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "75 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Jamaica": {
+    "location": {
+      "latitude": 18.109581,
+      "longitude": -77.297508
+    },
+    "economic_factors": {
+      "average_income": 5180,
+      "GDP_growth_rate": 4.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 75
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Medicine", "Business", "Tourism", "Agriculture", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 98.0,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 55.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Jordan": {
+    "location": {
+      "latitude": 30.585164,
+      "longitude": 36.238414
+    },
+    "economic_factors": {
+      "average_income": 4330,
+      "GDP_growth_rate": 2.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 75
+    },
+    "number_of_universities": {
+      "total": 32,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 99.9,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 66.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Kazakhstan": {
+    "location": {
+      "latitude": 48.019573,
+      "longitude": 66.923684
+    },
+    "economic_factors": {
+      "average_income": 9731,
+      "GDP_growth_rate": 4.1,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 25
+    },
+    "number_of_universities": {
+      "total": 125,
+      "relevant_study_fields": ["Engineering", "Oil & Gas", "Mining", "Medicine", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 82.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Kiribati": {
+    "location": {
+      "latitude": -3.370417,
+      "longitude": -168.734039
+    },
+    "economic_factors": {
+      "average_income": 1420,
+      "GDP_growth_rate": 2.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 161
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Marine Sciences", "Education", "Agriculture", "Tourism", "Public Administration"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited road network, no railway",
+      "energy": {
+        "electrification_rate": 93.0,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 54.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Kuwait": {
+    "location": {
+      "latitude": 29.31166,
+      "longitude": 47.481766
+    },
+    "economic_factors": {
+      "average_income": 29301,
+      "GDP_growth_rate": 2.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 83
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Business", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 99.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "65 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Kyrgyzstan": {
+    "location": {
+      "latitude": 41.20438,
+      "longitude": 74.766098
+    },
+    "economic_factors": {
+      "average_income": 1173,
+      "GDP_growth_rate": 3.6,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 80
+    },
+    "number_of_universities": {
+      "total": 52,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Mining", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited mountain roads, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 38.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Kenya": {
+    "location": {
+      "latitude": -0.023559,
+      "longitude": 37.906193
+    },
+    "economic_factors": {
+      "average_income": 1760,
+      "GDP_growth_rate": 5.7,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 56
+    },
+    "number_of_universities": {
+      "total": 74,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 75.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal primary healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 87.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Laos": {
+    "location": {
+      "latitude": 19.85627,
+      "longitude": 102.495496
+    },
+    "economic_factors": {
+      "average_income": 2535,
+      "GDP_growth_rate": 2.5,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 154
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Forestry"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 25.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Latvia": {
+    "location": {
+      "latitude": 56.879635,
+      "longitude": 24.603189
+    },
+    "economic_factors": {
+      "average_income": 17861,
+      "GDP_growth_rate": -3.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 19
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 82.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Lebanon": {
+    "location": {
+      "latitude": 33.854721,
+      "longitude": 35.862285
+    },
+    "economic_factors": {
+      "average_income": 4136,
+      "GDP_growth_rate": -21.4,
+      "purchasing_power": "medium",
+      "economic_stability": "low",
+      "doing_business_index": 143
+    },
+    "number_of_universities": {
+      "total": 45,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Banking", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 78.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Lesotho": {
+    "location": {
+      "latitude": -29.609988,
+      "longitude": 28.233608
+    },
+    "economic_factors": {
+      "average_income": 1118,
+      "GDP_growth_rate": 2.5,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 122
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Mining", "Textiles"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited mountain roads, no railway",
+      "energy": {
+        "electrification_rate": 47.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 29.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Liberia": {
+    "location": {
+      "latitude": 6.428055,
+      "longitude": -9.429499
+    },
+    "economic_factors": {
+      "average_income": 677,
+      "GDP_growth_rate": 5.0,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 175
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 28.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 7.3,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Libya": {
+    "location": {
+      "latitude": 26.3351,
+      "longitude": 17.228331
+    },
+    "economic_factors": {
+      "average_income": 6357,
+      "GDP_growth_rate": -31.3,
+      "purchasing_power": "medium",
+      "economic_stability": "low",
+      "doing_business_index": 186
+    },
+    "number_of_universities": {
+      "total": 12,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Agriculture", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, damaged rail",
+      "energy": {
+        "electrification_rate": 70.0,
+        "stability": "poor"
+      },
+      "public_services": "Deteriorating healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 21.8,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Liechtenstein": {
+    "location": {
+      "latitude": 47.166,
+      "longitude": 9.555373
+    },
+    "economic_factors": {
+      "average_income": 184083,
+      "GDP_growth_rate": 1.8,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 17
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Business", "Finance", "Law", "Architecture", "Medicine"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "World-class healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 98.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Lithuania": {
+    "location": {
+      "latitude": 55.169438,
+      "longitude": 23.881275
+    },
+    "economic_factors": {
+      "average_income": 19618,
+      "GDP_growth_rate": 5.0,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 11
+    },
+    "number_of_universities": {
+      "total": 14,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 81.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "60 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Luxembourg": {
+    "location": {
+      "latitude": 49.815273,
+      "longitude": 6.129583
+    },
+    "economic_factors": {
+      "average_income": 115839,
+      "GDP_growth_rate": 5.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 72
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Finance", "Business", "Engineering", "Law", "Medicine"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "World-class healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 97.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Mexico": {
+    "location": {
+      "latitude": 23.634501,
+      "longitude": -102.552784
+    },
+    "economic_factors": {
+      "average_income": 8810,
+      "GDP_growth_rate": 3.1,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 60
+    },
+    "number_of_universities": {
+      "total": 4500,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good highway system, limited rail",
+      "energy": {
+        "electrification_rate": 99.2,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare system, free public education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 70.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "23 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Madagascar": {
+    "location": {
+      "latitude": -18.766947,
+      "longitude": 46.869107
+    },
+    "economic_factors": {
+      "average_income": 471,
+      "GDP_growth_rate": 4.2,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 161
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Mining", "Marine Sciences", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 23.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 9.8,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Malawi": {
+    "location": {
+      "latitude": -13.254308,
+      "longitude": 34.301525
+    },
+    "economic_factors": {
+      "average_income": 412,
+      "GDP_growth_rate": 2.2,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 109
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Engineering", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 11.2,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 13.8,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Malaysia": {
+    "location": {
+      "latitude": 4.210484,
+      "longitude": 101.975766
+    },
+    "economic_factors": {
+      "average_income": 11200,
+      "GDP_growth_rate": 3.1,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 12
+    },
+    "number_of_universities": {
+      "total": 20,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Palm Oil"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 99.5,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and subsidized education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 84.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Maldives": {
+    "location": {
+      "latitude": 3.202778,
+      "longitude": 73.22068
+    },
+    "economic_factors": {
+      "average_income": 10366,
+      "GDP_growth_rate": -33.5,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 97
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Tourism", "Marine Sciences", "Medicine", "Business", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Maritime and air transport only",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 63.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Mali": {
+    "location": {
+      "latitude": 17.570692,
+      "longitude": -3.996166
+    },
+    "economic_factors": {
+      "average_income": 876,
+      "GDP_growth_rate": 3.1,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 148
+    },
+    "number_of_universities": {
+      "total": 4,
+      "relevant_study_fields": ["Agriculture", "Mining", "Medicine", "Education", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 28.4,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 13.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Malta": {
+    "location": {
+      "latitude": 35.937496,
+      "longitude": 14.375416
+    },
+    "economic_factors": {
+      "average_income": 29187,
+      "GDP_growth_rate": 10.6,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 88
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Medicine", "Engineering", "Business", "Maritime", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 86.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Marshall_Islands": {
+    "location": {
+      "latitude": 7.131474,
+      "longitude": 171.184478
+    },
+    "economic_factors": {
+      "average_income": 4840,
+      "GDP_growth_rate": 3.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 152
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Marine Sciences", "Education", "Business", "Agriculture", "Public Administration"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited roads, maritime transport",
+      "energy": {
+        "electrification_rate": 99.7,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 38.7,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Mauritania": {
+    "location": {
+      "latitude": 21.00789,
+      "longitude": -10.940835
+    },
+    "economic_factors": {
+      "average_income": 1681,
+      "GDP_growth_rate": -1.6,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 152
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Mining", "Agriculture", "Medicine", "Islamic Studies", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 42.1,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 20.8,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Mauritius": {
+    "location": {
+      "latitude": -20.348404,
+      "longitude": 57.552152
+    },
+    "economic_factors": {
+      "average_income": 11084,
+      "GDP_growth_rate": -14.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 13
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Business", "Tourism", "Medicine", "Engineering", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 65.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Micronesia": {
+    "location": {
+      "latitude": 7.425554,
+      "longitude": 150.550812
+    },
+    "economic_factors": {
+      "average_income": 3500,
+      "GDP_growth_rate": 1.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 158
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Marine Sciences", "Agriculture", "Education", "Business", "Fisheries"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited roads, maritime and air transport",
+      "energy": {
+        "electrification_rate": 75.4,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 35.3,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Moldova": {
+    "location": {
+      "latitude": 47.411631,
+      "longitude": 28.369885
+    },
+    "economic_factors": {
+      "average_income": 3540,
+      "GDP_growth_rate": 13.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 48
+    },
+    "number_of_universities": {
+      "total": 31,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Business", "IT"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 76.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Monaco": {
+    "location": {
+      "latitude": 43.750298,
+      "longitude": 7.412841
+    },
+    "economic_factors": {
+      "average_income": 234317,
+      "GDP_growth_rate": 5.4,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 16
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Business", "Finance", "Hospitality", "Sports Management", "Law"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road network, railway connection",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "World-class healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 97.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Mongolia": {
+    "location": {
+      "latitude": 46.862496,
+      "longitude": 103.846656
+    },
+    "economic_factors": {
+      "average_income": 3730,
+      "GDP_growth_rate": 1.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 81
+    },
+    "number_of_universities": {
+      "total": 95,
+      "relevant_study_fields": ["Mining", "Agriculture", "Medicine", "Engineering", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, railway to China/Russia",
+      "energy": {
+        "electrification_rate": 90.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 74.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Montenegro": {
+    "location": {
+      "latitude": 42.708678,
+      "longitude": 19.37439
+    },
+    "economic_factors": {
+      "average_income": 7900,
+      "GDP_growth_rate": 12.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 50
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Tourism", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 72.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Morocco": {
+    "location": {
+      "latitude": 31.791702,
+      "longitude": -7.09262
+    },
+    "economic_factors": {
+      "average_income": 3204,
+      "GDP_growth_rate": 7.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 53
+    },
+    "number_of_universities": {
+      "total": 15,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Tourism", "Textiles"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 99.4,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 64.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Mozambique": {
+    "location": {
+      "latitude": -18.665695,
+      "longitude": 35.529562
+    },
+    "economic_factors": {
+      "average_income": 460,
+      "GDP_growth_rate": 2.2,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 138
+    },
+    "number_of_universities": {
+      "total": 50,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Marine Sciences", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 30.7,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 17.5,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Myanmar": {
+    "location": {
+      "latitude": 21.913965,
+      "longitude": 95.956223
+    },
+    "economic_factors": {
+      "average_income": 1408,
+      "GDP_growth_rate": -18.0,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 165
+    },
+    "number_of_universities": {
+      "total": 156,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Buddhist Studies", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road and rail network",
+      "energy": {
+        "electrification_rate": 57.1,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 23.6,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Nigeria": {
+    "location": {
+      "latitude": 9.081999,
+      "longitude": 8.675277
+    },
+    "economic_factors": {
+      "average_income": 2030,
+      "GDP_growth_rate": 3.2,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 131
+    },
+    "number_of_universities": {
+      "total": 170,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Business", "Oil & Gas"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 55.4,
+        "stability": "poor"
+      },
+      "public_services": "Limited public healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 51.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Namibia": {
+    "location": {
+      "latitude": -22.95764,
+      "longitude": 18.49041
+    },
+    "economic_factors": {
+      "average_income": 5090,
+      "GDP_growth_rate": -7.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 104
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Mining", "Agriculture", "Medicine", "Tourism", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 54.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 31.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Nauru": {
+    "location": {
+      "latitude": -0.522778,
+      "longitude": 166.931503
+    },
+    "economic_factors": {
+      "average_income": 12060,
+      "GDP_growth_rate": 0.9,
+      "purchasing_power": "medium",
+      "economic_stability": "low",
+      "doing_business_index": 160
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Education", "Public Administration", "Marine Sciences", "Business", "Health"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited roads, airport only",
+      "energy": {
+        "electrification_rate": 99.9,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 57.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "10 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Nepal": {
+    "location": {
+      "latitude": 28.394857,
+      "longitude": 84.124008
+    },
+    "economic_factors": {
+      "average_income": 1155,
+      "GDP_growth_rate": 4.8,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 94
+    },
+    "number_of_universities": {
+      "total": 11,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Tourism", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor mountain roads, no railway",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 54.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Netherlands": {
+    "location": {
+      "latitude": 52.132633,
+      "longitude": 5.291266
+    },
+    "economic_factors": {
+      "average_income": 52331,
+      "GDP_growth_rate": 4.8,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 42
+    },
+    "number_of_universities": {
+      "total": 14,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Maritime"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road, rail and waterway network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 91.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "75 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "New_Zealand": {
+    "location": {
+      "latitude": -40.900557,
+      "longitude": 174.885971
+    },
+    "economic_factors": {
+      "average_income": 42941,
+      "GDP_growth_rate": 5.6,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 1
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Tourism", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 93.4,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Nicaragua": {
+    "location": {
+      "latitude": 12.865416,
+      "longitude": -85.207229
+    },
+    "economic_factors": {
+      "average_income": 1905,
+      "GDP_growth_rate": -1.8,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 142
+    },
+    "number_of_universities": {
+      "total": 58,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 97.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 34.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Niger": {
+    "location": {
+      "latitude": 17.607789,
+      "longitude": 8.081666
+    },
+    "economic_factors": {
+      "average_income": 554,
+      "GDP_growth_rate": 3.6,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 132
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Agriculture", "Mining", "Medicine", "Education", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 18.2,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 4.3,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "4 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "North_Korea": {
+    "location": {
+      "latitude": 40.339852,
+      "longitude": 127.510093
+    },
+    "economic_factors": {
+      "average_income": 1300,
+      "GDP_growth_rate": -4.5,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 190
+    },
+    "number_of_universities": {
+      "total": 300,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Military Sciences", "Political Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road and rail network",
+      "energy": {
+        "electrification_rate": 36.0,
+        "stability": "poor"
+      },
+      "public_services": "State-controlled healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 0.06,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "2 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "North_Macedonia": {
+    "location": {
+      "latitude": 41.608635,
+      "longitude": 21.745275
+    },
+    "economic_factors": {
+      "average_income": 5889,
+      "GDP_growth_rate": 3.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 17
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 79.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Oman": {
+    "location": {
+      "latitude": 21.512583,
+      "longitude": 55.923255
+    },
+    "economic_factors": {
+      "average_income": 14982,
+      "GDP_growth_rate": -2.8,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 68
+    },
+    "number_of_universities": {
+      "total": 9,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Business", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 95.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "40 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Pakistan": {
+    "location": {
+      "latitude": 30.375321,
+      "longitude": 69.345116
+    },
+    "economic_factors": {
+      "average_income": 1194,
+      "GDP_growth_rate": 5.6,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 108
+    },
+    "number_of_universities": {
+      "total": 198,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Textiles", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare, free primary education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 21.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Palau": {
+    "location": {
+      "latitude": 7.51498,
+      "longitude": 134.58252
+    },
+    "economic_factors": {
+      "average_income": 15722,
+      "GDP_growth_rate": -9.7,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 128
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Marine Sciences", "Tourism", "Business", "Education", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited roads, maritime and air transport",
+      "energy": {
+        "electrification_rate": 99.3,
+        "stability": "good"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 36.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "15 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Panama": {
+    "location": {
+      "latitude": 8.537981,
+      "longitude": -80.782127
+    },
+    "economic_factors": {
+      "average_income": 15575,
+      "GDP_growth_rate": 15.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 86
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Business", "Engineering", "Medicine", "Maritime", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, Panama Canal",
+      "energy": {
+        "electrification_rate": 97.0,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 64.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Papua_New_Guinea": {
+    "location": {
+      "latitude": -6.314993,
+      "longitude": 143.95555
+    },
+    "economic_factors": {
+      "average_income": 2629,
+      "GDP_growth_rate": -3.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 120
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Agriculture", "Mining", "Medicine", "Forestry", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 59.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 9.6,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Paraguay": {
+    "location": {
+      "latitude": -23.442503,
+      "longitude": -58.443832
+    },
+    "economic_factors": {
+      "average_income": 5821,
+      "GDP_growth_rate": 4.0,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 125
+    },
+    "number_of_universities": {
+      "total": 53,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road network, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 61.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Peru": {
+    "location": {
+      "latitude": -9.189967,
+      "longitude": -75.015152
+    },
+    "economic_factors": {
+      "average_income": 6692,
+      "GDP_growth_rate": 13.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 76
+    },
+    "number_of_universities": {
+      "total": 142,
+      "relevant_study_fields": ["Mining", "Engineering", "Medicine", "Agriculture", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 95.9,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 60.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "22 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Philippines": {
+    "location": {
+      "latitude": 12.879721,
+      "longitude": 121.774017
+    },
+    "economic_factors": {
+      "average_income": 3294,
+      "GDP_growth_rate": 5.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 95
+    },
+    "number_of_universities": {
+      "total": 2180,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Agriculture", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free public education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 60.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Poland": {
+    "location": {
+      "latitude": 51.919438,
+      "longitude": 19.145136
+    },
+    "economic_factors": {
+      "average_income": 15431,
+      "GDP_growth_rate": 5.7,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 40
+    },
+    "number_of_universities": {
+      "total": 131,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 84.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Portugal": {
+    "location": {
+      "latitude": 39.399872,
+      "longitude": -8.224454
+    },
+    "economic_factors": {
+      "average_income": 23252,
+      "GDP_growth_rate": 4.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 39
+    },
+    "number_of_universities": {
+      "total": 15,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Tourism", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 74.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "60 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Qatar": {
+    "location": {
+      "latitude": 25.354826,
+      "longitude": 51.183884
+    },
+    "economic_factors": {
+      "average_income": 59324,
+      "GDP_growth_rate": 1.5,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 77
+    },
+    "number_of_universities": {
+      "total": 10,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Business", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road network, metro system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education for citizens"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 99.7,
+      "mobile_coverage": "5G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Romania": {
+    "location": {
+      "latitude": 45.943161,
+      "longitude": 24.96676
+    },
+    "economic_factors": {
+      "average_income": 12301,
+      "GDP_growth_rate": 5.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 55
+    },
+    "number_of_universities": {
+      "total": 56,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Business", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 70.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "45 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Russia": {
+    "location": {
+      "latitude": 61.52401,
+      "longitude": 105.318756
+    },
+    "economic_factors": {
+      "average_income": 11585,
+      "GDP_growth_rate": 4.7,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 28
+    },
+    "number_of_universities": {
+      "total": 741,
+      "relevant_study_fields": ["Engineering", "Medicine", "Sciences", "Oil & Gas", "Defense"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Extensive rail network, developing roads",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 85.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "30 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Rwanda": {
+    "location": {
+      "latitude": -1.940278,
+      "longitude": 29.873888
+    },
+    "economic_factors": {
+      "average_income": 822,
+      "GDP_growth_rate": 10.9,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 38
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "IT"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Improving road network, no railway",
+      "energy": {
+        "electrification_rate": 60.0,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 29.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Saint_Kitts_and_Nevis": {
+    "location": {
+      "latitude": 17.357822,
+      "longitude": -62.782998
+    },
+    "economic_factors": {
+      "average_income": 17900,
+      "GDP_growth_rate": -14.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 134
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Medicine", "Business", "Tourism", "Agriculture", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, maritime transport",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 76.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Saint_Lucia": {
+    "location": {
+      "latitude": 13.909444,
+      "longitude": -60.978893
+    },
+    "economic_factors": {
+      "average_income": 9696,
+      "GDP_growth_rate": -20.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 93
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Tourism", "Medicine", "Business", "Agriculture", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road network, maritime transport",
+      "energy": {
+        "electrification_rate": 97.6,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 50.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "20 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Saint_Vincent_and_the_Grenadines": {
+    "location": {
+      "latitude": 12.984305,
+      "longitude": -61.287228
+    },
+    "economic_factors": {
+      "average_income": 7361,
+      "GDP_growth_rate": -5.3,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 130
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Tourism", "Agriculture", "Medicine", "Business", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, maritime transport",
+      "energy": {
+        "electrification_rate": 95.0,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 58.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Samoa": {
+    "location": {
+      "latitude": -13.759029,
+      "longitude": -172.104629
+    },
+    "economic_factors": {
+      "average_income": 4265,
+      "GDP_growth_rate": -3.0,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 79
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Tourism", "Education", "Business", "Marine Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road network, maritime transport",
+      "energy": {
+        "electrification_rate": 96.4,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 33.6,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "San_Marino": {
+    "location": {
+      "latitude": 43.94236,
+      "longitude": 12.457777
+    },
+    "economic_factors": {
+      "average_income": 46447,
+      "GDP_growth_rate": -7.6,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 98
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Business", "Engineering", "Medicine", "Law", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network within Italy",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 60.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "50 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Sao_Tome_and_Principe": {
+    "location": {
+      "latitude": 0.18636,
+      "longitude": 6.613081
+    },
+    "economic_factors": {
+      "average_income": 1668,
+      "GDP_growth_rate": 1.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 170
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Education", "Medicine", "Marine Sciences", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, maritime transport",
+      "energy": {
+        "electrification_rate": 70.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 29.9,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Saudi_Arabia": {
+    "location": {
+      "latitude": 23.885942,
+      "longitude": 45.079162
+    },
+    "economic_factors": {
+      "average_income": 23338,
+      "GDP_growth_rate": 3.2,
+      "purchasing_power": "high",
+      "economic_stability": "moderate",
+      "doing_business_index": 62
+    },
+    "number_of_universities": {
+      "total": 35,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Business", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Modern road network, developing rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Free healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 95.7,
+      "mobile_coverage": "5G",
+      "average_internet_speed": "70 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Senegal": {
+    "location": {
+      "latitude": 14.497401,
+      "longitude": -14.452362
+    },
+    "economic_factors": {
+      "average_income": 1430,
+      "GDP_growth_rate": 6.1,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 123
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Islamic Studies", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road network, limited rail",
+      "energy": {
+        "electrification_rate": 68.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 25.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Serbia": {
+    "location": {
+      "latitude": 44.016521,
+      "longitude": 21.005859
+    },
+    "economic_factors": {
+      "average_income": 7243,
+      "GDP_growth_rate": 7.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 44
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 80.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "40 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Seychelles": {
+    "location": {
+      "latitude": -4.679574,
+      "longitude": 55.491977
+    },
+    "economic_factors": {
+      "average_income": 15264,
+      "GDP_growth_rate": -13.8,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 100
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Tourism", "Marine Sciences", "Business", "Education", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, maritime and air transport",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 58.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "25 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Sierra_Leone": {
+    "location": {
+      "latitude": 8.460555,
+      "longitude": -11.779889
+    },
+    "economic_factors": {
+      "average_income": 527,
+      "GDP_growth_rate": 4.1,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 163
+    },
+    "number_of_universities": {
+      "total": 4,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Mining", "Education", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 26.0,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 2.4,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "6 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+
+  "Slovakia": {
+    "location": {
+      "latitude": 48.669026,
+      "longitude": 19.699024
+    },
+    "economic_factors": {
+      "average_income": 19582,
+      "GDP_growth_rate": 3.0,
+      "purchasing_power": "medium",
+      "economic_stability": "high",
+      "doing_business_index": 45
+    },
+    "number_of_universities": {
+      "total": 20,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "IT", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 80.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "55 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Slovenia": {
+    "location": {
+      "latitude": 46.151241,
+      "longitude": 14.995463
+    },
+    "economic_factors": {
+      "average_income": 25945,
+      "GDP_growth_rate": 8.5,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 37
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Arts", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 79.7,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "60 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Solomon_Islands": {
+    "location": {
+      "latitude": -9.64571,
+      "longitude": 160.156194
+    },
+    "economic_factors": {
+      "average_income": 2205,
+      "GDP_growth_rate": -4.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 88
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Education", "Marine Sciences", "Forestry", "Medicine"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited roads, maritime transport",
+      "energy": {
+        "electrification_rate": 67.0,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 11.9,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Somalia": {
+    "location": {
+      "latitude": 5.152149,
+      "longitude": 46.199616
+    },
+    "economic_factors": {
+      "average_income": 348,
+      "GDP_growth_rate": 2.9,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 190
+    },
+    "number_of_universities": {
+      "total": 4,
+      "relevant_study_fields": ["Medicine", "Islamic Studies", "Agriculture", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 36.0,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 1.9,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "3 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "South_Africa": {
+    "location": {
+      "latitude": -30.559482,
+      "longitude": 22.937506
+    },
+    "economic_factors": {
+      "average_income": 6001,
+      "GDP_growth_rate": 4.9,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 84
+    },
+    "number_of_universities": {
+      "total": 26,
+      "relevant_study_fields": ["Mining", "Engineering", "Medicine", "Business", "Agriculture"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 84.2,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 68.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "South_Korea": {
+    "location": {
+      "latitude": 35.907757,
+      "longitude": 127.766922
+    },
+    "economic_factors": {
+      "average_income": 31846,
+      "GDP_growth_rate": 2.6,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 5
+    },
+    "number_of_universities": {
+      "total": 193,
+      "relevant_study_fields": ["Engineering", "IT", "Medicine", "Business", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and excellent education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 96.0,
+      "mobile_coverage": "5G",
+      "average_internet_speed": "121 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "South_Sudan": {
+    "location": {
+      "latitude": 6.876991,
+      "longitude": 31.306978
+    },
+    "economic_factors": {
+      "average_income": 275,
+      "GDP_growth_rate": 5.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 185
+    },
+    "number_of_universities": {
+      "total": 5,
+      "relevant_study_fields": ["Oil & Gas", "Agriculture", "Medicine", "Education", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very poor road network, no railway",
+      "energy": {
+        "electrification_rate": 7.2,
+        "stability": "poor"
+      },
+      "public_services": "Very limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 8.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "3 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Spain": {
+    "location": {
+      "latitude": 40.463667,
+      "longitude": -3.74922
+    },
+    "economic_factors": {
+      "average_income": 27057,
+      "GDP_growth_rate": 5.1,
+      "purchasing_power": "high",
+      "economic_stability": "moderate",
+      "doing_business_index": 30
+    },
+    "number_of_universities": {
+      "total": 84,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Tourism", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 91.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Sri_Lanka": {
+    "location": {
+      "latitude": 7.873054,
+      "longitude": 80.771797
+    },
+    "economic_factors": {
+      "average_income": 3682,
+      "GDP_growth_rate": 3.3,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 99
+    },
+    "number_of_universities": {
+      "total": 17,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Business", "IT"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 34.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Sudan": {
+    "location": {
+      "latitude": 12.862807,
+      "longitude": 30.217636
+    },
+    "economic_factors": {
+      "average_income": 752,
+      "GDP_growth_rate": -3.6,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 171
+    },
+    "number_of_universities": {
+      "total": 33,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Oil & Gas", "Islamic Studies", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 44.3,
+        "stability": "poor"
+      },
+      "public_services": "Limited healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 28.0,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Suriname": {
+    "location": {
+      "latitude": 3.919305,
+      "longitude": -56.027783
+    },
+    "economic_factors": {
+      "average_income": 5799,
+      "GDP_growth_rate": -15.9,
+      "purchasing_power": "medium",
+      "economic_stability": "low",
+      "doing_business_index": 162
+    },
+    "number_of_universities": {
+      "total": 2,
+      "relevant_study_fields": ["Mining", "Medicine", "Agriculture", "Business", "Engineering"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited road network, no railway",
+      "energy": {
+        "electrification_rate": 94.8,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 63.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "18 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Sweden": {
+    "location": {
+      "latitude": 60.128161,
+      "longitude": 18.643501
+    },
+    "economic_factors": {
+      "average_income": 51925,
+      "GDP_growth_rate": 2.9,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 10
+    },
+    "number_of_universities": {
+      "total": 39,
+      "relevant_study_fields": ["Engineering", "Medicine", "IT", "Business", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 96.4,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "90 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Switzerland": {
+    "location": {
+      "latitude": 46.818188,
+      "longitude": 8.227512
+    },
+    "economic_factors": {
+      "average_income": 81867,
+      "GDP_growth_rate": 3.7,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 36
+    },
+    "number_of_universities": {
+      "total": 12,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Finance", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and excellent education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 91.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Syria": {
+    "location": {
+      "latitude": 34.802075,
+      "longitude": 38.996815
+    },
+    "economic_factors": {
+      "average_income": 870,
+      "GDP_growth_rate": 1.2,
+      "purchasing_power": "low",
+      "economic_stability": "low",
+      "doing_business_index": 176
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Medicine", "Engineering", "Agriculture", "Islamic Studies", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "War-damaged road and rail network",
+      "energy": {
+        "electrification_rate": 92.0,
+        "stability": "poor"
+      },
+      "public_services": "War-affected healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 34.3,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "5 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Taiwan": {
+    "location": {
+      "latitude": 23.69781,
+      "longitude": 120.960515
+    },
+    "economic_factors": {
+      "average_income": 25893,
+      "GDP_growth_rate": 3.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 15
+    },
+    "number_of_universities": {
+      "total": 158,
+      "relevant_study_fields": ["Engineering", "IT", "Medicine", "Business", "Semiconductor"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and excellent education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 90.7,
+      "mobile_coverage": "5G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "Tajikistan": {
+    "location": {
+      "latitude": 38.861034,
+      "longitude": 71.276093
+    },
+    "economic_factors": {
+      "average_income": 857,
+      "GDP_growth_rate": 9.2,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 106
+    },
+    "number_of_universities": {
+      "total": 34,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Education", "Mining"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 21.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "10 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Tanzania": {
+    "location": {
+      "latitude": -6.369028,
+      "longitude": 34.888822
+    },
+    "economic_factors": {
+      "average_income": 1122,
+      "GDP_growth_rate": 4.8,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 141
+    },
+    "number_of_universities": {
+      "total": 43,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Mining", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 38.8,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 25.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Thailand": {
+    "location": {
+      "latitude": 15.870032,
+      "longitude": 100.992541
+    },
+    "economic_factors": {
+      "average_income": 7189,
+      "GDP_growth_rate": 1.6,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 21
+    },
+    "number_of_universities": {
+      "total": 173,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Tourism", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 77.8,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "48 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Timor_Leste": {
+    "location": {
+      "latitude": -8.874217,
+      "longitude": 125.727539
+    },
+    "economic_factors": {
+      "average_income": 1381,
+      "GDP_growth_rate": -8.5,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 180
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Education", "Oil & Gas", "Business"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, no railway",
+      "energy": {
+        "electrification_rate": 81.0,
+        "stability": "fair"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 27.5,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Togo": {
+    "location": {
+      "latitude": 8.619543,
+      "longitude": 0.824782
+    },
+    "economic_factors": {
+      "average_income": 679,
+      "GDP_growth_rate": 5.3,
+      "purchasing_power": "low",
+      "economic_stability": "moderate",
+      "doing_business_index": 97
+    },
+    "number_of_universities": {
+      "total": 3,
+      "relevant_study_fields": ["Agriculture", "Medicine", "Engineering", "Business", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Poor road network, limited rail",
+      "energy": {
+        "electrification_rate": 50.0,
+        "stability": "poor"
+      },
+      "public_services": "Basic healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 12.4,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "10 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Tonga": {
+    "location": {
+      "latitude": -21.178986,
+      "longitude": -175.198242
+    },
+    "economic_factors": {
+      "average_income": 4301,
+      "GDP_growth_rate": 0.7,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 74
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Agriculture", "Education", "Business", "Marine Sciences", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Limited roads, maritime transport",
+      "energy": {
+        "electrification_rate": 96.2,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 40.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Trinidad_and_Tobago": {
+    "location": {
+      "latitude": 10.691803,
+      "longitude": -61.222503
+    },
+    "economic_factors": {
+      "average_income": 15468,
+      "GDP_growth_rate": -7.4,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 105
+    },
+    "number_of_universities": {
+      "total": 4,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Business", "Tourism"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road network, no railway",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 77.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Tunisia": {
+    "location": {
+      "latitude": 33.886917,
+      "longitude": 9.537499
+    },
+    "economic_factors": {
+      "average_income": 3317,
+      "GDP_growth_rate": 4.0,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 78
+    },
+    "number_of_universities": {
+      "total": 13,
+      "relevant_study_fields": ["Engineering", "Medicine", "Agriculture", "Tourism", "Islamic Studies"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Fair road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 64.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "22 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Turkey": {
+    "location": {
+      "latitude": 38.963745,
+      "longitude": 35.243322
+    },
+    "economic_factors": {
+      "average_income": 9126,
+      "GDP_growth_rate": 11.0,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 33
+    },
+    "number_of_universities": {
+      "total": 207,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Tourism", "Textiles"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Good road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 71.0,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "35 Mbps",
+      "digital_maturity": "moderate"
+    }
+  },
+  "Turkmenistan": {
+    "location": {
+      "latitude": 38.969719,
+      "longitude": 59.556278
+    },
+    "economic_factors": {
+      "average_income": 6967,
+      "GDP_growth_rate": 6.2,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 126
+    },
+    "number_of_universities": {
+      "total": 24,
+      "relevant_study_fields": ["Oil & Gas", "Engineering", "Medicine", "Agriculture", "Education"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Developing road and rail network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "good"
+      },
+      "public_services": "State healthcare and education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 18.1,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "12 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Tuvalu": {
+    "location": {
+      "latitude": -7.109535,
+      "longitude": 177.64933
+    },
+    "economic_factors": {
+      "average_income": 3663,
+      "GDP_growth_rate": 13.8,
+      "purchasing_power": "medium",
+      "economic_stability": "moderate",
+      "doing_business_index": 150
+    },
+    "number_of_universities": {
+      "total": 1,
+      "relevant_study_fields": ["Education", "Marine Sciences", "Agriculture", "Business", "Health"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Very limited roads, maritime transport",
+      "energy": {
+        "electrification_rate": 99.4,
+        "stability": "fair"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 49.3,
+      "mobile_coverage": "3G",
+      "average_internet_speed": "8 Mbps",
+      "digital_maturity": "low"
+    }
+  },
+  "Norway": {
+    "location": {
+      "latitude": 60.472024,
+      "longitude": 8.468946
+    },
+    "economic_factors": {
+      "average_income": 75420,
+      "GDP_growth_rate": 1.3,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 9
+    },
+    "number_of_universities": {
+      "total": 8,
+      "relevant_study_fields": ["Engineering", "Medicine", "Marine Sciences", "Oil & Gas", "Environmental Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Excellent roads and maritime transport",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Universal healthcare and free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 97.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "85 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+
+  "Singapore": {
+    "location": {
+      "latitude": 1.352083,
+      "longitude": 103.819836
+    },
+    "economic_factors": {
+      "average_income": 59790,
+      "GDP_growth_rate": 3.6,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 2
+    },
+    "number_of_universities": {
+      "total": 6,
+      "relevant_study_fields": ["Engineering", "Business", "Medicine", "Technology", "Finance"]
+    },
+    "general_infrastructure": {
+      "transport_network": "World-class public transport system",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Excellent healthcare and education systems"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 88.2,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "200 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+
+  "United_Kingdom": {
+    "location": {
+      "latitude": 55.378051,
+      "longitude": -3.435973
+    },
+    "economic_factors": {
+      "average_income": 41030,
+      "GDP_growth_rate": 1.4,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 8
+    },
+    "number_of_universities": {
+      "total": 164,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Sciences", "Arts"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Extensive rail and road network",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "NHS universal healthcare, free education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 94.9,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "65 Mbps",
+      "digital_maturity": "high"
+    }
+  },
+  "United_States": {
+    "location": {
+      "latitude": 37.09024,
+      "longitude": -95.712891
+    },
+    "economic_factors": {
+      "average_income": 63080,
+      "GDP_growth_rate": 2.1,
+      "purchasing_power": "high",
+      "economic_stability": "high",
+      "doing_business_index": 6
+    },
+    "number_of_universities": {
+      "total": 5300,
+      "relevant_study_fields": ["Engineering", "Medicine", "Business", "Technology", "Sciences"]
+    },
+    "general_infrastructure": {
+      "transport_network": "Extensive highway system, limited rail",
+      "energy": {
+        "electrification_rate": 100,
+        "stability": "excellent"
+      },
+      "public_services": "Mixed healthcare system, free K-12 education"
+    },
+    "digital_infrastructure": {
+      "internet_penetration_rate": 87.3,
+      "mobile_coverage": "4G",
+      "average_internet_speed": "80 Mbps",
+      "digital_maturity": "high"
+    }
+  }
+}
