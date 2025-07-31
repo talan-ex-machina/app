@@ -27,6 +27,7 @@ interface MarketChartsProps {
   competitorData?: CompetitorData[];
   topTrends?: TopTrend[];
   marketGaps?: MarketGap[];
+  darkMode?: boolean;
 }
 
 const COLORS = ['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#6B7280'];
@@ -34,7 +35,8 @@ const COLORS = ['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899'
 const MarketCharts: React.FC<MarketChartsProps> = ({ 
   competitorData = [], 
   topTrends = [], 
-  marketGaps = [] 
+  marketGaps = [],
+  darkMode = false
 }) => {
   // Process competitor data for pie chart
   const pieData = competitorData.map((competitor, index) => ({
@@ -65,13 +67,13 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white dark:bg-gray-800 p-3 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg">
-          <p className="text-sm font-medium text-gray-900 dark:text-white">{label}</p>
+        <div className={`p-3 border rounded-lg shadow-lg ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+          <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{label}</p>
           {payload.map((entry: any, index: number) => (
             <p key={index} className="text-sm" style={{ color: entry.color }}>
               {entry.name}: {entry.value}
               {entry.payload.revenue && (
-                <span className="text-xs text-gray-500 dark:text-gray-400 block">
+                <span className={`text-xs block ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                   Revenue: {entry.payload.revenue}
                 </span>
               )}
@@ -87,11 +89,11 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-white dark:bg-gray-800 p-3 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg">
-          <p className="text-sm font-medium text-gray-900 dark:text-white">{data.name}</p>
-          <p className="text-sm text-blue-600 dark:text-blue-400">Market Share: {data.value}%</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Revenue: {data.revenue}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Growth: {data.growth}</p>
+        <div className={`p-3 border rounded-lg shadow-lg ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+          <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.name}</p>
+          <p className={`text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Market Share: {data.value}%</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Revenue: {data.revenue}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Growth: {data.growth}</p>
         </div>
       );
     }
@@ -102,10 +104,10 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-white dark:bg-gray-800 p-3 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg max-w-xs">
-          <p className="text-sm font-medium text-gray-900 dark:text-white">{data.fullName}</p>
-          <p className="text-sm text-green-600 dark:text-green-400">Growth: {data.growth}%</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Impact: {data.impact}</p>
+        <div className={`p-3 border rounded-lg shadow-lg max-w-xs ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+          <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.fullName}</p>
+          <p className={`text-sm ${darkMode ? 'text-green-400' : 'text-green-600'}`}>Growth: {data.growth}%</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Impact: {data.impact}</p>
         </div>
       );
     }
@@ -116,11 +118,11 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
-        <div className="bg-white dark:bg-gray-800 p-3 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg max-w-xs">
-          <p className="text-sm font-medium text-gray-900 dark:text-white">{data.fullName}</p>
-          <p className="text-sm text-purple-600 dark:text-purple-400">Potential: ${data.potential}M</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Segment: {data.segment}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-300">
+        <div className={`p-3 border rounded-lg shadow-lg max-w-xs ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+          <p className={`text-sm font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.fullName}</p>
+          <p className={`text-sm ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>Potential: ${data.potential}M</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Segment: {data.segment}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Difficulty: {data.difficulty === 1 ? 'Low' : data.difficulty === 2 ? 'Medium' : 'High'}
           </p>
         </div>
@@ -133,8 +135,8 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     <div className="space-y-8">
       {/* Market Share Pie Chart */}
       {pieData.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-          <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Share Distribution
           </h4>
           <div className="h-80">
@@ -163,8 +165,8 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Market Trends Bar Chart */}
       {trendsData.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-          <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Trends Growth Rate
           </h4>
           <div className="h-80">
@@ -194,8 +196,8 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Market Gaps Opportunity Chart */}
       {gapsData.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-          <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Opportunity Analysis
           </h4>
           <div className="h-80">
@@ -225,8 +227,8 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Combined Impact vs Growth Scatter */}
       {trendsData.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-          <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+          <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Trend Impact vs Growth Rate
           </h4>
           <div className="h-80">
@@ -260,33 +262,57 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
       {/* Summary Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {competitorData.length > 0 && (
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
-            <h5 className="text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">
+          <div className={`p-4 rounded-lg border ${
+            darkMode 
+              ? 'bg-blue-900/20 border-blue-800' 
+              : 'bg-blue-50 border-blue-200'
+          }`}>
+            <h5 className={`text-sm font-medium mb-2 ${
+              darkMode ? 'text-blue-100' : 'text-blue-900'
+            }`}>
               Total Competitors Analyzed
             </h5>
-            <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            <p className={`text-2xl font-bold ${
+              darkMode ? 'text-blue-400' : 'text-blue-600'
+            }`}>
               {competitorData.length}
             </p>
           </div>
         )}
         
         {topTrends.length > 0 && (
-          <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
-            <h5 className="text-sm font-medium text-green-900 dark:text-green-100 mb-2">
+          <div className={`p-4 rounded-lg border ${
+            darkMode 
+              ? 'bg-green-900/20 border-green-800' 
+              : 'bg-green-50 border-green-200'
+          }`}>
+            <h5 className={`text-sm font-medium mb-2 ${
+              darkMode ? 'text-green-100' : 'text-green-900'
+            }`}>
               High-Impact Trends
             </h5>
-            <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+            <p className={`text-2xl font-bold ${
+              darkMode ? 'text-green-400' : 'text-green-600'
+            }`}>
               {topTrends.filter(t => t.impact === 'high').length}
             </p>
           </div>
         )}
         
         {marketGaps.length > 0 && (
-          <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-800">
-            <h5 className="text-sm font-medium text-purple-900 dark:text-purple-100 mb-2">
+          <div className={`p-4 rounded-lg border ${
+            darkMode 
+              ? 'bg-purple-900/20 border-purple-800' 
+              : 'bg-purple-50 border-purple-200'
+          }`}>
+            <h5 className={`text-sm font-medium mb-2 ${
+              darkMode ? 'text-purple-100' : 'text-purple-900'
+            }`}>
               Market Opportunities
             </h5>
-            <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+            <p className={`text-2xl font-bold ${
+              darkMode ? 'text-purple-400' : 'text-purple-600'
+            }`}>
               {marketGaps.length}
             </p>
           </div>
