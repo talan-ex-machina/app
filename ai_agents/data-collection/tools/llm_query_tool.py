@@ -20,15 +20,28 @@ class LLMQueryTool(BaseTool):
         tavily_results = input.get("top_products", [])
         industry = input.get("industry", "")
         country = input.get("country", "")
+        target_count = input.get("target_products", 3)  # Changed default from 4 to 3
         
-        # Compose a stricter prompt to ensure only a Python list is returned
+        # Compose a stricter prompt to ensure only software products are returned
         prompt = (
-            f"You are given search results for top products in the industry '{industry}'"
-            f"{f' in {country}' if country else ''}. Follow these steps exactly:\n"
-            "1. Analyze the search results to identify real, valid product or company names.\n"
-            "2. Ignore any entries that are empty, punctuation, or not actual product names.\n"
-            "3. Summarize, filter, and rank the results to produce a Python list containing *only* the best product names.\n"
-            "4. Return *only* a valid Python list (e.g., ['Product1', 'Product2']) with no additional text, explanations, or formatting.\n\n"
+            f"You are analyzing search results to find SOFTWARE PRODUCTS (not companies) "
+            f"for the '{industry}' industry{f' in {country}' if country else ''}.\n\n"
+            "IMPORTANT: Look for software tools, platforms, applications, and SaaS solutions - NOT consulting companies or service providers.\n\n"
+            "Examples of what to INCLUDE:\n"
+            "- Software applications (e.g., Salesforce, ServiceNow, Jira)\n"
+            "- SaaS platforms (e.g., HubSpot, Workday, Tableau)\n"
+            "- Development tools (e.g., GitHub, Jenkins, Docker)\n"
+            "- Business software (e.g., SAP, Oracle, Microsoft Office)\n\n"
+            "Examples of what to EXCLUDE:\n"
+            "- Consulting companies (e.g., Accenture, Deloitte, McKinsey)\n"
+            "- Service providers (e.g., IBM Global Services, Capgemini)\n"
+            "- Hardware manufacturers (unless they make software)\n\n"
+            "Instructions:\n"
+            "1. Analyze the search results to identify real SOFTWARE PRODUCT names only.\n"
+            "2. Ignore consulting companies, service providers, and non-software entities.\n"
+            "3. Focus on products that would likely be reviewed on G2.com (software marketplace).\n"
+            f"4. Return EXACTLY {target_count} products maximum.\n"
+            "5. Return *only* a valid Python list (e.g., ['Product1', 'Product2']) with no additional text.\n\n"
             f"Search results:\n{tavily_results}"
         )
         

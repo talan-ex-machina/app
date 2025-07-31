@@ -9,3 +9,7 @@ bs4
 tavily-python
 fake-useragent
 html2text
+requests
+langchain-community
+langchain-google-genai
+langchain-core
