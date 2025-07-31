@@ -18,7 +18,7 @@ model = genai.GenerativeModel(
 def query_gemini(prompt):
      response = model.generate_content(prompt)
      return response.text
-def load_trending_domains(file_path="predicted_trends.json") -> list:
+def load_trending_domains(file_path="/home/saaya/talan_app/ai_agents/technology_trend/predicted_trends.json") -> list:
     """Load trending technology domains from JSON file or use defaults."""
     default_domains = [
         "Artificial Intelligence", "Machine Learning", "Quantum Computing",

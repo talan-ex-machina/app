@@ -156,6 +156,11 @@ interface AnalysisResults {
     risk_assessment?: Record<string, unknown>;
   };
   target_audience?: {
+    idol_timeline?:[{
+      year: number,
+      title: string,
+      description: string
+    }];
     primary_segments?: MarketSegment[];
     customer_personas?: CustomerPersona[];
     geographic_opportunities?: Array<{
@@ -610,7 +615,6 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
 
 const renderMarketResearch = () => {
   const data = session.analysisResults?.market_research;
-
   if (!data) return <div>No market research data available</div>;
 
   return (
@@ -742,6 +746,8 @@ const renderMarketResearch = () => {
 
   const renderTargetAudience = () => {
   const data = session.analysisResults?.target_audience;
+    console.log(data);
+
   if (!data) return <div>No target audience data available</div>;
 
   const geoOpportunities = data.geographic_opportunities || [];

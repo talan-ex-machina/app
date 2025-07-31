@@ -18,15 +18,22 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 class TargetAudienceAgent:
     def __init__(self):
+        self.idol_company = "N/A"
         self.model = genai.GenerativeModel("gemini-2.0-flash")
-        self.system_prompt = """You are a target audience expert with focus on geographic market analysis and competitive benchmarking.
+        self.system_prompt = f"""You are a target audience expert with focus on geographic and timeline market analysis and competitive benchmarking.
+        you should do a timeline analysis on : {self.idol_company} and return a timeline of their progress over the last past 10 years.
 
 IMPORTANT: You MUST respond with ONLY a valid JSON object. No explanations, no markdown, just JSON.
 
 Return this exact JSON structure with geographic coordinates for mapping and idol company analysis:
-{
+{{
+    "idol_timeline": [{{
+            year: number
+            title: string,
+            description: string
+    }}],
   "primary_segments": [ ... ],
-  "geographic_opportunities": [ {
+  "geographic_opportunities": [ {{
       city: string;
       country: string;
       latitude: number;
@@ -38,19 +45,20 @@ Return this exact JSON structure with geographic coordinates for mapping and ido
       key_advantages: string[];
       population: number;
       recommended_priority: number;
-    } ],
+    }} ],
   "customer_personas": [ ... ],
-  "market_entry_strategy": { ... },
-  "idol_company_market_analysis": {
+  "market_entry_strategy": {{... }},
+  "idol_company_market_analysis": {{
     "strengths_to_avoid": [
-      {"strength": "description", "why_avoid": "how to differentiate", "market_impact": "high/medium/low"}
+      {{"strength": "description", "why_avoid": "how to differentiate", "market_impact": "high/medium/low"}}
     ],
     "weaknesses_to_exploit": [
-      {"weakness": "description", "opportunity": "how to capitalize", "market_size": "value", "difficulty": "high/medium/low"}
+      {{"weakness": "description", "opportunity": "how to capitalize", "market_size": "value", "difficulty": "high/medium/low"}}
     ]
-  }
-}"""
-
+  }}
+}}"""
+    def set_idol_company(self, idol_company):
+        self.idol_company = idol_company
     def clean_and_parse_response(self, response_text: str) -> Dict[str, Any]:
         """Clean and parse the Gemini response"""
         # Remove markdown formatting and code blocks

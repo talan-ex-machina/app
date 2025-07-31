@@ -129,6 +129,7 @@ Return a JSON array of questions:
         elif step == "company_selection":
             # User selected or mentioned a company
             self.conversation_state["idol_company"] = user_input
+            self.audience_agent.set_idol_company(user_input)
             
             # Check if we need more information
             if self.check_readiness_for_analysis():
