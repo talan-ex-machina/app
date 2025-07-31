@@ -26,7 +26,19 @@ IMPORTANT: You MUST respond with ONLY a valid JSON object. No explanations, no m
 Return this exact JSON structure with geographic coordinates for mapping and idol company analysis:
 {
   "primary_segments": [ ... ],
-  "geographic_opportunities": [ ... ],
+  "geographic_opportunities": [ {
+      city: string;
+      country: string;
+      latitude: number;
+      longitude: number;
+      market_potential: string;
+      opportunity_type: string;
+      market_size: string;
+      entry_difficulty: string;
+      key_advantages: string[];
+      population: number;
+      recommended_priority: number;
+    } ],
   "customer_personas": [ ... ],
   "market_entry_strategy": { ... },
   "idol_company_market_analysis": {

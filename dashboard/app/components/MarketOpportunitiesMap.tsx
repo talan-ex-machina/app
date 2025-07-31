@@ -43,11 +43,10 @@ export default function MarketOpportunitiesMap({ opportunities, darkMode }: Mark
       <div className="rounded-lg overflow-hidden border border-gray-300 dark:border-gray-700" style={{ height: '100%' }}>
         <MapContainer center={center as [number, number]} zoom={2} style={{ height: '100%', width: '100%' }} scrollWheelZoom={true}>
         <TileLayer
-          url={darkMode
-            ? 'https://tiles.stadiamaps.com/tiles/alidade_dark/{z}/{x}/{y}{r}.png'
-            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; OpenStreetMap contributors'
         />
+
         {opportunities.map((op, idx) => (
           <Marker key={idx} position={[op.latitude, op.longitude]} icon={defaultIcon}>
             <Popup>

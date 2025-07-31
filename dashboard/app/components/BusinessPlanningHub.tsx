@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import MarketCharts from './MarketCharts';
 import { 
   Lightbulb, 
   Target, 
@@ -92,6 +94,7 @@ interface StrategicGoal {
 }
 
 interface AnalysisResults {
+
   market_research?: {
     market_overview?: {
       market_size: string;
@@ -99,10 +102,51 @@ interface AnalysisResults {
       key_trends?: string[];
       market_maturity?: string;
     };
-    market_gaps?: MarketGap[];
-    competitor_analysis?: Record<string, unknown>;
-    success_patterns?: Record<string, unknown>[];
-    recommendations?: string[];
+    competitor_breakdown?: {
+      name: string;
+      market_share: string; // percent
+      revenue: string; // in millions
+      growth_rate: string; // percent
+    }[];
+    idol_company_analysis?: {
+      name: string;
+      strengths_to_avoid?: {
+        strength: string;
+        why_avoid: string;
+        market_impact: "high" | "medium" | "low";
+      }[];
+      weaknesses_to_exploit?: {
+        weakness: string;
+        opportunity: string;
+        market_size: string; // in millions
+        difficulty: "high" | "medium" | "low";
+      }[];
+      missed_opportunities?: {
+        opportunity: string;
+        market_potential: string; // in millions
+        why_missed: string;
+        how_to_capture: string;
+      }[];
+      market_share: string; // percent
+    };
+    competitive_gaps?: {
+      gap_title: string;
+      description: string;
+      target_segment: string;
+      revenue_potential: string; // in millions
+      barriers_to_entry: "low" | "medium" | "high";
+    }[];
+    top_trends?: {
+      trend: string;
+      impact: "high" | "medium" | "low";
+      growth_rate: string; // percent
+    }[];
+    strategic_recommendations?: {
+      strategy: string;
+      rationale: string;
+      timeline: string;
+      investment_needed: string; // in millions
+    }[];
   };
   product_innovation?: {
     product_services?: ProductService[];
@@ -564,52 +608,89 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
     </div>
   );
 
-  const renderMarketResearch = () => {
-    const data = session.analysisResults?.market_research;
-    if (!data) return <div>No market research data available</div>;
+const renderMarketResearch = () => {
+  const data = session.analysisResults?.market_research;
 
-    return (
-      <div className="space-y-6">
-        <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Market Research Analysis
-        </h3>
-        
-        {data.market_overview && (
-          <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-            <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Market Overview
-            </h4>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <span className={`font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Market Size:</span>
-                <p className={darkMode ? 'text-white' : 'text-gray-900'}>{data.market_overview.market_size}</p>
-              </div>
-              <div>
-                <span className={`font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Growth Rate:</span>
-                <p className={darkMode ? 'text-white' : 'text-gray-900'}>{data.market_overview.growth_rate}</p>
-              </div>
-            </div>
-          </div>
-        )}
+  if (!data) return <div>No market research data available</div>;
 
-        {data.market_gaps && data.market_gaps.length > 0 && (
-          <div>
-            <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Market Opportunities
-            </h4>
-            <div className="space-y-3">
-              {data.market_gaps.map((gap: MarketGap, index: number) => (
-                <div key={index} className={`p-4 border rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}>
-                  <h5 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{gap.gap_title}</h5>
-                  <p className={`text-sm mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{gap.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+  return (
+    <div className="space-y-6">
+      <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        Market Research Analysis
+      </h3>
+
+      {/* Market KPIs */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Market Size</p>
+          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.market_size ?? 'N/A'}</p>
+        </div>
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Growth Rate</p>
+          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.growth_rate ?? 'N/A'}</p>
+        </div>
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Market Maturity</p>
+          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.market_maturity ?? 'N/A'}</p>
+        </div>
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Idol Market Share</p>
+          <p className="text-xl font-bold text-gray-900 dark:text-white">{data.idol_company_analysis?.market_share ?? 'N/A'}</p>
+        </div>
       </div>
-    );
-  };
+
+      {/* Charts */}
+      <div className="space-y-4">
+        <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Market Share by Competitor</h4>
+        <MarketCharts
+          competitorData={data?.competitor_breakdown}
+          topTrends={data?.top_trends}
+          marketGaps={data?.competitive_gaps}
+        />
+      </div>
+
+      {/* Overview Section */}
+      {data.market_overview && (
+        <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Market Overview
+          </h4>
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <span className={`font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Key Trends:</span>
+              <ul className={darkMode ? 'text-white' : 'text-gray-900'}>
+                {(data?.market_overview?.key_trends || []).map((trend: string, i: number) => (
+                  <li key={i}>• {trend}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Gaps Section */}
+      {data.competitive_gaps && data.competitive_gaps.length > 0 && (
+        <div>
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Market Opportunities
+          </h4>
+          <div className="space-y-3">
+            {data.competitive_gaps.map((gap: MarketGap, index: number) => (
+              <div
+                key={index}
+                className={`p-4 border rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}
+              >
+                <h5 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{gap.gap_title}</h5>
+                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{gap.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 
   const renderProductInnovation = () => {
     const data = session.analysisResults?.product_innovation;
@@ -660,38 +741,37 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
   };
 
   const renderTargetAudience = () => {
-    const data = session.analysisResults?.target_audience;
-    if (!data) return <div>No target audience data available</div>;
+  const data = session.analysisResults?.target_audience;
+  if (!data) return <div>No target audience data available</div>;
 
-    const geoOpportunities = data.geographic_opportunities || [];
-    const idolAnalysis = data.idol_company_market_analysis || {};
+  const geoOpportunities = data.geographic_opportunities || [];
+  console.log('Geographic Opportunities:', geoOpportunities);
+  const idolAnalysis = data.idol_company_market_analysis || {};
 
-    return (
-      <div className="space-y-6">
+  return (
+    <div className="space-y-6">
       <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Target Audience Analysis
-        </h3>
+        Target Audience Analysis
+      </h3>
 
-        {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
-          <div>
+      {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
+        <div>
           <h4 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
             Idol Company Strengths (Avoid Competing Directly)
           </h4>
-            <ul className="space-y-2">
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
-                 <li key={idx} className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700">
-                  <strong className="text-gray-900 dark:text-white">{item.strength}</strong>{' '}
-                  <span className="text-xs text-gray-700 dark:text-gray-300">({item.market_impact})</span>
-                  <div className="text-sm mt-1 text-gray-800 dark:text-gray-200">
-                    Why avoid: {item.why_avoid}
-                  </div>
+          <ul className="space-y-2">
+            {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
+              <li key={idx} className="p-3 rounded-lg bg-gray-50 dark:bg-gray-800">
+                <strong className="text-gray-900 dark:text-white">{item.strength}</strong>{' '}
+                <span className="text-xs text-gray-700 dark:text-gray-300">({item.market_impact})</span>
+                <div className="text-sm mt-1 text-gray-800 dark:text-gray-200">
+                  Why avoid: {item.why_avoid}
+                </div>
               </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
+            ))}
+          </ul>
+        </div>
+      )}
         {idolAnalysis.weaknesses_to_exploit && idolAnalysis.weaknesses_to_exploit.length > 0 && (
           <div>
           <h4 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
@@ -701,12 +781,12 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {idolAnalysis.weaknesses_to_exploit.map((item: any, idx: number) => (
               <li key={idx} className="p-3 rounded-lg bg-red-100 dark:bg-red-900">
-                 <strong className="text-gray-900 dark:text-white">{item.weakness}</strong>{' '}
-                <span className="text-xs text-red-800 dark:text-red-200">({item.difficulty})</span>
-                <div className="text-sm mt-1 text-red-900 dark:text-red-100">
+                 <strong className="text-gray-900 dark:text-black">{item.weakness}</strong>{' '}
+                <span className="text-xs text-red-800 dark:text-black">({item.difficulty})</span>
+                <div className="text-sm mt-1 text-red-900 dark:text-black">
                   Opportunity: {item.opportunity}
                 </div>
-                <div className="text-xs text-red-800 dark:text-red-200">
+                <div className="text-xs text-red-800 dark:text-black">
                   Market Size: {item.market_size}
                 </div>
                 </li>
@@ -722,7 +802,7 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
           </div>
         )}
 
-        {data.primary_segments && data.primary_segments.length > 0 && (
+        {/* {data.primary_segments && data.primary_segments.length > 0 && (
           <div>
             <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               Primary Market Segments
@@ -748,9 +828,9 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
-        {data.customer_personas && data.customer_personas.length > 0 && (
+        {/* {data.customer_personas && data.customer_personas.length > 0 && (
           <div>
             <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               Customer Personas
@@ -766,7 +846,7 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     );
   };

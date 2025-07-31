@@ -28,8 +28,8 @@ Focus on finding weaknesses and missed opportunities by the idol company that a 
 Return this exact JSON structure:
 {
   "market_overview": {
-    "market_size": "value",
-    "growth_rate": "value",
+    "market_size": "value (in millions or billions)",
+    "growth_rate": "value (in percent)",
     "key_trends": ["trend1", "trend2", ...],
     "market_maturity": "value"
   },
