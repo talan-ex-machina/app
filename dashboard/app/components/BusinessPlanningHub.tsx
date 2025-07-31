@@ -613,10 +613,11 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
     </div>
   );
 
+  
+
 const renderMarketResearch = () => {
   const data = session.analysisResults?.market_research;
   if (!data) return <div>No market research data available</div>;
-
   return (
     <div className="space-y-6">
       <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -746,7 +747,8 @@ const renderMarketResearch = () => {
 
   const renderTargetAudience = () => {
   const data = session.analysisResults?.target_audience;
-    console.log(data);
+  const timelineData = session.analysisResults?.target_audience?.idol_timeline
+
 
   if (!data) return <div>No target audience data available</div>;
 
@@ -807,6 +809,48 @@ const renderMarketResearch = () => {
             <MarketOpportunitiesMap opportunities={geoOpportunities} darkMode={darkMode} />
           </div>
         )}
+
+        <div className="space-y-4">
+        <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          Idol Company Evolution Timeline
+        </h4>
+        <div className="relative">
+          {/* Timeline line */}
+          <div className={`absolute left-8 top-0 bottom-0 w-0.5 ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+          
+          <div className="space-y-6">
+            {timelineData?.map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="relative flex items-start"
+              >
+                {/* Timeline dot */}
+                <div className={`relative z-10 w-4 h-4 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'} mr-4 mt-1 flex-shrink-0`}>
+                  <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'} animate-ping opacity-75`}></div>
+                </div>
+                
+                {/* Content */}
+                <div className={`flex-1 p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
+                  <div className="flex items-center justify-between mb-2">
+                    <h5 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      {event.title}
+                    </h5>
+                    <span className={`text-sm px-2 py-1 rounded ${darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'}`}>
+                      {event.year}
+                    </span>
+                  </div>
+                  <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                    {event.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
 
         {/* {data.primary_segments && data.primary_segments.length > 0 && (
           <div>
