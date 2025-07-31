@@ -54,7 +54,11 @@ const metrics = [
   },
 ];
 
-export default function MetricsGrid() {
+interface MetricsGridProps {
+  darkMode?: boolean;
+}
+
+export default function MetricsGrid({ darkMode = false }: MetricsGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {metrics.map((metric, index) => (
@@ -64,7 +68,9 @@ export default function MetricsGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
           whileHover={{ scale: 1.02, y: -5 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+          className={`rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 ${
+            darkMode ? 'bg-gray-800' : 'bg-white'
+          }`}
         >
           <div className="flex items-center justify-between mb-4">
             <div className={`p-3 rounded-xl bg-gradient-to-r ${metric.color}`}>
@@ -83,15 +89,15 @@ export default function MetricsGrid() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+            <h3 className={`text-2xl font-bold mb-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
               {metric.value}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
               {metric.title}
             </p>
           </div>
 
-          <div className="mt-4 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+          <div className={`mt-4 h-2 rounded-full overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '75%' }}

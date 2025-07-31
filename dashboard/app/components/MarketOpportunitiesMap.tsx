@@ -40,7 +40,7 @@ export default function MarketOpportunitiesMap({ opportunities, darkMode }: Mark
 
   return (
     <div className="w-full" style={{ height: 400, minHeight: 400 }}>
-      <div className="rounded-lg overflow-hidden border border-gray-300 dark:border-gray-700" style={{ height: '100%' }}>
+      <div className={`rounded-lg overflow-hidden border ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} style={{ height: '100%' }}>
         <MapContainer center={center as [number, number]} zoom={2} style={{ height: '100%', width: '100%' }} scrollWheelZoom={true}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

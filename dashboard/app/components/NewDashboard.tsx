@@ -38,7 +38,7 @@ export default function Dashboard() {
       darkMode ? 'dark bg-gray-900' : 'bg-gradient-to-br from-blue-50 to-indigo-100'
     }`}>
       <div className="flex h-screen overflow-hidden">
-        <Sidebar />
+        <Sidebar darkMode={darkMode} />
         
         <div className="flex-1 flex flex-col overflow-hidden">
           <Header darkMode={darkMode} setDarkMode={setDarkMode} />

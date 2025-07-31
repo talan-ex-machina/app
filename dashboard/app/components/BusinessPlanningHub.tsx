@@ -20,7 +20,7 @@ import {
 // Dynamic import for MarketOpportunitiesMap to avoid SSR issues
 const MarketOpportunitiesMap = dynamic(() => import('./MarketOpportunitiesMap'), { 
   ssr: false,
-  loading: () => <div className="w-full h-[400px] bg-gray-200 dark:bg-gray-700 rounded-lg animate-pulse" />
+  loading: () => <div className="w-full h-[400px] bg-gray-200 rounded-lg animate-pulse" />
 });
 
 interface Company {
@@ -563,7 +563,7 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
   const renderResults = () => (
     <div className="space-y-6">
       {/* Tab Navigation */}
-      <div className="flex space-x-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-lg">
+      <div className={`flex space-x-1 p-1 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
         {tabs.map((tab, index) => {
           const Icon = tab.icon;
           return (
@@ -572,8 +572,12 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
               onClick={() => setActiveTab(index)}
               className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md transition-colors ${
                 activeTab === index
-                  ? 'bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                  ? darkMode 
+                    ? 'bg-gray-700 text-blue-400 shadow-sm'
+                    : 'bg-white text-blue-600 shadow-sm'
+                  : darkMode
+                    ? 'text-gray-300 hover:text-white'
+                    : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -626,20 +630,20 @@ const renderMarketResearch = () => {
       {/* Market KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Market Size</p>
-          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.market_size ?? 'N/A'}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Size</p>
+          <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_size ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Growth Rate</p>
-          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.growth_rate ?? 'N/A'}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Growth Rate</p>
+          <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.growth_rate ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Market Maturity</p>
-          <p className="text-xl font-bold text-gray-900 dark:text-white">{data?.market_overview?.market_maturity ?? 'N/A'}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Maturity</p>
+          <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_maturity ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Idol Market Share</p>
-          <p className="text-xl font-bold text-gray-900 dark:text-white">{data.idol_company_analysis?.market_share ?? 'N/A'}</p>
+          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Idol Market Share</p>
+          <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.idol_company_analysis?.market_share ?? 'N/A'}</p>
         </div>
       </div>
 
@@ -650,6 +654,7 @@ const renderMarketResearch = () => {
           competitorData={data?.competitor_breakdown}
           topTrends={data?.top_trends}
           marketGaps={data?.competitive_gaps}
+          darkMode={darkMode}
         />
       </div>
 
@@ -756,21 +761,21 @@ const renderMarketResearch = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+      <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
         Target Audience Analysis
       </h3>
 
       {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
         <div>
-          <h4 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Idol Company Strengths (Avoid Competing Directly)
           </h4>
           <ul className="space-y-2">
             {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
-              <li key={idx} className="p-3 rounded-lg bg-gray-50 dark:bg-gray-800">
-                <strong className="text-gray-900 dark:text-white">{item.strength}</strong>{' '}
-                <span className="text-xs text-gray-700 dark:text-gray-300">({item.market_impact})</span>
-                <div className="text-sm mt-1 text-gray-800 dark:text-gray-200">
+              <li key={idx} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
+                <strong className={`${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.strength}</strong>{' '}
+                <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>({item.market_impact})</span>
+                <div className={`text-sm mt-1 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
                   Why avoid: {item.why_avoid}
                 </div>
               </li>
@@ -780,19 +785,19 @@ const renderMarketResearch = () => {
       )}
         {idolAnalysis.weaknesses_to_exploit && idolAnalysis.weaknesses_to_exploit.length > 0 && (
           <div>
-          <h4 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Idol Company Weaknesses (Exploit These)
           </h4>
           <ul className="space-y-2">
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {idolAnalysis.weaknesses_to_exploit.map((item: any, idx: number) => (
-              <li key={idx} className="p-3 rounded-lg bg-red-100 dark:bg-red-900">
-                 <strong className="text-gray-900 dark:text-black">{item.weakness}</strong>{' '}
-                <span className="text-xs text-red-800 dark:text-black">({item.difficulty})</span>
-                <div className="text-sm mt-1 text-red-900 dark:text-black">
+              <li key={idx} className={`p-3 rounded-lg ${darkMode ? 'bg-red-900' : 'bg-red-100'}`}>
+                 <strong className={`${darkMode ? 'text-red-100' : 'text-gray-900'}`}>{item.weakness}</strong>{' '}
+                <span className={`text-xs ${darkMode ? 'text-red-200' : 'text-red-800'}`}>({item.difficulty})</span>
+                <div className={`text-sm mt-1 ${darkMode ? 'text-red-100' : 'text-red-900'}`}>
                   Opportunity: {item.opportunity}
                 </div>
-                <div className="text-xs text-red-800 dark:text-black">
+                <div className={`text-xs ${darkMode ? 'text-red-200' : 'text-red-800'}`}>
                   Market Size: {item.market_size}
                 </div>
                 </li>
