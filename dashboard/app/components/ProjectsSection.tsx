@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Users, DollarSign, CheckCircle } from 'lucide-react';
+import { Calendar, Users, DollarSign, CheckCircle } from 'lucide-react';
 import { recentProjects } from '../data/mockData';
 
 interface ProjectsSectionProps {

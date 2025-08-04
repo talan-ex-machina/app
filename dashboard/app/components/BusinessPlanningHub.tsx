@@ -159,7 +159,9 @@ interface AnalysisResults {
     idol_timeline?:[{
       year: number,
       title: string,
-      description: string
+      description: string,
+      achievements: string[],
+      takeaway: string,
     }];
     primary_segments?: MarketSegment[];
     customer_personas?: CustomerPersona[];
@@ -390,7 +392,7 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
       <div className="space-y-4">
         <Building2 className={`w-16 h-16 mx-auto ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
         <h2 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Business Planning Assistant
+          Market Gap Strategy Assistant
         </h2>
         <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
           Tell me about the business you want to start or improve
@@ -621,6 +623,9 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
 
 const renderMarketResearch = () => {
   const data = session.analysisResults?.market_research;
+  const targetData = session.analysisResults?.target_audience;
+  const idolAnalysis = targetData?.idol_company_market_analysis || {};
+
   if (!data) return <div>No market research data available</div>;
   return (
     <div className="space-y-6">
@@ -631,19 +636,31 @@ const renderMarketResearch = () => {
       {/* Market KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Size</p>
+          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+            📊 MARKET METRICS
+          </div>
+          <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Market Size</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_size ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Growth Rate</p>
+          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+            📈 GROWTH RATE
+          </div>
+          <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Annual Growth Rate</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.growth_rate ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Maturity</p>
+          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+            🎯 MARKET STAGE
+          </div>
+          <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Maturity Level</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_maturity ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Idol Market Share</p>
+          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+            🏢 BENCHMARK SHARE
+          </div>
+          <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{session.selectedCompany} Market Share</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.idol_company_analysis?.market_share ?? 'N/A'}</p>
         </div>
       </div>
@@ -677,6 +694,89 @@ const renderMarketResearch = () => {
           </div>
         </div>
       )}
+      {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
+        <div>
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            {session.selectedCompany}&apos;s Strengths (Avoid Competing Directly)
+          </h4>
+          <ul className="space-y-2">
+            {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
+              <li key={idx} className={`p-4 rounded-lg border-l-4 border-orange-500 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
+                <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                  ⚠️ STRENGTH TO AVOID #{idx + 1}
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Strength Description: </span>
+                  <strong className={`${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.strength}</strong>
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Impact Level: </span>
+                  <span className={`text-sm font-medium ${
+                    item.market_impact?.toLowerCase() === 'high' 
+                      ? darkMode ? 'text-red-400' : 'text-red-600'
+                      : item.market_impact?.toLowerCase() === 'medium'
+                      ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
+                      : darkMode ? 'text-green-400' : 'text-green-600'
+                  }`}>
+                    {item.market_impact?.toUpperCase() || 'NOT SPECIFIED'}
+                  </span>
+                </div>
+                <div>
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Strategic Advice: </span>
+                  <div className={`text-sm mt-1 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+                    {item.why_avoid}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+        {idolAnalysis.weaknesses_to_exploit && idolAnalysis.weaknesses_to_exploit.length > 0 && (
+          <div>
+          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            {session.selectedCompany}&apos;s Weaknesses (Exploit These)
+          </h4>
+          <ul className="space-y-2">
+            {idolAnalysis.weaknesses_to_exploit.map((item: any, idx: number) => (
+              <li key={idx} className={`p-4 rounded-lg border-l-4 border-green-500 ${darkMode ? 'bg-red-900/30' : 'bg-red-50'}`}>
+                <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                  💡 OPPORTUNITY #{idx + 1}
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Weakness Identified: </span>
+                  <strong className={`${darkMode ? 'text-red-200' : 'text-red-800'}`}>{item.weakness}</strong>
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Difficulty to Exploit: </span>
+                  <span className={`text-sm font-medium ${
+                    item.difficulty?.toLowerCase() === 'high' 
+                      ? darkMode ? 'text-red-400' : 'text-red-600'
+                      : item.difficulty?.toLowerCase() === 'medium'
+                      ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
+                      : darkMode ? 'text-green-400' : 'text-green-600'
+                  }`}>
+                    {item.difficulty?.toUpperCase() || 'NOT SPECIFIED'}
+                  </span>
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Business Opportunity: </span>
+                  <div className={`text-sm mt-1 ${darkMode ? 'text-red-100' : 'text-red-900'}`}>
+                    {item.opportunity}
+                  </div>
+                </div>
+                <div>
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Potential Market Size: </span>
+                  <span className={`text-sm font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                    {item.market_size}
+                  </span>
+                </div>
+              </li>
+            ))}
+            </ul>
+          </div>
+        )}
+      
 
       {/* Gaps Section */}
       {data.competitive_gaps && data.competitive_gaps.length > 0 && (
@@ -688,10 +788,39 @@ const renderMarketResearch = () => {
             {data.competitive_gaps.map((gap: MarketGap, index: number) => (
               <div
                 key={index}
-                className={`p-4 border rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}
+                className={`p-4 border-l-4 border-blue-500 rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}
               >
-                <h5 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{gap.gap_title}</h5>
-                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{gap.description}</p>
+                <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                  🎯 MARKET GAP #{index + 1}
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Opportunity Title: </span>
+                  <h5 className={`inline font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{gap.gap_title}</h5>
+                </div>
+                <div className="mb-2">
+                  <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Description: </span>
+                  <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{gap.description}</p>
+                </div>
+                {gap.opportunity_size && (
+                  <div className="mb-1">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Size: </span>
+                    <span className={`text-sm font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{gap.opportunity_size}</span>
+                  </div>
+                )}
+                {gap.difficulty_level && (
+                  <div>
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Entry Difficulty: </span>
+                    <span className={`text-sm font-medium ${
+                      gap.difficulty_level?.toLowerCase() === 'high' 
+                        ? darkMode ? 'text-red-400' : 'text-red-600'
+                        : gap.difficulty_level?.toLowerCase() === 'medium'
+                        ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
+                        : darkMode ? 'text-green-400' : 'text-green-600'
+                    }`}>
+                      {gap.difficulty_level?.toUpperCase()}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -720,11 +849,39 @@ const renderMarketResearch = () => {
             <div className="space-y-4">
               {data.product_services.map((product: ProductService, index: number) => (
                 <div key={index} className={`p-4 border rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}>
-                  <h5 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{product.name}</h5>
-                  <p className={`text-sm mt-1 mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{product.description}</p>
-                  <div className={`text-xs ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                    <strong>Value Proposition:</strong> {product.unique_value_proposition}
+                  <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                    PRODUCT #{index + 1}
                   </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Product Name: </span>
+                    <h5 className={`inline font-medium text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>{product.name}</h5>
+                  </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Type: </span>
+                    <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{product.type || 'Not specified'}</span>
+                  </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Description: </span>
+                    <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{product.description}</p>
+                  </div>
+                  <div className="mb-2">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Value Proposition: </span>
+                    <div className={`text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      {product.unique_value_proposition}
+                    </div>
+                  </div>
+                  {product.target_market && (
+                    <div className="mb-2">
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Target Market: </span>
+                      <span className={`text-sm ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{product.target_market}</span>
+                    </div>
+                  )}
+                  {product.revenue_model && (
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Revenue Model: </span>
+                      <span className={`text-sm ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>{product.revenue_model}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -739,8 +896,37 @@ const renderMarketResearch = () => {
             <div className="grid gap-3">
               {data.future_trends.map((trend: FutureTrend, index: number) => (
                 <div key={index} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <h6 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{trend.trend_name}</h6>
-                  <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{trend.description}</p>
+                  <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                    TREND #{index + 1}
+                  </div>
+                  <div className="mb-2">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Trend Name: </span>
+                    <h6 className={`inline font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{trend.trend_name}</h6>
+                  </div>
+                  <div className="mb-2">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Description: </span>
+                    <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{trend.description}</p>
+                  </div>
+                  {trend.timeline && (
+                    <div className="mb-1">
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Timeline: </span>
+                      <span className={`text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>{trend.timeline}</span>
+                    </div>
+                  )}
+                  {trend.impact_level && (
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Impact Level: </span>
+                      <span className={`text-sm font-medium ${
+                        trend.impact_level.toLowerCase() === 'high' 
+                          ? darkMode ? 'text-red-400' : 'text-red-600'
+                          : trend.impact_level.toLowerCase() === 'medium'
+                          ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
+                          : darkMode ? 'text-green-400' : 'text-green-600'
+                      }`}>
+                        {trend.impact_level.toUpperCase()}
+                      </span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -753,60 +939,20 @@ const renderMarketResearch = () => {
   const renderTargetAudience = () => {
   const data = session.analysisResults?.target_audience;
   const timelineData = session.analysisResults?.target_audience?.idol_timeline
+  console.log(session.analysisResults?.target_audience);
 
 
+  
   if (!data) return <div>No target audience data available</div>;
 
   const geoOpportunities = data.geographic_opportunities || [];
   console.log('Geographic Opportunities:', geoOpportunities);
-  const idolAnalysis = data.idol_company_market_analysis || {};
 
   return (
     <div className="space-y-6">
       <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
         Target Audience Analysis
       </h3>
-
-      {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
-        <div>
-          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Idol Company Strengths (Avoid Competing Directly)
-          </h4>
-          <ul className="space-y-2">
-            {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
-              <li key={idx} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
-                <strong className={`${darkMode ? 'text-white' : 'text-gray-900'}`}>{item.strength}</strong>{' '}
-                <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>({item.market_impact})</span>
-                <div className={`text-sm mt-1 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
-                  Why avoid: {item.why_avoid}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-        {idolAnalysis.weaknesses_to_exploit && idolAnalysis.weaknesses_to_exploit.length > 0 && (
-          <div>
-          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Idol Company Weaknesses (Exploit These)
-          </h4>
-          <ul className="space-y-2">
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            {idolAnalysis.weaknesses_to_exploit.map((item: any, idx: number) => (
-              <li key={idx} className={`p-3 rounded-lg ${darkMode ? 'bg-red-900' : 'bg-red-100'}`}>
-                 <strong className={`${darkMode ? 'text-red-100' : 'text-gray-900'}`}>{item.weakness}</strong>{' '}
-                <span className={`text-xs ${darkMode ? 'text-red-200' : 'text-red-800'}`}>({item.difficulty})</span>
-                <div className={`text-sm mt-1 ${darkMode ? 'text-red-100' : 'text-red-900'}`}>
-                  Opportunity: {item.opportunity}
-                </div>
-                <div className={`text-xs ${darkMode ? 'text-red-200' : 'text-red-800'}`}>
-                  Market Size: {item.market_size}
-                </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
 
         {geoOpportunities.length > 0 && (
           <div>
@@ -839,17 +985,55 @@ const renderMarketResearch = () => {
                 
                 {/* Content */}
                 <div className={`flex-1 p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <div className="flex items-center justify-between mb-2">
-                    <h5 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      {event.title}
-                    </h5>
-                    <span className={`text-sm px-2 py-1 rounded ${darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'}`}>
-                      {event.year}
-                    </span>
+                  <div className={`text-xs font-semibold mb-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                    📅 MILESTONE #{index + 1}
                   </div>
-                  <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {event.description}
-                  </p>
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Event Title: </span>
+                      <h5 className={`inline font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {event.title}
+                      </h5>
+                    </div>
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Year: </span>
+                      <span className={`text-sm px-2 py-1 rounded font-bold ${darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'}`}>
+                        {event.year}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Historical Impact: </span>
+                    <p className={`text-sm mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {event.description}
+                    </p>
+                  </div>
+                  {event.achievements && event.achievements.length > 0 && (
+                    <div className="mb-3">
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Key Achievements ({event.achievements.length}): </span>
+                      <ul className="mt-1 space-y-1">
+                        {event.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex items-start">
+                            <span className={`text-xs mr-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>🏆</span>
+                            <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                              {achievement}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {event.takeaway && (
+                    <div className={`p-3 rounded-lg border-l-4 border-yellow-500 ${darkMode ? 'bg-gray-800' : 'bg-yellow-50'}`}>
+                      <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-yellow-400' : 'text-yellow-600'}`}>
+                        💡 STRATEGIC TAKEAWAY
+                      </div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Business Lesson: </span>
+                      <p className={`text-sm inline ${darkMode ? 'text-yellow-200' : 'text-yellow-800'}`}>
+                        {event.takeaway}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -917,11 +1101,17 @@ const renderMarketResearch = () => {
         </h3>
         
         {data.executive_summary && (
-          <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
+          <div className={`p-4 border-l-4 border-indigo-500 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
+            <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-indigo-400' : 'text-indigo-600'}`}>
+              📋 EXECUTIVE SUMMARY
+            </div>
             <h4 className={`text-lg font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Executive Summary
+              Strategic Overview ({data.timeframe_months}-Month Plan)
             </h4>
-            <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{data.executive_summary}</p>
+            <div>
+              <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Executive Summary: </span>
+              <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{data.executive_summary}</p>
+            </div>
           </div>
         )}
 
@@ -932,33 +1122,62 @@ const renderMarketResearch = () => {
             </h4>
             <div className="space-y-4">
               {data.strategic_goals.map((goal: StrategicGoal, index: number) => (
-                <div key={index} className={`p-4 border rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}>
+                <div key={index} className={`p-4 border-l-4 border-purple-500 rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}>
+                  <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+                    🎯 STRATEGIC GOAL #{index + 1}
+                  </div>
                   <div className="flex justify-between items-start mb-2">
-                    <h5 className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{goal.title}</h5>
-                    <span className={`text-xs px-2 py-1 rounded ${darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'}`}>
-                      {goal.priority} Priority
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Goal Title: </span>
+                      <h5 className={`inline font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{goal.title}</h5>
+                    </div>
+                    <div>
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Priority: </span>
+                      <span className={`text-xs px-2 py-1 rounded font-bold ${
+                        goal.priority?.toLowerCase() === 'high' 
+                          ? darkMode ? 'bg-red-600 text-white' : 'bg-red-100 text-red-800'
+                          : goal.priority?.toLowerCase() === 'medium'
+                          ? darkMode ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-800'
+                          : darkMode ? 'bg-green-600 text-white' : 'bg-green-100 text-green-800'
+                      }`}>
+                        {goal.priority?.toUpperCase() || 'NORMAL'} PRIORITY
+                      </span>
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Description: </span>
+                    <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{goal.description}</p>
+                  </div>
+                  <div className="mb-3">
+                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Timeline: </span>
+                    <span className={`text-sm font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Month {goal.start_month} → Month {goal.end_month} ({goal.end_month - goal.start_month + 1} months duration)
                     </span>
                   </div>
-                  <p className={`text-sm mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{goal.description}</p>
-                  <div className="text-xs">
-                    <span className={`font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Timeline:</span>
-                    <span className={`ml-1 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      Month {goal.start_month} - {goal.end_month}
-                    </span>
-                  </div>
+                  {goal.category && (
+                    <div className="mb-3">
+                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Category: </span>
+                      <span className={`text-sm ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>{goal.category}</span>
+                    </div>
+                  )}
                   
                   {goal.key_milestones && goal.key_milestones.length > 0 && (
                     <div className="mt-3">
                       <div className={`text-xs font-medium mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        Key Milestones:
+                        Key Milestones ({goal.key_milestones.length} total):
                       </div>
                       <div className="space-y-1">
                         {goal.key_milestones.map((milestone: Milestone, mIndex: number) => (
-                          <div key={mIndex} className="flex items-center text-xs">
-                            <CheckCircle className={`w-3 h-3 mr-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
-                            <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
-                              Month {milestone.month}: {milestone.title}
-                            </span>
+                          <div key={mIndex} className="flex items-start text-xs">
+                            <CheckCircle className={`w-3 h-3 mr-2 mt-0.5 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
+                            <div>
+                              <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                Month {milestone.month}:
+                              </span>{' '}
+                              <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
+                                {milestone.title}
+                              </span>
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -973,19 +1192,43 @@ const renderMarketResearch = () => {
         {data.success_metrics && (
           <div>
             <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Success Metrics
+              📊 Key Performance Indicators (KPIs)
             </h4>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {Object.entries(data.success_metrics).map(([category, metrics]: [string, string[] | undefined]) => (
                 metrics && metrics.length > 0 && (
-                  <div key={category} className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                    <h6 className={`font-medium mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      {category.replace('_', ' ').toUpperCase()}
+                  <div key={category} className={`p-4 border-l-4 rounded-lg ${
+                    category.includes('financial') 
+                      ? `border-green-500 ${darkMode ? 'bg-gray-700' : 'bg-green-50'}`
+                      : category.includes('operational')
+                      ? `border-blue-500 ${darkMode ? 'bg-gray-700' : 'bg-blue-50'}`
+                      : category.includes('customer')
+                      ? `border-purple-500 ${darkMode ? 'bg-gray-700' : 'bg-purple-50'}`
+                      : `border-orange-500 ${darkMode ? 'bg-gray-700' : 'bg-orange-50'}`
+                  }`}>
+                    <div className={`text-xs font-semibold mb-2 ${
+                      category.includes('financial') 
+                        ? darkMode ? 'text-green-400' : 'text-green-600'
+                        : category.includes('operational')
+                        ? darkMode ? 'text-blue-400' : 'text-blue-600'
+                        : category.includes('customer')
+                        ? darkMode ? 'text-purple-400' : 'text-purple-600'
+                        : darkMode ? 'text-orange-400' : 'text-orange-600'
+                    }`}>
+                      {category.includes('financial') ? '💰' : category.includes('operational') ? '⚙️' : category.includes('customer') ? '👥' : '📈'} {category.replace('_', ' ').toUpperCase()} METRICS
+                    </div>
+                    <h6 className={`font-medium mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      {category.replace('_kpis', '').replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())} KPIs ({metrics.length} indicators)
                     </h6>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {metrics.map((metric: string, mIndex: number) => (
-                        <li key={mIndex} className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                          • {metric}
+                        <li key={mIndex} className="flex items-start">
+                          <span className={`text-xs font-bold mr-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                            KPI #{mIndex + 1}:
+                          </span>
+                          <span className={`text-xs ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                            {metric}
+                          </span>
                         </li>
                       ))}
                     </ul>

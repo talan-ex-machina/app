@@ -117,6 +117,8 @@ Return a JSON array of questions:
             
             # Get company suggestions
             companies = self.suggest_idol_companies(intent["business_type"])
+            self.audience_agent.set_activity_type(intent["business_type"])
+
             
             return {
                 "type": "company_selection",
