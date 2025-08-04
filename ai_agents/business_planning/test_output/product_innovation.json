@@ -1,0 +1,12 @@
+{
+  "error": "Failed to generate innovations: Invalid response format.",
+  "future_trends": [],
+  "innovation_opportunities": [],
+  "product_services": [],
+  "implementation_roadmap": [],
+  "risk_assessment": {
+    "technical_risks": [],
+    "market_risks": [],
+    "mitigation_strategies": []
+  }
+}

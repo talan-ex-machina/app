@@ -1,0 +1,14 @@
+{
+  "error": "Failed to generate strategic plan: Invalid response format.",
+  "timeframe_months": 12,
+  "executive_summary": "",
+  "strategic_goals": [],
+  "monthly_breakdown": [],
+  "success_metrics": {
+    "financial_kpis": [],
+    "operational_kpis": [],
+    "customer_kpis": [],
+    "growth_kpis": []
+  },
+  "contingency_plans": []
+}

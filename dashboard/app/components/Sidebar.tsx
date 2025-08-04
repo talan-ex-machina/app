@@ -25,23 +25,31 @@ const menuItems = [
   { icon: Settings, label: 'Settings' },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  darkMode?: boolean;
+}
+
+export default function Sidebar({ darkMode = false }: SidebarProps) {
   return (
     <motion.aside
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-lg"
+      className={`w-64 border-r shadow-lg ${
+        darkMode 
+          ? 'bg-gray-800 border-gray-700' 
+          : 'bg-white border-gray-200'
+      }`}
     >
       {/* Logo */}
-      <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+      <div className={`p-6 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
             <span className="text-white font-bold text-lg">T</span>
           </div>
           <div>
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">Talan</h1>
-            <p className="text-xs text-gray-500 dark:text-gray-400">Consulting</p>
+            <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Talan</h1>
+            <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Consulting</p>
           </div>
         </div>
       </div>
@@ -58,7 +66,9 @@ export default function Sidebar() {
             className={`flex items-center space-x-3 p-3 rounded-lg cursor-pointer transition-all ${
               item.active
                 ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                : darkMode
+                  ? 'text-gray-300 hover:bg-gray-700'
+                  : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
             <item.icon className="w-5 h-5" />

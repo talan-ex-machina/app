@@ -23,7 +23,12 @@ class MetaAgent(BaseTool):
             return {"error": "No products found.", "details": tavily_result}
 
         # LLM query refinement
-        llm_result = self.llm_query_tool.run({"top_products": top_products_raw, "industry": input.get("industry"), "country": input.get("country")}, context or {})
+        llm_result = self.llm_query_tool.run({
+            "top_products": top_products_raw, 
+            "industry": input.get("industry"), 
+            "country": input.get("country"),
+            "target_products": input.get("target_products", 3)
+        }, context or {})
         refined_products = llm_result.get("refined_query_and_products", [])
         if not refined_products:
             return {"error": "LLM could not refine products.", "details": llm_result}
@@ -60,9 +65,12 @@ class MetaAgent(BaseTool):
         if not product_names or not isinstance(product_names, list):
             return {"error": "LLM could not extract product names.", "details": extractor_result}
 
-        # Collect G2 reviews for each product name
+        # Collect G2 reviews for each product name (limited by target_products)
+        target_products = input.get("target_products", 3)  # Changed default from 4 to 3
+        products_to_analyze = product_names[:target_products]  # Limit to target number
+        
         reviews = []
-        for product in product_names:
+        for product in products_to_analyze:
             g2_result = self.g2_tool.run({"product_name": product}, context or {})
             reviews.append({
                 "product": product,
@@ -72,6 +80,7 @@ class MetaAgent(BaseTool):
         return {
             "industry": input.get("industry"),
             "country": input.get("country"),
-            "product_names": product_names,
+            "product_names": products_to_analyze,  # Return only analyzed products
+            "all_discovered_products": product_names,  # Keep full list for reference
             "reviews": reviews
         }

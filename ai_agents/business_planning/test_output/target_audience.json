@@ -1,0 +1,16 @@
+{
+  "error": "Failed to analyze target audience: Invalid response format.",
+  "primary_segments": [],
+  "geographic_analysis": {
+    "recommended_launch_markets": [],
+    "expansion_sequence": [],
+    "regional_considerations": {}
+  },
+  "customer_personas": [],
+  "market_entry_strategy": {
+    "acquisition_channels": [],
+    "pricing_strategy": "",
+    "go_to_market_approach": "",
+    "success_metrics": []
+  }
+}

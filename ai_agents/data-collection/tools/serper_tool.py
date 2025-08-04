@@ -8,6 +8,8 @@ class SerperTool(BaseTool):
             name="serper_tool",
             description="Extracts the official website of a company using Serper.dev."
         )
+        if not SERPER_API_KEY:
+            raise ValueError("SERPER_API_KEY is required but not found in configuration.")
         self.api_key = SERPER_API_KEY
         self.base_url = "https://google.serper.dev/search"
 

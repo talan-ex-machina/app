@@ -1,0 +1,22 @@
+{
+  "error": "Failed to analyze market: Invalid response format.",
+  "market_overview": {
+    "market_size": "Unknown",
+    "growth_rate": "Unknown",
+    "key_trends": [],
+    "market_maturity": "Unknown"
+  },
+  "competitor_analysis": {
+    "idol_company": {
+      "name": "Industry Leader 1",
+      "strengths": [],
+      "weaknesses": [],
+      "market_share": "Unknown",
+      "key_success_factors": []
+    },
+    "top_competitors": []
+  },
+  "market_gaps": [],
+  "success_patterns": [],
+  "recommendations": []
+}

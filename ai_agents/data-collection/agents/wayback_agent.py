@@ -63,73 +63,194 @@ class WaybackAgent(BaseTool):
             f"- {s['timestamp'][:4]}-{s['timestamp'][4:6]}-{s['timestamp'][6:8]}: Title: {s['title']}, Headings: {', '.join(s['headings'])}, Size Data: {', '.join(extract_size_and_locations(s['text_content'])[0]) or 'None'}, Locations: {', '.join(extract_size_and_locations(s['text_content'])[1]) or 'None'}" for s in valid_snapshots
         ])
         analytic_prompt = f"""
-        ROLE: You are a senior strategy consultant specializing in digital transformation and technology evolution analysis.
+        ROLE: Strategic Evolution Analyst - Decode organizational transformation patterns from digital footprint changes.
 
-        TASK: Conduct a comprehensive longitudinal analysis of the company's strategic evolution using archived website data. Extract actionable insights that reveal strategic patterns, technology adoption cycles, and market positioning shifts.
+        OBJECTIVE: Extract strategic intelligence from website evolution data through systematic pattern analysis.
 
-        INPUT DATA: Historical website snapshots spanning multiple years
-        OUTPUT FORMAT: Professional strategy report with quantitative insights and trend analysis
+        ANALYSIS STRUCTURE:
 
-        ANALYSIS FRAMEWORK:
+        ## Chronological Strategic Profiling
+        **Per Year Analysis** (Direct findings, no introductory text):
 
-        ## Section 1: Annual Strategic Profile
-        For each year present in the data, create a structured analysis:
+        **[YEAR]**: 
+        Strategic Focus: [2-3 primary objectives identified from content emphasis]
+        Technology Integration: [Technologies prominently featured vs. previous years]
+        Market Targeting: [Industry/geographic segments emphasized]
+        Positioning Shift: [Value proposition changes from prior year]
+        Communication Evolution: [Messaging tone/terminology changes]
+        Capability Additions: [New services/partnerships/initiatives launched]
 
-        **Year: [YYYY]**
-        • **Strategic Priorities**: What were the 2-3 primary business objectives or strategic themes?
-        • **Technology Portfolio**: Which technologies, platforms, or methodologies were prominently featured?
-        • **Target Markets**: What industries, client segments, or geographic regions were emphasized?
-        • **Value Proposition**: How did the company position its unique value and competitive advantages?
-        • **Messaging Evolution**: Note changes in tone, terminology, or brand positioning
-        • **Key Initiatives**: Highlight major projects, partnerships, or service launches mentioned
+        ## Multi-Dimensional Trend Mapping
+        **Technology Evolution Trajectory**:
+        - Adoption sequence: [Technology A → Technology B → Technology C with timing]
+        - Integration depth: [Surface mention → Core capability → Leadership position]
+        - Innovation cycles: [Follower → Adopter → Leader patterns per technology]
 
-        *Analysis depth: 250-350 words per year with specific examples*
+        **Market Strategy Evolution**:
+        - Sector progression: [Industry focus sequence and expansion patterns]
+        - Geographic expansion: [Market entry timing and prioritization]
+        - Client segment evolution: [SME → Enterprise → Specialized verticals]
 
-        IMPORTANT: If content is in French, translate to English before analyzing. Note the original language context where relevant.
+        **Organizational Maturity Indicators**:
+        - Capability scaling: [Generalist → Specialist → Integrated solutions]
+        - Partnership sophistication: [Vendor → Strategic alliance → Ecosystem leader]
+        - Communication maturity: [Feature-focused → Outcome-focused → Thought leadership]
 
-        ## Section 2: Multi-Year Trend Analysis
-        • **Strategic Trajectory**: Map the evolution of core strategic themes over time
-        • **Technology Adoption Curve**: Track when new technologies first appeared and how emphasis shifted
-        • **Market Focus Evolution**: Analyze changes in sector focus or geographic expansion
-        • **Organizational Maturity**: Identify signs of scaling, specialization, or capability development
-        • **Communication Strategy**: Evolution in brand voice, messaging sophistication, and market positioning
+        ## Competitive Intelligence Extraction
+        **Technology Leadership Assessment**:
+        - First-mover advantages: [Technologies adopted ahead of market]
+        - Fast-follower positions: [Rapid adoption of emerging technologies]
+        - Laggard areas: [Technologies adopted late or reluctantly]
 
-        ## Section 3: Competitive Positioning Analysis
-        • **Technology Leadership**: Which areas show consistent innovation focus vs. follower positioning?
-        • **Market Differentiation**: How has their unique value proposition evolved?
-        • **Service Portfolio Evolution**: Track additions, discontinuations, or rebranding of offerings
-        • **Client Relationship Strategy**: Changes in how they present client partnerships or success stories
+        **Market Differentiation Analysis**:
+        - Unique positioning elements: [Differentiators maintained across years]
+        - Positioning shifts: [Strategic repositioning moments and triggers]
+        - Competitive responses: [Reaction patterns to market changes]
 
-        ## Section 4: Quantitative Insights
-        Create data-driven observations:
-        • **Keyword Frequency Analysis**: Most mentioned technologies, services, or concepts by year
-        • **Emerging vs. Declining Terms**: Technologies or concepts gaining/losing prominence
-        • **Geographic Mentions**: Track international expansion or market focus shifts
-        • **Sector Emphasis**: Quantify attention given to different industries over time
+        **Portfolio Evolution Intelligence**:
+        - Service lifecycle patterns: [Launch → Growth → Maturity → Decline/Evolution]
+        - Diversification strategy: [Core expansion vs. adjacent market entry]
+        - Pruning decisions: [Service discontinuation patterns and rationale]
 
-        ## Section 5: Strategic Assessment & Future Implications
-        • **Core Strategic Pattern**: What is the overarching transformation story?
-        • **Competitive Response**: How do changes reflect broader market pressures or opportunities?
-        • **Strategic Consistency**: Which elements remained constant vs. what evolved?
-        • **Future Trajectory**: Based on evolution patterns, what strategic direction appears likely?
-        • **Strategic Risks/Opportunities**: What gaps or strengths emerge from this historical analysis?
+        ## Quantitative Pattern Recognition
+        **Content Analysis Metrics**:
+        - Keyword frequency shifts: [Technology/service mentions per year]
+        - Message emphasis allocation: [Percentage focus on different themes]
+        - Geographic mention distribution: [Market attention allocation]
+        - Partnership mention frequency: [Relationship emphasis patterns]
 
-        QUALITY STANDARDS:
-        - Use specific examples and quotes from the website content
-        - Quantify observations where possible (e.g., "mentioned 15 times" vs. "frequently mentioned")
-        - Focus on strategic implications, not just description
-        - Identify cause-effect relationships between market changes and strategic responses
-        - Maintain analytical objectivity while drawing actionable conclusions
+        **Strategic Signal Detection**:
+        - Investment indicators: [Language suggesting resource allocation]
+        - Growth signals: [Expansion, hiring, capability mentions]
+        - Pivot indicators: [Strategic direction change signals]
+        - Market pressure responses: [Adaptation to external forces]
 
-        Begin analysis with the earliest year in the dataset and proceed chronologically.
+        ## Strategic Assessment Intelligence
+        **Transformation Pattern**:
+        - Core evolution theme: [Overarching transformation story in one sentence]
+        - Strategic consistency: [Elements that remained constant]
+        - Major inflection points: [Significant strategic shift moments]
+
+        **Market Responsiveness**:
+        - External adaptation speed: [Response time to market changes]
+        - Innovation rhythm: [Technology adoption and development cycles]
+        - Competitive awareness: [Market positioning adjustment patterns]
+
+        **Future Trajectory Indicators**:
+        - Momentum areas: [Technologies/markets showing acceleration]
+        - Consolidation signals: [Areas showing focus/specialization]
+        - Expansion vectors: [Logical next-step opportunities]
+
+        DELIVERY STANDARDS:
+        - Start directly with findings (no "Here's my analysis...")
+        - Use specific data points and timestamps
+        - Quantify changes where possible
+        - Focus on non-obvious strategic insights
+        - Cross-reference multiple data points for validation
 
         Website snapshot data:
         {analytic_snapshots_text}
         """
         analytic_response = self.llm.generate_response([], analytic_prompt)
 
+        patterns_prompt = f"""
+        ROLE: Pattern Recognition Analyst - Detect strategic, operational, and financial transformation patterns from historical data.
+
+        OBJECTIVE: Identify non-obvious correlations, cyclical behaviors, and predictive patterns that reveal business intelligence insights.
+
+        ANALYSIS METHODOLOGY:
+
+        ## Temporal Pattern Detection
+        **Strategic Cycle Analysis**:
+        - Expansion → Consolidation → Pivot cycles (identify duration and triggers)
+        - Innovation adoption lag patterns (technology mentions vs. implementation)
+        - Market entry timing patterns (geographic/sector expansion sequences)
+        - Resource allocation shifts (people/technology/investment patterns)
+
+        **Financial Rhythm Detection**:
+        - Revenue announcement timing vs. service launch gaps
+        - Investment mention patterns preceding major strategic shifts
+        - Cost optimization language correlation with market downturns
+        - Growth acceleration indicators in messaging changes
+
+        ## Correlation Matrix Analysis
+        **Service-Performance Correlations**:
+        - New service introduction → client testimonial increase (timing analysis)
+        - Technology adoption mentions → partnership announcements (lag analysis)
+        - Geographic expansion → sector diversification (sequence patterns)
+        - Team growth indicators → service portfolio expansion (scaling patterns)
+
+        **Market Response Patterns**:
+        - External market pressure → internal strategic response (reaction speed)
+        - Competitor moves → differentiation strategy shifts (competitive intelligence)
+        - Economic indicators → service positioning changes (market sensitivity)
+        - Client feedback themes → product development cycles (feedback loops)
+
+        ## Predictive Pattern Identification
+        **Leading Indicators**:
+        - Website structure changes preceding major announcements
+        - Language sentiment shifts predicting strategic pivots
+        - Partnership mention frequency predicting market expansion
+        - Technology emphasis patterns predicting service launches
+
+        **Lagging Confirmations**:
+        - Success story publication patterns following service maturation
+        - Client portfolio mentions following market validation
+        - Geographic presence updates following expansion completion
+        - Team expertise highlights following capability development
+
+        ## Deep Pattern Mining
+        **Hidden Dependencies**:
+        - Service A success → Service B development (innovation chains)
+        - Geographic Market X → Sector Y focus (cross-dimensional patterns)
+        - Partnership Type 1 → Client Acquisition Method 2 (relationship patterns)
+        - Technology Investment → Client Outcome Improvement (value chains)
+
+        **Cyclical Behaviors**:
+        - Seasonal strategic messaging changes (quarterly/annual patterns)
+        - Multi-year strategic focus rotation cycles
+        - Investment→Development→Launch→Optimization cycles
+        - Client acquisition→Retention→Expansion→Renewal patterns
+
+        ## Pattern Strength Quantification
+        For each identified pattern:
+        - **Frequency**: How often does this pattern repeat?
+        - **Reliability**: What percentage of occurrences follow the pattern?
+        - **Lead Time**: What is the typical delay between cause and effect?
+        - **Magnitude**: How significant is the impact when the pattern occurs?
+        - **Context Dependency**: Under what conditions does the pattern hold/break?
+
+        ## Strategic Intelligence Extraction
+        **Competitive Advantage Patterns**:
+        - Unique timing advantages in market responses
+        - Proprietary capability development sequences
+        - Client relationship evolution patterns
+        - Innovation-to-market speed patterns
+
+        **Risk Pattern Identification**:
+        - Vulnerability windows during strategic transitions
+        - Resource strain indicators during rapid expansion
+        - Market dependency patterns creating single points of failure
+        - Competitive response lag creating opportunity windows
+
+        DELIVERY REQUIREMENTS:
+        - No introductory or summary language
+        - Start directly with pattern findings
+        - Use data points and specific time correlations
+        - Quantify pattern strength where possible
+        - Focus on non-obvious, actionable insights
+        - Cross-reference multiple data dimensions
+
+        Website snapshot data:
+        {analytic_snapshots_text}
+        """
+
+        patterns_response = self.llm.generate_response([], patterns_prompt)
+
+
         return {
             "story_report": story_response,
             "analytic_report": analytic_response,
+            "patterns_report": patterns_response,
             "snapshots": valid_snapshots
         }
