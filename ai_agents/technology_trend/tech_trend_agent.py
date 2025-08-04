@@ -18,7 +18,7 @@ model = genai.GenerativeModel(
 def query_gemini(prompt):
      response = model.generate_content(prompt)
      return response.text
-def load_trending_domains(file_path="predicted_trends.json") -> list:
+def load_trending_domains(file_path="ai_agents\\technology_trend\\predicted_trends.json") -> list:
     """Load trending technology domains from JSON file or use defaults."""
     default_domains = [
         "Artificial Intelligence", "Machine Learning", "Quantum Computing",
@@ -96,6 +96,9 @@ def get_strategic_tech_domains(company_profile, competitor_domains=None) -> str:
      
      
         return f"❌ Error during Gemini response: {str(e)}"
+    
+
+    
 def save_json(data, filename="domain_recommendations.json"):
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
