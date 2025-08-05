@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import html2canvas from 'html2canvas-pro';
+import { useRef, useEffect, useState } from 'react';
 
 interface CompetitorData {
   name: string;
@@ -38,7 +39,14 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
   marketGaps = [],
   darkMode = false
 }) => {
-  // Process competitor data for pie chart
+  const pieRef = useRef<HTMLDivElement>(null);
+  const trendsRef = useRef<HTMLDivElement>(null);
+  const gapsRef = useRef<HTMLDivElement>(null);
+  const impactRef = useRef<HTMLDivElement>(null);
+  
+  const [hasData, setHasData] = useState(false);
+  const [chartsCaptured, setChartsCaptured] = useState(false);
+
   const pieData = competitorData.map((competitor, index) => ({
     name: competitor.name,
     value: parseFloat(competitor.market_share.replace('%', '')),
@@ -55,7 +63,6 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     impactScore: trend.impact === 'high' ? 3 : trend.impact === 'medium' ? 2 : 1
   }));
 
-  // Process market gaps for opportunity chart
   const gapsData = marketGaps.map(gap => ({
     name: gap.gap_title.length > 15 ? gap.gap_title.substring(0, 15) + '...' : gap.gap_title,
     fullName: gap.gap_title,
@@ -63,6 +70,55 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
     difficulty: gap.barriers_to_entry === 'low' ? 1 : gap.barriers_to_entry === 'medium' ? 2 : 3,
     segment: gap.target_segment
   }));
+
+  const captureAndSendCharts = async () => {
+    const charts = [
+      { ref: pieRef, name: 'market-share', hasData: pieData.length > 0 },
+      { ref: trendsRef, name: 'market-trends', hasData: trendsData.length > 0 },
+      { ref: gapsRef, name: 'market-gaps', hasData: gapsData.length > 0 },
+      { ref: impactRef, name: 'impact-vs-growth', hasData: trendsData.length > 0 },
+    ];
+
+    try {
+      for (const { ref, name, hasData } of charts) {
+        if (ref.current && hasData) {
+          const canvas = await html2canvas(ref.current, {
+            allowTaint: true,
+            useCORS: true,
+            scale: 2, 
+            backgroundColor: darkMode ? '#1F2937' : '#FFFFFF'
+          });
+          const imageData = canvas.toDataURL('image/png');
+          console.log(`Sending ${name} chart image`);
+          await fetch('http://localhost:5000/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chartName: name, imageData, imageInfo: { pieData, trendsData, gapsData } }),
+          });
+        }
+      }
+      setChartsCaptured(true);
+    } catch (error) {
+      console.error('Error capturing charts:', error);
+    }
+  };
+
+  useEffect(() => {
+    const dataExists = competitorData.length > 0 || topTrends.length > 0 || marketGaps.length > 0;
+    
+    if (dataExists && !chartsCaptured) {
+      setHasData(true);
+      const timer = setTimeout(() => {
+        captureAndSendCharts();
+      }, 3500); 
+      
+      return () => clearTimeout(timer);
+    }
+  }, [competitorData, topTrends, marketGaps, chartsCaptured, darkMode]);
+
+  useEffect(() => {
+    setChartsCaptured(false);
+  }, [competitorData.length, topTrends.length, marketGaps.length]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
@@ -133,9 +189,21 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
   return (
     <div className="space-y-8">
+      {/* {hasData && !chartsCaptured && (
+        <div className={`p-3 rounded-lg border ${darkMode ? 'bg-yellow-900/20 border-yellow-800 text-yellow-400' : 'bg-yellow-50 border-yellow-200 text-yellow-800'}`}>
+          <p className="text-sm">Charts are being captured automatically...</p>
+        </div>
+      )}
+
+      {chartsCaptured && (
+        <div className={`p-3 rounded-lg border ${darkMode ? 'bg-green-900/20 border-green-800 text-green-400' : 'bg-green-50 border-green-200 text-green-800'}`}>
+          <p className="text-sm">Charts have been captured and sent successfully!</p>
+        </div>
+      )} */}
+
       {/* Market Share Pie Chart */}
       {pieData.length > 0 && (
-        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        <div ref={pieRef} className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Share Distribution
           </h4>
@@ -165,7 +233,7 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Market Trends Bar Chart */}
       {trendsData.length > 0 && (
-        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        <div ref={trendsRef} className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Trends Growth Rate
           </h4>
@@ -196,7 +264,7 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Market Gaps Opportunity Chart */}
       {gapsData.length > 0 && (
-        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        <div ref={gapsRef} className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Opportunity Analysis
           </h4>
@@ -227,7 +295,7 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
 
       {/* Combined Impact vs Growth Scatter */}
       {trendsData.length > 0 && (
-        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+        <div ref={impactRef} className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Trend Impact vs Growth Rate
           </h4>

@@ -145,6 +145,7 @@ async def get_results(session_id: str):
     except Exception as e:
         return ApiResponse(success=False, error=str(e))
 
+
 @app.delete("/api/business-planning/session/{session_id}")
 async def delete_session(session_id: str):
     """Delete a session"""
@@ -167,7 +168,7 @@ async def health_check():
         "version": "1.0.0"
     }
 
-# Specific endpoints for each tab
+
 @app.get("/api/business-planning/market-research/{session_id}")
 async def get_market_research(session_id: str):
     """Get market research results"""

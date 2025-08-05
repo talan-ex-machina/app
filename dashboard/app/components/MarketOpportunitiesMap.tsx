@@ -1,7 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-import { useMemo } from 'react';
+import L, { map } from 'leaflet';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import html2canvas from 'html2canvas-pro';
 
 export interface MarketOpportunity {
   city: string;
@@ -32,6 +33,58 @@ const defaultIcon = L.icon({
 });
 
 export default function MarketOpportunitiesMap({ opportunities, darkMode }: MarketOpportunitiesMapProps) {
+
+  const mapRef = useRef<HTMLDivElement>(null);
+  
+  const [hasData, setHasData] = useState(false);
+  const [chartsCaptured, setChartsCaptured] = useState(false);
+
+  const captureAndSendCharts = async () => {
+    const charts = [
+      { ref: mapRef, name: 'market-opportunities-map', hasData: opportunities.length > 0 },
+    ];
+
+    try {
+      for (const { ref, name, hasData } of charts) {
+        if (ref.current && hasData) {
+          const canvas = await html2canvas(ref.current, {
+            allowTaint: true,
+            useCORS: true,
+            scale: 2, 
+            backgroundColor: darkMode ? '#1F2937' : '#FFFFFF'
+          });
+          const imageData = canvas.toDataURL('image/png');
+          console.log(`Sending ${name} chart image`);
+          await fetch('http://localhost:5000/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chartName: name, imageData, imageInfo: opportunities }),
+          });
+        }
+      }
+      setChartsCaptured(true);
+      console.log('All charts captured and sent successfully');
+    } catch (error) {
+      console.error('Error capturing charts:', error);
+    }
+  };
+  useEffect(() => {
+    const dataExists = opportunities.length > 0;
+    
+    if (dataExists && !chartsCaptured) {
+      setHasData(true);
+      const timer = setTimeout(() => {
+        captureAndSendCharts();
+      }, 3500); 
+      
+      return () => clearTimeout(timer);
+    }
+  }, [opportunities, chartsCaptured,]);
+
+  useEffect(() => {
+    setChartsCaptured(false);
+  }, [opportunities.length]);
+
   const center = useMemo(() => {
     if (opportunities.length === 0) return [20, 0];
     // Center on the first opportunity
@@ -40,7 +93,7 @@ export default function MarketOpportunitiesMap({ opportunities, darkMode }: Mark
 
   return (
     <div className="w-full" style={{ height: 400, minHeight: 400 }}>
-      <div className={`rounded-lg overflow-hidden border ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} style={{ height: '100%' }}>
+      <div ref={mapRef} className={`rounded-lg overflow-hidden border ${darkMode ? 'border-gray-700' : 'border-gray-300'}`} style={{ height: '100%' }}>
         <MapContainer center={center as [number, number]} zoom={2} style={{ height: '100%', width: '100%' }} scrollWheelZoom={true}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

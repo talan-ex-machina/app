@@ -1,5 +1,6 @@
 'use client';
 
+import html2canvas from 'html2canvas-pro';
 import { motion } from 'framer-motion';
 import {
   LineChart,
@@ -18,7 +19,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-
+import { useEffect } from 'react';
+import { use, useRef } from 'react';
 const revenueData = [
   { month: 'Jan', revenue: 3.2, growth: 12 },
   { month: 'Feb', revenue: 3.8, growth: 18 },
@@ -53,11 +55,46 @@ const geographicalData = [
   { region: 'Latin America', revenue: 2.5 },
 ];
 
+
 export default function ChartsSection() {
+  const revenueRef = useRef(null);
+  const serviceRef = useRef(null);
+  const satisfactionRef = useRef(null);
+  const geoRef = useRef(null);
+
+  const captureAndSendCharts = async () => {
+  const chartRefs = [
+    { ref: revenueRef, name: 'revenue-growth' },
+    { ref: serviceRef, name: 'service-distribution' },
+    { ref: satisfactionRef, name: 'client-satisfaction' },
+    { ref: geoRef, name: 'revenue-by-region' },
+  ];
+
+  for (const { ref, name } of chartRefs) {
+    if (ref.current) {
+      const canvas = await html2canvas(ref.current);
+      const image = canvas.toDataURL('image/png');
+      console.log("sending image")
+      await fetch('http://localhost:5000/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chartName: name,
+          imageData: image, // base64 PNG
+        }),
+      });
+    }
+  }
+};
+
+useEffect(() => {
+  captureAndSendCharts();
+}, []);
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Revenue Growth Chart */}
-      <motion.div
+      <motion.div ref={revenueRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
@@ -98,7 +135,7 @@ export default function ChartsSection() {
       </motion.div>
 
       {/* Service Distribution */}
-      <motion.div
+      <motion.div  ref={serviceRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -148,7 +185,7 @@ export default function ChartsSection() {
       </motion.div>
 
       {/* Client Satisfaction */}
-      <motion.div
+      <motion.div ref={satisfactionRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.6 }}
@@ -193,7 +230,7 @@ export default function ChartsSection() {
       </motion.div>
 
       {/* Geographical Revenue */}
-      <motion.div
+      <motion.div ref={geoRef}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.8 }}

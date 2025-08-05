@@ -16,8 +16,6 @@ import {
   Building2,
   BarChart3
 } from 'lucide-react';
-
-// Dynamic import for MarketOpportunitiesMap to avoid SSR issues
 const MarketOpportunitiesMap = dynamic(() => import('./MarketOpportunitiesMap'), { 
   ssr: false,
   loading: () => <div className="w-full h-[400px] bg-gray-200 rounded-lg animate-pulse" />
