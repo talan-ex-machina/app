@@ -14,7 +14,10 @@ import {
   Loader,
   CheckCircle,
   Building2,
-  BarChart3
+  BarChart3,
+  Volume2,
+  Play,
+  Pause
 } from 'lucide-react';
 
 // Dynamic import for MarketOpportunitiesMap to avoid SSR issues
@@ -101,12 +104,14 @@ interface AnalysisResults {
       growth_rate: string;
       key_trends?: string[];
       market_maturity?: string;
+      summary?: string;
     };
     competitor_breakdown?: {
       name: string;
       market_share: string; // percent
       revenue: string; // in millions
       growth_rate: string; // percent
+      summary?: string;
     }[];
     idol_company_analysis?: {
       name: string;
@@ -114,18 +119,21 @@ interface AnalysisResults {
         strength: string;
         why_avoid: string;
         market_impact: "high" | "medium" | "low";
+        summary?: string;
       }[];
       weaknesses_to_exploit?: {
         weakness: string;
         opportunity: string;
         market_size: string; // in millions
         difficulty: "high" | "medium" | "low";
+        summary?: string;
       }[];
       missed_opportunities?: {
         opportunity: string;
         market_potential: string; // in millions
         why_missed: string;
         how_to_capture: string;
+        summary?: string;
       }[];
       market_share: string; // percent
     };
@@ -135,17 +143,20 @@ interface AnalysisResults {
       target_segment: string;
       revenue_potential: string; // in millions
       barriers_to_entry: "low" | "medium" | "high";
+      summary?: string;
     }[];
     top_trends?: {
       trend: string;
       impact: "high" | "medium" | "low";
       growth_rate: string; // percent
+      summary?: string;
     }[];
     strategic_recommendations?: {
       strategy: string;
       rationale: string;
       timeline: string;
-      investment_needed: string; // in millions
+      investment_needed: string;
+      summary?: string; // in millions
     }[];
   };
   product_innovation?: {
@@ -232,6 +243,143 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
     answers: [],
     analysisResults: null
   });
+
+  // TTS State Management
+  const [ttsState, setTtsState] = useState<{
+    [key: string]: {
+      isPlaying: boolean;
+      volume: number;
+      utterance: SpeechSynthesisUtterance | null;
+    }
+  }>({});
+
+  const speechSynthesis = typeof window !== 'undefined' ? window.speechSynthesis : null;
+
+  // TTS Functions
+  const handleTTS = (cardId: string, text: string) => {
+    console.log('handleTTS clicked', cardId, text);
+    if (!speechSynthesis) return;
+
+    const currentTTS = ttsState[cardId];
+    
+    if (currentTTS?.isPlaying) {
+      // Pause current speech
+      speechSynthesis.pause();
+      setTtsState(prev => ({
+        ...prev,
+        [cardId]: { ...prev[cardId], isPlaying: false }
+      }));
+    } else if (currentTTS?.utterance && speechSynthesis.paused) {
+      // Resume paused speech
+      speechSynthesis.resume();
+      setTtsState(prev => ({
+        ...prev,
+        [cardId]: { ...prev[cardId], isPlaying: true }
+      }));
+    } else {
+      // Start new speech
+      speechSynthesis.cancel(); // Stop any other ongoing speech
+      
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.volume = currentTTS?.volume || 0.8;
+      utterance.rate = 0.9;
+      utterance.pitch = 1;
+      
+      utterance.onstart = () => {
+        setTtsState(prev => ({
+          ...prev,
+          [cardId]: { isPlaying: true, volume: utterance.volume, utterance }
+        }));
+      };
+      
+      utterance.onend = () => {
+        setTtsState(prev => ({
+          ...prev,
+          [cardId]: { ...prev[cardId], isPlaying: false }
+        }));
+      };
+      
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  const handleVolumeChange = (cardId: string, volume: number) => {
+    setTtsState(prev => ({
+      ...prev,
+      [cardId]: { ...prev[cardId], volume }
+    }));
+    
+    if (ttsState[cardId]?.utterance) {
+      ttsState[cardId].utterance!.volume = volume;
+    }
+  };
+
+  const stopAllTTS = () => {
+    if (speechSynthesis) {
+      speechSynthesis.cancel();
+      setTtsState({});
+    }
+  };
+
+  // Stop TTS when tab changes
+  const handleTabChange = (tabIndex: number) => {
+    stopAllTTS();
+    setActiveTab(tabIndex);
+  };
+
+  // TTS Button Component
+  const TTSButton = ({ cardId, text, title }: { cardId: string; text: string; title: string }) => {
+    const currentTTS = ttsState[cardId];
+    const isPlaying = currentTTS?.isPlaying || false;
+    const volume = currentTTS?.volume || 0.8;
+
+    return (
+      <div className="flex items-center space-x-2">
+        <button
+          onClick={() => handleTTS(cardId, `${title}. ${text}`)}
+          className={`flex items-center space-x-1 px-2 py-1 text-xs rounded transition-all ${
+            isPlaying
+              ? darkMode
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-blue-500 text-white hover:bg-blue-600'
+              : darkMode
+                ? 'bg-gray-700 text-gray-300 hover:bg-gray-600 hover:text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800'
+          }`}
+        >
+          {isPlaying ? (
+            <Pause className="w-3 h-3" />
+          ) : (
+            <Play className="w-3 h-3" />
+          )}
+          <span>🔊 Hear Summary</span>
+        </button>
+        
+        {(currentTTS || isPlaying) && (
+          <div className="flex items-center space-x-1">
+            <Volume2 className={`w-3 h-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} />
+            <input
+              type="range"
+              min="0.1"
+              max="1"
+              step="0.1"
+              value={volume}
+              onChange={(e) => handleVolumeChange(cardId, parseFloat(e.target.value))}
+              className={`w-12 h-1 rounded-lg appearance-none cursor-pointer ${
+                darkMode ? 'bg-gray-600' : 'bg-gray-300'
+              }`}
+              style={{
+                background: `linear-gradient(to right, ${darkMode ? '#3B82F6' : '#2563EB'} 0%, ${darkMode ? '#3B82F6' : '#2563EB'} ${volume * 100}%, ${darkMode ? '#4B5563' : '#D1D5DB'} ${volume * 100}%, ${darkMode ? '#4B5563' : '#D1D5DB'} 100%)`
+              }}
+            />
+            <span className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              {Math.round(volume * 100)}%
+            </span>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const tabs = [
     { id: 'market-research', label: 'Market Research', icon: BarChart3 },
@@ -571,7 +719,7 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
           return (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(index)}
+              onClick={() => handleTabChange(index)}
               className={`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md transition-colors ${
                 activeTab === index
                   ? darkMode 
@@ -673,6 +821,9 @@ const renderMarketResearch = () => {
           topTrends={data?.top_trends}
           marketGaps={data?.competitive_gaps}
           darkMode={darkMode}
+          onTTSClick={handleTTS}
+          onVolumeChange={handleVolumeChange}
+          ttsState={ttsState}
         />
       </div>
 
@@ -801,23 +952,23 @@ const renderMarketResearch = () => {
                   <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Description: </span>
                   <p className={`text-sm inline ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{gap.description}</p>
                 </div>
-                {gap.opportunity_size && (
+                {((gap as any).opportunity_size || (gap as any).revenue_potential) && (
                   <div className="mb-1">
                     <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Size: </span>
-                    <span className={`text-sm font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{gap.opportunity_size}</span>
+                    <span className={`text-sm font-bold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>{(gap as any).opportunity_size || (gap as any).revenue_potential}</span>
                   </div>
                 )}
-                {gap.difficulty_level && (
+                {((gap as any).difficulty_level || (gap as any).barriers_to_entry) && (
                   <div>
                     <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Entry Difficulty: </span>
                     <span className={`text-sm font-medium ${
-                      gap.difficulty_level?.toLowerCase() === 'high' 
+                      ((gap as any).difficulty_level || (gap as any).barriers_to_entry)?.toLowerCase() === 'high' 
                         ? darkMode ? 'text-red-400' : 'text-red-600'
-                        : gap.difficulty_level?.toLowerCase() === 'medium'
+                        : ((gap as any).difficulty_level || (gap as any).barriers_to_entry)?.toLowerCase() === 'medium'
                         ? darkMode ? 'text-yellow-400' : 'text-yellow-600'
                         : darkMode ? 'text-green-400' : 'text-green-600'
                     }`}>
-                      {gap.difficulty_level?.toUpperCase()}
+                      {((gap as any).difficulty_level || (gap as any).barriers_to_entry)?.toUpperCase()}
                     </span>
                   </div>
                 )}
