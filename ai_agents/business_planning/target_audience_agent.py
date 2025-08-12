@@ -34,8 +34,13 @@ class TargetAudienceAgent:
         """Update the system prompt with current idol company and activity type"""
         if self.idol_company and self.activity_type:
             self.system_prompt = f"""You are a target audience expert with focus on geographic and timeline market analysis and competitive benchmarking.
-        you should do a timeline analysis on : {self.idol_company} and return a detailed timeline of their progress in {self.activity_type} over the last past 10 years and what they have achieved in that time, and what's the takeaway from that analysis.
-
+        you should do a timeline analysis on : {self.idol_company} and return a detailed timeline of their progress in {self.activity_type} over the last past 10 years and what they have achieved in that time, and what's the takeaway from that analysis and also analyze how new competitors could do better than {self.idol_company} given the current technological advancement (genAI, ML, etc..) and the current market state and how much money and ressources we would save using new technologies
+        the analysis should include 
+1. A detailed timeline from year to year including milestones, progress, and key achievements.
+2. A takeaway or insight from each year.
+3. A final takeaway summarizing the 10-year trajectory.
+4. A comparative analysis: How could we do better today using current technologies, market conditions, and cost savings.
+5. Quantify or estimate the advantages (time saved, cost reduced, efficiency gained) where possible.
 IMPORTANT: You MUST respond with ONLY a valid JSON object. No explanations, no markdown, just JSON.
 
 Return this exact JSON structure with geographic coordinates for mapping and idol company analysis:
@@ -45,7 +50,16 @@ Return this exact JSON structure with geographic coordinates for mapping and ido
         "title": "string",
         "description": "string",
         "achievements": ["string"],
-        "takeaway": "string"
+        "takeaway": "string",
+    "how_we_can_do_better": {{
+      "summary": "string",
+      "technology_advantages": ["string"],
+      "estimated_savings": {{
+        "time": "string",
+        "cost": "string",
+        "resources": "string"
+      }}
+  }}
     }}],
   "primary_segments": [ 
     {{
