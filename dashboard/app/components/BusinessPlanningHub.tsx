@@ -17,7 +17,13 @@ import {
   BarChart3,
   Volume2,
   Play,
-  Pause
+  Pause,
+  Rocket,
+  PieChart,
+  Upload,
+  FileText,
+  Globe,
+  X
 } from 'lucide-react';
 
 // Dynamic import for MarketOpportunitiesMap to avoid SSR issues
@@ -25,12 +31,6 @@ const MarketOpportunitiesMap = dynamic(() => import('./MarketOpportunitiesMap'),
   ssr: false,
   loading: () => <div className="w-full h-[400px] bg-gray-200 rounded-lg animate-pulse" />
 });
-
-interface Company {
-  name: string;
-  description: string;
-  why_choose: string;
-}
 
 interface MarketGap {
   gap_title: string;
@@ -46,6 +46,66 @@ interface ProductService {
   unique_value_proposition: string;
   target_market?: string;
   revenue_model?: string;
+  key_features?: string[];
+}
+
+interface GTMPlan {
+  framework_name: string;
+  executive_summary: string;
+  product_focus: string;
+  phases: Array<{
+    phase_number: number;
+    phase_name: string;
+    phase_description: string;
+    duration_weeks: number;
+    key_objectives: string[];
+    tactics?: Array<{
+      tactic_name: string;
+      description: string;
+    }>;
+  }>;
+  framework_elements: Record<string, string>;
+  w5h1_analysis: {
+    who: string;
+    what: string;
+    where: string;
+    when: string;
+    why: string;
+    how: string;
+  };
+  budget_allocation?: Record<string, any>;
+  launch_timeline?: Array<{
+    phase: string;
+    timeline: string;
+    activities: string[];
+  }>;
+  success_metrics?: Record<string, string[]>;
+}
+
+interface MarketSimulation {
+  simulation_id: string;
+  scenario_name: string;
+  product_focus: string;
+  executive_summary: string;
+  timeline_results: Array<{
+    month: number;
+    conservative: number;
+    realistic: number;
+    optimistic: number;
+    market_share: number;
+    customer_acquisition: number;
+    revenue: number;
+    customers: number;
+  }>;
+  scenario_analysis: Record<string, {
+    revenue: number;
+    market_share: number;
+    roi: number;
+  }>;
+  key_metrics: Record<string, any>;
+  risk_factors: string[];
+  recommendations: string[];
+  risk_assessment: Record<string, string>;
 }
 
 interface FutureTrend {
@@ -96,155 +156,47 @@ interface StrategicGoal {
   key_milestones?: Milestone[];
 }
 
-interface AnalysisResults {
-
-  market_research?: {
-    market_overview?: {
-      market_size: string;
-      growth_rate: string;
-      key_trends?: string[];
-      market_maturity?: string;
-      summary?: string;
-    };
-    competitor_breakdown?: {
-      name: string;
-      market_share: string; // percent
-      revenue: string; // in millions
-      growth_rate: string; // percent
-      summary?: string;
-    }[];
-    idol_company_analysis?: {
-      name: string;
-      strengths_to_avoid?: {
-        strength: string;
-        why_avoid: string;
-        market_impact: "high" | "medium" | "low";
-        summary?: string;
-      }[];
-      weaknesses_to_exploit?: {
-        weakness: string;
-        opportunity: string;
-        market_size: string; // in millions
-        difficulty: "high" | "medium" | "low";
-        summary?: string;
-      }[];
-      missed_opportunities?: {
-        opportunity: string;
-        market_potential: string; // in millions
-        why_missed: string;
-        how_to_capture: string;
-        summary?: string;
-      }[];
-      market_share: string; // percent
-    };
-    competitive_gaps?: {
-      gap_title: string;
-      description: string;
-      target_segment: string;
-      revenue_potential: string; // in millions
-      barriers_to_entry: "low" | "medium" | "high";
-      summary?: string;
-    }[];
-    top_trends?: {
-      trend: string;
-      impact: "high" | "medium" | "low";
-      growth_rate: string; // percent
-      summary?: string;
-    }[];
-    strategic_recommendations?: {
-      strategy: string;
-      rationale: string;
-      timeline: string;
-      investment_needed: string;
-      summary?: string; // in millions
-    }[];
-  };
-  product_innovation?: {
-    product_services?: ProductService[];
-    future_trends?: FutureTrend[];
-    innovation_opportunities?: Record<string, unknown>[];
-    implementation_roadmap?: Record<string, unknown>[];
-    risk_assessment?: Record<string, unknown>;
-  };
-  target_audience?: {
-    idol_timeline?:[{
-      year: number,
-      title: string,
-      description: string,
-      achievements: string[],
-      takeaway: string,
-      how_we_can_do_better?: {
-      summary?: string,
-      technology_advantages?: [string],
-      estimated_savings?: {
-        time?: string,
-        cost?: string,
-        resources?: string
-      }
-  }
-    }];
-    primary_segments?: MarketSegment[];
-    customer_personas?: CustomerPersona[];
-    geographic_opportunities?: Array<{
-      city: string;
-      country: string;
-      latitude: number;
-      longitude: number;
-      market_potential: string;
-      opportunity_type: string;
-      market_size: string;
-      entry_difficulty: string;
-      key_advantages: string[];
-      population: number;
-      recommended_priority: number;
-    }>;
-    idol_company_market_analysis?: {
-      strengths_to_avoid?: Array<{ strength: string; why_avoid: string; market_impact: string }>;
-      weaknesses_to_exploit?: Array<{ weakness: string; opportunity: string; market_size: string; difficulty: string }>;
-    };
-    geographic_analysis?: Record<string, unknown>;
-    market_entry_strategy?: Record<string, unknown>;
-  };
-  strategic_plan?: {
-    timeframe_months: number;
-    executive_summary?: string;
-    strategic_goals?: StrategicGoal[];
-    monthly_breakdown?: Record<string, unknown>[];
-    success_metrics?: {
-      financial_kpis?: string[];
-      operational_kpis?: string[];
-      customer_kpis?: string[];
-      growth_kpis?: string[];
-    };
-    contingency_plans?: Record<string, unknown>[];
-  };
+interface SessionState {
+  sessionId: string | null;
+  currentStep: 'initial' | 'company_selection' | 'follow_up' | 'analysis' | 'results';
+  businessType: string;
+  selectedCompany: string;
+  selectedIdolCompanies: string[];
+  isLoading: boolean;
+  companies: any[];
+  followUpQuestions: any[];
+  currentQuestionIndex: number;
+  answers: any[];
+  analysisResults: any;
+  companyInfo?: any;
 }
 
 interface BusinessPlanningHubProps {
   darkMode: boolean;
 }
 
-interface SessionState {
-  sessionId: string | null;
-  currentStep: 'initial' | 'company_selection' | 'follow_up' | 'analysis' | 'results';
-  businessType: string;
-  selectedCompany: string;
-  isLoading: boolean;
-  companies: Company[];
-  followUpQuestions: string[];
-  currentQuestionIndex: number;
-  answers: string[];
-  analysisResults: AnalysisResults | null;
-}
-
 export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubProps) {
   const [prompt, setPrompt] = useState('');
   const [activeTab, setActiveTab] = useState(0);
+  const [showCompanyDialog, setShowCompanyDialog] = useState(false);
+  const [companySettings, setCompanySettings] = useState({
+    name: 'Talan Consulting',
+    size: 'Large',
+    specialty: 'Digital Transformation and Technology Consulting',
+    industry: 'Information Technology',
+    description: 'Global technology consulting firm specializing in digital transformation',
+    external_data: {
+      uploaded_files: [] as File[],
+      website_urls: [] as string[],
+      data_sources: [] as string[]
+    }
+  });
   const [session, setSession] = useState<SessionState>({
     sessionId: null,
     currentStep: 'initial',
     businessType: '',
     selectedCompany: '',
+    selectedIdolCompanies: [],
     isLoading: false,
     companies: [],
     followUpQuestions: [],
@@ -261,6 +213,38 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
       utterance: SpeechSynthesisUtterance | null;
     }
   }>({});
+
+  // GTM Plan State
+  const [selectedProduct, setSelectedProduct] = useState<string>('');
+  const [customProduct, setCustomProduct] = useState<string>('');
+  const [customProductDetails, setCustomProductDetails] = useState({
+    name: '',
+    description: '',
+    target_market: '',
+    key_features: '',
+    value_proposition: '',
+    pricing_model: '',
+    competitive_advantage: ''
+  });
+  const [selectedFramework, setSelectedFramework] = useState<string>('crossing_chasm');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [gtmPlan, setGtmPlan] = useState<GTMPlan | null>(null);
+
+  // Market Simulation State
+  const [simulationParams, setSimulationParams] = useState({
+    product_type: '',
+    target_market_size: 1000000,
+    marketing_budget: 100000,
+    competitive_intensity: 'medium',
+    market_growth_rate: 5,
+    customer_acquisition_cost: 100,
+    customer_lifetime_value: 1000,
+    conversion_rate: 2.5,
+    pricing_strategy: 'competitive'
+  });
+  const [selectedChannels, setSelectedChannels] = useState<string[]>(['digital_marketing', 'content_marketing']);
+  const [isSimulating, setIsSimulating] = useState(false);
+  const [simulationResults, setSimulationResults] = useState<MarketSimulation | null>(null);
 
   const speechSynthesis = typeof window !== 'undefined' ? window.speechSynthesis : null;
 
@@ -393,7 +377,9 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
     { id: 'market-research', label: 'Market Research', icon: BarChart3 },
     { id: 'product-innovation', label: 'Product Innovation', icon: Lightbulb },
     { id: 'target-audience', label: 'Target Audience', icon: Target },
-    { id: 'strategic-plan', label: 'Strategic Planning', icon: Calendar }
+    { id: 'strategic-plan', label: 'Strategic Planning', icon: Calendar },
+    { id: 'go-to-market', label: 'Go-to-Market Plan', icon: Rocket },
+    { id: 'market-simulation', label: 'Market Simulation', icon: TrendingUp }
   ];
 
   const API_BASE = '/api/business-planning';
@@ -533,7 +519,8 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
       followUpQuestions: [],
       currentQuestionIndex: 0,
       answers: [],
-      analysisResults: null
+      analysisResults: null,
+      selectedIdolCompanies: []
     });
     setPrompt('');
     setActiveTab(0);
@@ -753,6 +740,8 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
             {activeTab === 1 && renderProductInnovation()}
             {activeTab === 2 && renderTargetAudience()}
             {activeTab === 3 && renderStrategicPlan()}
+            {activeTab === 4 && renderGoToMarketPlan()}
+            {activeTab === 5 && renderMarketSimulation()}
           </div>
         ) : (
           <div className="text-center">
@@ -1574,8 +1563,9 @@ const renderMarketResearch = () => {
               📊 Key Performance Indicators (KPIs)
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {Object.entries(data.success_metrics).map(([category, metrics]: [string, string[] | undefined]) => (
-                metrics && metrics.length > 0 && (
+              {Object.entries(data.success_metrics).map(([category, metrics]) => {
+                const typedMetrics = metrics as string[] | undefined;
+                return typedMetrics && typedMetrics.length > 0 && (
                   <div key={category} className={`p-4 border-l-4 rounded-lg ${
                     category.includes('financial') 
                       ? `border-green-500 ${darkMode ? 'bg-gray-700' : 'bg-green-50'}`
@@ -1597,10 +1587,10 @@ const renderMarketResearch = () => {
                       {category.includes('financial') ? '💰' : category.includes('operational') ? '⚙️' : category.includes('customer') ? '👥' : '📈'} {category.replace('_', ' ').toUpperCase()} METRICS
                     </div>
                     <h6 className={`font-medium mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      {category.replace('_kpis', '').replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())} KPIs ({metrics.length} indicators)
+                      {category.replace('_kpis', '').replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())} KPIs ({typedMetrics.length} indicators)
                     </h6>
                     <ul className="space-y-2">
-                      {metrics.map((metric: string, mIndex: number) => (
+                      {typedMetrics.map((metric: string, mIndex: number) => (
                         <li key={mIndex} className="flex items-start">
                           <span className={`text-xs font-bold mr-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                             KPI #{mIndex + 1}:
@@ -1612,10 +1602,1403 @@ const renderMarketResearch = () => {
                       ))}
                     </ul>
                   </div>
-                )
-              ))}
+                );
+              })}
             </div>
           </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderGoToMarketPlan = () => {
+    const frameworks = [
+      { 
+        id: 'crossing_chasm', 
+        name: 'Crossing the Chasm', 
+        description: 'Focus on early adopters and mainstream market transition',
+        icon: '🌉'
+      },
+      { 
+        id: 'mckinsey_7s', 
+        name: 'McKinsey 7S Framework', 
+        description: 'Align strategy, structure, systems, and more',
+        icon: '⚙️'
+      },
+      { 
+        id: 'kotler_4p', 
+        name: 'Kotler 4Ps Marketing', 
+        description: 'Product, Price, Place, Promotion strategy',
+        icon: '📊'
+      },
+      { 
+        id: 'lean_canvas', 
+        name: 'Lean Canvas', 
+        description: 'Problem-solution fit and business model',
+        icon: '📋'
+      }
+    ];
+
+    const generateGTMPlan = async () => {
+      // Validate input
+      if (!selectedProduct && customProduct !== 'custom') return;
+      if (customProduct === 'custom' && (!customProductDetails.name || !customProductDetails.description || !customProductDetails.target_market)) return;
+      
+      setIsGenerating(true);
+      try {
+        let productData;
+        
+        if (selectedProduct) {
+          // Find the selected product from Product Innovation results
+          const selectedProductData = availableProducts.find((p: ProductService) => p.name === selectedProduct);
+          productData = {
+            name: selectedProduct,
+            description: selectedProductData?.description || '',
+            target_market: selectedProductData?.target_market || '',
+            key_features: selectedProductData?.key_features || [],
+            value_proposition: selectedProductData?.value_proposition || '',
+            pricing_model: selectedProductData?.pricing_strategy || '',
+            competitive_advantage: selectedProductData?.differentiation || ''
+          };
+        } else {
+          // Use custom product details
+          productData = {
+            name: customProductDetails.name,
+            description: customProductDetails.description,
+            target_market: customProductDetails.target_market,
+            key_features: customProductDetails.key_features.split('\n').filter(f => f.trim()),
+            value_proposition: customProductDetails.value_proposition,
+            pricing_model: customProductDetails.pricing_model,
+            competitive_advantage: customProductDetails.competitive_advantage
+          };
+        }
+
+        const response = await fetch('/api/agents/gtm-plan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_data: productData,
+            framework: selectedFramework,
+            company_context: session.companyInfo,
+            idol_companies: session.selectedIdolCompanies
+          })
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          setGtmPlan(data);
+        }
+      } catch (error) {
+        console.error('Error generating GTM plan:', error);
+      } finally {
+        setIsGenerating(false);
+      }
+    };
+
+    // Validation for generate button
+    const canGenerate = () => {
+      if (selectedProduct) return true;
+      if (customProduct === 'custom') {
+        return customProductDetails.name && customProductDetails.description && customProductDetails.target_market;
+      }
+      return false;
+    };
+
+    // Get products from Product Innovation results
+    const availableProducts = session.analysisResults?.product_innovation?.product_services || [];
+
+    return (
+      <div className="space-y-6">
+        <div className="text-center">
+          <Rocket className={`w-12 h-12 mx-auto mb-4 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
+          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Go-to-Market Strategy
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            Create comprehensive product launch strategies with proven frameworks
+          </p>
+        </div>
+
+        {/* Product Selection */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            📦 Select Product/Service
+          </h3>
+          
+          {/* Product Innovation Results */}
+          {availableProducts.length > 0 && (
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-4">
+                <label className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  🚀 Products from Innovation Analysis
+                </label>
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  darkMode ? 'bg-green-900/30 text-green-400 border border-green-600' : 'bg-green-100 text-green-700 border border-green-200'
+                }`}>
+                  {availableProducts.length} Products Available
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {availableProducts.map((product: ProductService, index: number) => (
+                  <motion.div
+                    key={index}
+                    onClick={() => {
+                      setSelectedProduct(product.name);
+                      setCustomProduct('');
+                      // Clear custom product details when selecting from innovation
+                      setCustomProductDetails({
+                        name: '',
+                        description: '',
+                        target_market: '',
+                        key_features: '',
+                        value_proposition: '',
+                        pricing_model: '',
+                        competitive_advantage: ''
+                      });
+                    }}
+                    className={`relative p-6 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+                      selectedProduct === product.name
+                        ? darkMode 
+                          ? 'border-green-500 bg-gradient-to-br from-green-900/30 to-green-800/20 shadow-lg shadow-green-500/20' 
+                          : 'border-green-500 bg-gradient-to-br from-green-50 to-green-100 shadow-lg shadow-green-500/20'
+                        : darkMode 
+                          ? 'border-gray-600 bg-gradient-to-br from-gray-800 to-gray-700 hover:border-gray-500 hover:shadow-lg' 
+                          : 'border-gray-200 bg-gradient-to-br from-white to-gray-50 hover:border-gray-300 hover:shadow-lg'
+                    }`}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {/* Selection Indicator */}
+                    {selectedProduct === product.name && (
+                      <div className="absolute top-4 right-4">
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                          darkMode ? 'bg-green-500' : 'bg-green-600'
+                        }`}>
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Product Header */}
+                    <div className="mb-4">
+                      <div className="flex items-start justify-between mb-2">
+                        <h4 className={`text-xl font-bold leading-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                          {product.name}
+                        </h4>
+                        <span className={`px-2 py-1 rounded-lg text-xs font-medium ml-2 ${
+                          darkMode ? 'bg-blue-600 text-blue-100' : 'bg-blue-100 text-blue-700'
+                        }`}>
+                          {product.type}
+                        </span>
+                      </div>
+                      <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        {product.description}
+                      </p>
+                    </div>
+
+                    {/* Value Proposition */}
+                    {product.unique_value_proposition && (
+                      <div className={`p-3 rounded-lg mb-4 ${
+                        selectedProduct === product.name
+                          ? darkMode ? 'bg-green-800/30' : 'bg-green-100/70'
+                          : darkMode ? 'bg-gray-700/50' : 'bg-gray-100/70'
+                      }`}>
+                        <h5 className={`text-xs font-semibold uppercase tracking-wide mb-1 ${
+                          darkMode ? 'text-blue-400' : 'text-blue-600'
+                        }`}>
+                          💡 Value Proposition
+                        </h5>
+                        <p className={`text-sm ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+                          {product.unique_value_proposition}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Key Features */}
+                    {product.key_features && product.key_features.length > 0 && (
+                      <div className="mb-4">
+                        <h5 className={`text-xs font-semibold uppercase tracking-wide mb-2 ${
+                          darkMode ? 'text-gray-400' : 'text-gray-500'
+                        }`}>
+                          ⭐ Key Features
+                        </h5>
+                        <div className="flex flex-wrap gap-2">
+                          {product.key_features.slice(0, 4).map((feature: string, fIndex: number) => (
+                            <span 
+                              key={fIndex}
+                              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                                selectedProduct === product.name
+                                  ? darkMode ? 'bg-green-700 text-green-200' : 'bg-green-200 text-green-800'
+                                  : darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-700'
+                              }`}
+                            >
+                              {feature}
+                            </span>
+                          ))}
+                          {product.key_features.length > 4 && (
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                              darkMode ? 'bg-gray-600 text-gray-300' : 'bg-gray-300 text-gray-600'
+                            }`}>
+                              +{product.key_features.length - 4} more
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Target Market & Revenue Model */}
+                    <div className="grid grid-cols-2 gap-3">
+                      {product.target_market && (
+                        <div>
+                          <h5 className={`text-xs font-semibold uppercase tracking-wide mb-1 ${
+                            darkMode ? 'text-gray-400' : 'text-gray-500'
+                          }`}>
+                            🎯 Target Market
+                          </h5>
+                          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            {product.target_market}
+                          </p>
+                        </div>
+                      )}
+                      {product.revenue_model && (
+                        <div>
+                          <h5 className={`text-xs font-semibold uppercase tracking-wide mb-1 ${
+                            darkMode ? 'text-gray-400' : 'text-gray-500'
+                          }`}>
+                            💰 Revenue Model
+                          </h5>
+                          <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            {product.revenue_model}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Selection Call-to-Action */}
+                    <div className="mt-4 pt-4 border-t border-gray-300 dark:border-gray-600">
+                      <div className={`text-center text-sm font-medium ${
+                        selectedProduct === product.name
+                          ? darkMode ? 'text-green-400' : 'text-green-600'
+                          : darkMode ? 'text-gray-400' : 'text-gray-500'
+                      }`}>
+                        {selectedProduct === product.name ? '✓ Selected for GTM Strategy' : 'Click to select for GTM Strategy'}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Custom Product Entry */}
+          <div className={`p-4 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+            <div className="flex items-center justify-between mb-4">
+              <label className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                ✨ Or Create Custom Product/Service
+              </label>
+              <button
+                onClick={() => {
+                  setSelectedProduct('');
+                  setCustomProduct('custom');
+                }}
+                className={`px-3 py-1 rounded-lg text-xs transition-colors ${
+                  customProduct === 'custom'
+                    ? 'bg-blue-600 text-white'
+                    : darkMode 
+                      ? 'bg-gray-700 text-gray-300 hover:bg-gray-600' 
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {customProduct === 'custom' ? 'Selected' : 'Create Custom'}
+              </button>
+            </div>
+            
+            {customProduct === 'custom' && (
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Product/Service Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={customProductDetails.name}
+                      onChange={(e) => setCustomProductDetails(prev => ({ ...prev, name: e.target.value }))}
+                      placeholder="e.g., AI-Powered Analytics Platform"
+                      className={`w-full p-3 rounded-lg border ${
+                        darkMode 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'bg-white border-gray-300 text-gray-900'
+                      }`}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Target Market *
+                    </label>
+                    <input
+                      type="text"
+                      value={customProductDetails.target_market}
+                      onChange={(e) => setCustomProductDetails(prev => ({ ...prev, target_market: e.target.value }))}
+                      placeholder="e.g., Mid-size tech companies"
+                      className={`w-full p-3 rounded-lg border ${
+                        darkMode 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'bg-white border-gray-300 text-gray-900'
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Product Description *
+                  </label>
+                  <textarea
+                    value={customProductDetails.description}
+                    onChange={(e) => setCustomProductDetails(prev => ({ ...prev, description: e.target.value }))}
+                    rows={3}
+                    placeholder="Describe what your product/service does and what problems it solves..."
+                    className={`w-full p-3 rounded-lg border resize-none ${
+                      darkMode 
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                        : 'bg-white border-gray-300 text-gray-900'
+                    }`}
+                  />
+                </div>
+
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Key Features & Benefits
+                  </label>
+                  <textarea
+                    value={customProductDetails.key_features}
+                    onChange={(e) => setCustomProductDetails(prev => ({ ...prev, key_features: e.target.value }))}
+                    rows={3}
+                    placeholder="List the main features and benefits (one per line)..."
+                    className={`w-full p-3 rounded-lg border resize-none ${
+                      darkMode 
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                        : 'bg-white border-gray-300 text-gray-900'
+                    }`}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Value Proposition
+                    </label>
+                    <textarea
+                      value={customProductDetails.value_proposition}
+                      onChange={(e) => setCustomProductDetails(prev => ({ ...prev, value_proposition: e.target.value }))}
+                      rows={2}
+                      placeholder="What unique value do you provide?"
+                      className={`w-full p-3 rounded-lg border resize-none ${
+                        darkMode 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'bg-white border-gray-300 text-gray-900'
+                      }`}
+                    />
+                  </div>
+
+                  <div>
+                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Pricing Model
+                    </label>
+                    <input
+                      type="text"
+                      value={customProductDetails.pricing_model}
+                      onChange={(e) => setCustomProductDetails(prev => ({ ...prev, pricing_model: e.target.value }))}
+                      placeholder="e.g., SaaS subscription, one-time fee"
+                      className={`w-full p-3 rounded-lg border ${
+                        darkMode 
+                          ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                          : 'bg-white border-gray-300 text-gray-900'
+                      }`}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Competitive Advantage
+                  </label>
+                  <textarea
+                    value={customProductDetails.competitive_advantage}
+                    onChange={(e) => setCustomProductDetails(prev => ({ ...prev, competitive_advantage: e.target.value }))}
+                    rows={2}
+                    placeholder="What makes you different from competitors?"
+                    className={`w-full p-3 rounded-lg border resize-none ${
+                      darkMode 
+                        ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                        : 'bg-white border-gray-300 text-gray-900'
+                    }`}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Framework Selection */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            🎯 Strategic Framework
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {frameworks.map((framework) => (
+              <motion.div
+                key={framework.id}
+                onClick={() => setSelectedFramework(framework.id)}
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  selectedFramework === framework.id
+                    ? darkMode 
+                      ? 'border-blue-500 bg-blue-900/20' 
+                      : 'border-blue-500 bg-blue-50'
+                    : darkMode 
+                      ? 'border-gray-600 bg-gray-800 hover:border-gray-500' 
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <div className="flex items-start space-x-3">
+                  <span className="text-2xl">{framework.icon}</span>
+                  <div>
+                    <h4 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      {framework.name}
+                    </h4>
+                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                      {framework.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Generate Button */}
+        <motion.button
+          onClick={generateGTMPlan}
+          disabled={!canGenerate() || isGenerating}
+          className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {isGenerating ? (
+            <Loader className="w-5 h-5 animate-spin" />
+          ) : (
+            <>
+              <Rocket className="w-5 h-5" />
+              <span>Generate GTM Strategy</span>
+            </>
+          )}
+        </motion.button>
+
+        {/* GTM Plan Results */}
+        {gtmPlan && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6"
+          >
+            {/* Executive Summary */}
+            <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+              <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                🎯 Executive Summary
+              </h3>
+              <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                {gtmPlan.executive_summary}
+              </p>
+            </div>
+
+            {/* Framework Elements */}
+            {gtmPlan.framework_elements && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  ⚙️ Framework Analysis
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(gtmPlan.framework_elements).map(([key, value]) => (
+                    <div key={key} className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
+                      <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </h4>
+                      <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                        {value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 5W1H Analysis */}
+            {gtmPlan.w5h1_analysis && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  🔍 Strategic 5W1H Analysis
+                  <span className={`ml-3 px-3 py-1 rounded-full text-xs font-medium ${
+                    darkMode ? 'bg-blue-600 text-blue-100' : 'bg-blue-100 text-blue-700'
+                  }`}>
+                    Product-Specific Insights
+                  </span>
+                </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {Object.entries(gtmPlan.w5h1_analysis).map(([question, answer]) => {
+                    const questionConfig = {
+                      who: { 
+                        icon: '👥', 
+                        title: 'Target Audience', 
+                        color: 'green',
+                        subtitle: 'Who are we targeting and why?'
+                      },
+                      what: { 
+                        icon: '🎯', 
+                        title: 'Product Positioning', 
+                        color: 'blue',
+                        subtitle: 'What are we launching and how?'
+                      },
+                      where: { 
+                        icon: '🌍', 
+                        title: 'Market Geography', 
+                        color: 'purple',
+                        subtitle: 'Where will we focus our efforts?'
+                      },
+                      when: { 
+                        icon: '⏰', 
+                        title: 'Launch Timeline', 
+                        color: 'orange',
+                        subtitle: 'When is the optimal timing?'
+                      },
+                      why: { 
+                        icon: '💡', 
+                        title: 'Market Opportunity', 
+                        color: 'red',
+                        subtitle: 'Why is this the right move now?'
+                      },
+                      how: { 
+                        icon: '🚀', 
+                        title: 'Execution Strategy', 
+                        color: 'yellow',
+                        subtitle: 'How will we execute and deliver?'
+                      }
+                    };
+
+                    const config = questionConfig[question as keyof typeof questionConfig];
+                    
+                    return (
+                      <motion.div 
+                        key={question} 
+                        className={`p-6 rounded-xl border-l-4 relative overflow-hidden ${
+                          config.color === 'blue' ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' :
+                          config.color === 'green' ? 'border-green-500 bg-green-50 dark:bg-green-900/20' :
+                          config.color === 'purple' ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20' :
+                          config.color === 'orange' ? 'border-orange-500 bg-orange-50 dark:bg-orange-900/20' :
+                          config.color === 'red' ? 'border-red-500 bg-red-50 dark:bg-red-900/20' :
+                          'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20'
+                        }`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: Object.keys(gtmPlan.w5h1_analysis).indexOf(question) * 0.1 }}
+                      >
+                        {/* Background Decoration */}
+                        <div className={`absolute top-0 right-0 text-6xl opacity-10 ${darkMode ? 'text-white' : 'text-gray-400'}`}>
+                          {config.icon}
+                        </div>
+                        
+                        {/* Header */}
+                        <div className="relative z-10 mb-4">
+                          <div className="flex items-center mb-2">
+                            <span className="text-2xl mr-3">{config.icon}</span>
+                            <div>
+                              <h4 className={`font-bold text-lg uppercase tracking-wide ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {config.title}
+                              </h4>
+                              <p className={`text-xs font-medium ${
+                                config.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
+                                config.color === 'green' ? 'text-green-600 dark:text-green-400' :
+                                config.color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
+                                config.color === 'orange' ? 'text-orange-600 dark:text-orange-400' :
+                                config.color === 'red' ? 'text-red-600 dark:text-red-400' :
+                                'text-yellow-600 dark:text-yellow-400'
+                              }`}>
+                                {config.subtitle}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-200' : 'text-gray-700'} font-medium`}>
+                            {answer}
+                          </p>
+                        </div>
+
+                        {/* Insights Badge */}
+                        <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-600">
+                          <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                            config.color === 'blue' ? 'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200' :
+                            config.color === 'green' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-200' :
+                            config.color === 'purple' ? 'bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200' :
+                            config.color === 'orange' ? 'bg-orange-100 text-orange-700 dark:bg-orange-800 dark:text-orange-200' :
+                            config.color === 'red' ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-200' :
+                            'bg-yellow-100 text-yellow-700 dark:bg-yellow-800 dark:text-yellow-200'
+                          }`}>
+                            ✨ AI-Generated Strategic Insight
+                          </span>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Launch Timeline */}
+            {gtmPlan.launch_timeline && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  📅 Launch Timeline
+                </h3>
+                <div className="space-y-4">
+                  {gtmPlan.launch_timeline.map((phase, index) => (
+                    <div key={index} className={`flex items-start space-x-4 p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold ${
+                        index % 4 === 0 ? 'bg-blue-500' :
+                        index % 4 === 1 ? 'bg-green-500' :
+                        index % 4 === 2 ? 'bg-purple-500' : 'bg-orange-500'
+                      }`}>
+                        {index + 1}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                          {phase.phase}
+                        </h4>
+                        <p className={`text-sm mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                          {phase.timeline}
+                        </p>
+                        <ul className="list-disc list-inside space-y-1">
+                          {phase.activities.map((activity, aIndex) => (
+                            <li key={aIndex} className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                              {activity}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Success Metrics */}
+            {gtmPlan.success_metrics && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  📊 Success Metrics
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(gtmPlan.success_metrics).map(([category, metrics]) => (
+                    <div key={category} className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
+                      <h4 className={`font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </h4>
+                      <ul className="space-y-2">
+                        {(Array.isArray(metrics) ? metrics : []).map((metric, mIndex) => (
+                          <li key={mIndex} className={`text-sm flex items-start ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                            <span className="mr-2">•</span>
+                            {metric}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </div>
+    );
+  };
+
+  const renderMarketSimulation = () => {
+    const competitiveOptions = [
+      { value: 'low', label: 'Low Competition', description: 'Niche market with few competitors' },
+      { value: 'medium', label: 'Medium Competition', description: 'Balanced competitive landscape' },
+      { value: 'high', label: 'High Competition', description: 'Saturated market with many players' }
+    ];
+
+    const pricingStrategies = [
+      { value: 'premium', label: 'Premium Pricing', description: 'Higher prices for premium positioning' },
+      { value: 'competitive', label: 'Competitive Pricing', description: 'Match market average prices' },
+      { value: 'penetration', label: 'Penetration Pricing', description: 'Lower prices to gain market share' }
+    ];
+
+    const marketingChannels = [
+      { id: 'digital_marketing', name: 'Digital Marketing', icon: '💻' },
+      { id: 'content_marketing', name: 'Content Marketing', icon: '📝' },
+      { id: 'social_media', name: 'Social Media', icon: '📱' },
+      { id: 'email_marketing', name: 'Email Marketing', icon: '📧' },
+      { id: 'seo', name: 'SEO/SEM', icon: '🔍' },
+      { id: 'pr', name: 'Public Relations', icon: '📢' },
+      { id: 'events', name: 'Events & Webinars', icon: '🎪' },
+      { id: 'partnerships', name: 'Partnerships', icon: '🤝' }
+    ];
+
+    const runSimulation = async () => {
+      setIsSimulating(true);
+      try {
+        const response = await fetch('/api/agents/market-simulation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...simulationParams,
+            marketing_channels: selectedChannels,
+            company_context: session.companyInfo,
+            simulation_period: 12 // months
+          })
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          setSimulationResults(data);
+        }
+      } catch (error) {
+        console.error('Error running simulation:', error);
+      } finally {
+        setIsSimulating(false);
+      }
+    };
+
+    const toggleChannel = (channelId: string) => {
+      setSelectedChannels(prev => 
+        prev.includes(channelId) 
+          ? prev.filter(id => id !== channelId)
+          : [...prev, channelId]
+      );
+    };
+
+    return (
+      <div className="space-y-6">
+        <div className="text-center">
+          <PieChart className={`w-12 h-12 mx-auto mb-4 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} />
+          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            Market Simulation
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            Run Monte Carlo simulations to predict market performance and ROI
+          </p>
+        </div>
+
+        {/* Simulation Parameters */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            ⚙️ Simulation Parameters
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Product Type */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Product/Service Type
+              </label>
+              <input
+                type="text"
+                value={simulationParams.product_type}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, product_type: e.target.value }))}
+                placeholder="e.g., SaaS platform, consulting service"
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+
+            {/* Market Size */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Target Market Size ($)
+              </label>
+              <input
+                type="number"
+                value={simulationParams.target_market_size}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, target_market_size: Number(e.target.value) }))}
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+
+            {/* Marketing Budget */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Marketing Budget ($)
+              </label>
+              <input
+                type="number"
+                value={simulationParams.marketing_budget}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, marketing_budget: Number(e.target.value) }))}
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+
+            {/* Market Growth Rate */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Market Growth Rate (%)
+              </label>
+              <input
+                type="number"
+                step="0.1"
+                value={simulationParams.market_growth_rate}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, market_growth_rate: Number(e.target.value) }))}
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+
+            {/* Customer Acquisition Cost */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Customer Acquisition Cost ($)
+              </label>
+              <input
+                type="number"
+                value={simulationParams.customer_acquisition_cost}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, customer_acquisition_cost: Number(e.target.value) }))}
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+
+            {/* Customer Lifetime Value */}
+            <div>
+              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                Customer Lifetime Value ($)
+              </label>
+              <input
+                type="number"
+                value={simulationParams.customer_lifetime_value}
+                onChange={(e) => setSimulationParams(prev => ({ ...prev, customer_lifetime_value: Number(e.target.value) }))}
+                className={`w-full p-3 rounded-lg border ${
+                  darkMode 
+                    ? 'bg-gray-800 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Competitive Intensity */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            🏆 Competitive Environment
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {competitiveOptions.map((option) => (
+              <motion.div
+                key={option.value}
+                onClick={() => setSimulationParams(prev => ({ ...prev, competitive_intensity: option.value }))}
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  simulationParams.competitive_intensity === option.value
+                    ? darkMode 
+                      ? 'border-purple-500 bg-purple-900/20' 
+                      : 'border-purple-500 bg-purple-50'
+                    : darkMode 
+                      ? 'border-gray-600 bg-gray-800 hover:border-gray-500' 
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  {option.label}
+                </h4>
+                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {option.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing Strategy */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            💰 Pricing Strategy
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {pricingStrategies.map((strategy) => (
+              <motion.div
+                key={strategy.value}
+                onClick={() => setSimulationParams(prev => ({ ...prev, pricing_strategy: strategy.value }))}
+                className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                  simulationParams.pricing_strategy === strategy.value
+                    ? darkMode 
+                      ? 'border-green-500 bg-green-900/20' 
+                      : 'border-green-500 bg-green-50'
+                    : darkMode 
+                      ? 'border-gray-600 bg-gray-800 hover:border-gray-500' 
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  {strategy.label}
+                </h4>
+                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {strategy.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Marketing Channels */}
+        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            📈 Marketing Channels
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {marketingChannels.map((channel) => (
+              <motion.div
+                key={channel.id}
+                onClick={() => toggleChannel(channel.id)}
+                className={`p-3 rounded-lg border-2 cursor-pointer transition-all text-center ${
+                  selectedChannels.includes(channel.id)
+                    ? darkMode 
+                      ? 'border-blue-500 bg-blue-900/20' 
+                      : 'border-blue-500 bg-blue-50'
+                    : darkMode 
+                      ? 'border-gray-600 bg-gray-800 hover:border-gray-500' 
+                      : 'border-gray-200 bg-white hover:border-gray-300'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="text-2xl mb-1">{channel.icon}</div>
+                <div className={`text-xs font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  {channel.name}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Run Simulation Button */}
+        <motion.button
+          onClick={runSimulation}
+          disabled={!simulationParams.product_type.trim() || isSimulating}
+          className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {isSimulating ? (
+            <Loader className="w-5 h-5 animate-spin" />
+          ) : (
+            <>
+              <PieChart className="w-5 h-5" />
+              <span>Run Market Simulation</span>
+            </>
+          )}
+        </motion.button>
+
+        {/* Simulation Results */}
+        {simulationResults && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6"
+          >
+            {/* Executive Summary */}
+            {simulationResults.simulation?.executive_summary && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  📊 Executive Summary
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Overall Assessment
+                    </h4>
+                    <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.executive_summary.overall_assessment}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Key Success Factors
+                    </h4>
+                    <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.executive_summary.key_success_factors}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Primary Recommendation
+                    </h4>
+                    <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.executive_summary.primary_recommendation}
+                    </p>
+                  </div>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-green-900/20 border border-green-700' : 'bg-green-50 border border-green-200'}`}>
+                    <h4 className={`font-semibold mb-1 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                      Confidence Level
+                    </h4>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.executive_summary.confidence_level}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Scenario Analysis */}
+            {simulationResults.simulation?.scenario_analysis && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  🎯 Scenario Analysis
+                </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {Object.entries(simulationResults.simulation.scenario_analysis).map(([scenario, data]: [string, any]) => (
+                    <div key={scenario} className={`p-4 rounded-lg border-2 ${
+                      scenario === 'optimistic_scenario' ? 'bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-600' :
+                      scenario === 'realistic_scenario' ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-300 dark:border-blue-600' :
+                      'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-600'
+                    }`}>
+                      <h4 className={`font-bold mb-3 text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {scenario.replace('_scenario', '').replace('_', ' ').split(' ').map(word => 
+                          word.charAt(0).toUpperCase() + word.slice(1)
+                        ).join(' ')} Scenario
+                      </h4>
+                      
+                      {/* Key Metrics */}
+                      <div className="space-y-3 mb-4">
+                        <div className="flex justify-between">
+                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Market Share Growth:</span>
+                          <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {data.market_share_growth}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Revenue Projection:</span>
+                          <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {data.revenue_projection}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Customer Acquisition:</span>
+                          <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {data.customer_acquisition_rate}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Probability:</span>
+                          <span className={`text-sm font-bold ${
+                            scenario === 'optimistic_scenario' ? 'text-green-600 dark:text-green-400' :
+                            scenario === 'realistic_scenario' ? 'text-blue-600 dark:text-blue-400' :
+                            'text-red-600 dark:text-red-400'
+                          }`}>
+                            {data.probability}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Reasoning */}
+                      <div className="mb-4">
+                        <h5 className={`font-semibold mb-2 text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                          💡 Why This Scenario?
+                        </h5>
+                        <p className={`text-xs leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                          {data.reasoning}
+                        </p>
+                      </div>
+
+                      {/* Key Drivers */}
+                      <div>
+                        <h5 className={`font-semibold mb-2 text-sm ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+                          🚀 Key Drivers
+                        </h5>
+                        <p className={`text-xs leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                          {data.key_drivers}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Timeline Results */}
+            {simulationResults.simulation?.timeline_results && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  📅 12-Month Growth Timeline
+                </h3>
+                <div className="space-y-4">
+                  {Object.entries(simulationResults.simulation.timeline_results).map(([period, data]: [string, any], index) => (
+                    <div key={period} className={`p-4 rounded-lg border ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+                      <div className="flex items-start space-x-4">
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold ${
+                          index === 0 ? 'bg-blue-500' :
+                          index === 1 ? 'bg-orange-500' : 'bg-green-500'
+                        }`}>
+                          {index + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className={`font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {period}
+                          </h4>
+                          
+                          {/* Key Metrics */}
+                          <div className="grid grid-cols-3 gap-4 mb-3">
+                            <div>
+                              <div className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Penetration</div>
+                              <div className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {data.market_penetration}
+                              </div>
+                            </div>
+                            <div>
+                              <div className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Customer Base</div>
+                              <div className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {data.customer_base}
+                              </div>
+                            </div>
+                            <div>
+                              <div className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Revenue</div>
+                              <div className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                                {data.revenue}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Explanation */}
+                          <div className="mb-3">
+                            <h5 className={`font-semibold mb-1 text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                              📈 Phase Analysis
+                            </h5>
+                            <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                              {data.explanation}
+                            </p>
+                          </div>
+
+                          {/* Critical Activities */}
+                          <div>
+                            <h5 className={`font-semibold mb-1 text-sm ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                              ⭐ Critical Activities
+                            </h5>
+                            <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                              {data.critical_activities}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Risk Assessment */}
+            {simulationResults.simulation?.risk_assessment && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  ⚠️ Risk Assessment & Mitigation
+                </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* High Impact Risks */}
+                  <div>
+                    <h4 className={`font-semibold mb-3 ${darkMode ? 'text-red-400' : 'text-red-600'} flex items-center`}>
+                      🔴 High Impact Risks
+                    </h4>
+                    <div className="space-y-3">
+                      {Object.entries(simulationResults.simulation.risk_assessment.high_impact_risks).map(([risk, details]: [string, any]) => (
+                        <div key={risk} className={`p-3 rounded-lg border ${darkMode ? 'bg-red-900/20 border-red-700' : 'bg-red-50 border-red-200'}`}>
+                          <h5 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {risk.replace(/_/g, ' ').split(' ').map(word => 
+                              word.charAt(0).toUpperCase() + word.slice(1)
+                            ).join(' ')}
+                          </h5>
+                          <div className="space-y-1 text-sm">
+                            <div className="flex justify-between">
+                              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Probability:</span>
+                              <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{details.probability}</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Impact:</span>
+                              <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{details.impact}</span>
+                            </div>
+                            <div className="mt-2">
+                              <span className={`text-xs font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Mitigation Strategy:</span>
+                              <p className={`text-xs mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                {details.mitigation}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Medium Impact Risks */}
+                  <div>
+                    <h4 className={`font-semibold mb-3 ${darkMode ? 'text-orange-400' : 'text-orange-600'} flex items-center`}>
+                      🟡 Medium Impact Risks
+                    </h4>
+                    <div className="space-y-3">
+                      {Object.entries(simulationResults.simulation.risk_assessment.medium_impact_risks).map(([risk, details]: [string, any]) => (
+                        <div key={risk} className={`p-3 rounded-lg border ${darkMode ? 'bg-orange-900/20 border-orange-700' : 'bg-orange-50 border-orange-200'}`}>
+                          <h5 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                            {risk.replace(/_/g, ' ').split(' ').map(word => 
+                              word.charAt(0).toUpperCase() + word.slice(1)
+                            ).join(' ')}
+                          </h5>
+                          <div className="space-y-1 text-sm">
+                            <div className="flex justify-between">
+                              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Probability:</span>
+                              <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{details.probability}</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>Impact:</span>
+                              <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>{details.impact}</span>
+                            </div>
+                            <div className="mt-2">
+                              <span className={`text-xs font-medium ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Mitigation Strategy:</span>
+                              <p className={`text-xs mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                {details.mitigation}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Competitive Analysis */}
+            {simulationResults.simulation?.competitive_analysis && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  🏆 Competitive Analysis
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Market Position
+                    </h4>
+                    <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.competitive_analysis.market_position}
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className={`font-semibold mb-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                        ✅ Competitive Advantages
+                      </h4>
+                      <ul className="space-y-1">
+                        {simulationResults.simulation.competitive_analysis.competitive_advantages.map((advantage: string, index: number) => (
+                          <li key={index} className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'} flex items-start`}>
+                            <span className="text-green-500 mr-2">•</span>
+                            {advantage}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className={`font-semibold mb-2 ${darkMode ? 'text-red-400' : 'text-red-600'}`}>
+                        ⚠️ Competitive Threats
+                      </h4>
+                      <ul className="space-y-1">
+                        {simulationResults.simulation.competitive_analysis.threats.map((threat: string, index: number) => (
+                          <li key={index} className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'} flex items-start`}>
+                            <span className="text-red-500 mr-2">•</span>
+                            {threat}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-blue-900/20 border border-blue-700' : 'bg-blue-50 border border-blue-200'}`}>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      📋 Strategic Recommendations
+                    </h4>
+                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.competitive_analysis.strategic_recommendations}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Financial Projections */}
+            {simulationResults.simulation?.financial_projections && (
+              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  💰 Financial Projections & Analysis
+                </h3>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                      Revenue Model Analysis
+                    </h4>
+                    <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.financial_projections.revenue_model_analysis}
+                    </p>
+                    
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                      Cost Structure Optimization
+                    </h4>
+                    <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.financial_projections.cost_structure_optimization}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Profitability Timeline
+                    </h4>
+                    <p className={`text-sm leading-relaxed mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.financial_projections.profitability_timeline}
+                    </p>
+                    
+                    <h4 className={`font-semibold mb-2 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+                      Funding Requirements
+                    </h4>
+                    <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      {simulationResults.simulation.financial_projections.funding_requirements}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </motion.div>
         )}
       </div>
     );
@@ -1624,6 +3007,31 @@ const renderMarketResearch = () => {
   return (
     <div className={`min-h-screen p-6 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       <div className="max-w-6xl mx-auto">
+        {/* Header with Company Selector */}
+        <div className={`mb-6 p-4 rounded-lg ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'} shadow-lg`}>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Business Planning Hub
+              </h1>
+              <p className={`mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                Company: {companySettings.name} • {companySettings.specialty}
+              </p>
+            </div>
+            <button
+              onClick={() => setShowCompanyDialog(true)}
+              className={`px-4 py-2 rounded-lg border ${
+                darkMode 
+                  ? 'border-gray-600 text-gray-300 hover:bg-gray-700' 
+                  : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+              } transition-colors`}
+            >
+              <Building2 className="w-4 h-4 inline mr-2" />
+              Company Settings
+            </button>
+          </div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1640,6 +3048,278 @@ const renderMarketResearch = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Company Settings Dialog */}
+      {showCompanyDialog && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className={`max-w-4xl w-full max-h-[90vh] rounded-xl ${
+              darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
+            } shadow-2xl flex flex-col`}
+          >
+            <div className={`flex justify-between items-center p-6 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+              <h2 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Company Settings
+              </h2>
+              <button
+                onClick={() => setShowCompanyDialog(false)}
+                className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
+              >
+                <X className={`w-5 h-5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-6">
+              <div className="space-y-6">
+                {/* Company Selection */}
+                <div className={`p-4 rounded-lg border-2 ${
+                  darkMode ? 'bg-blue-900/20 border-blue-500' : 'bg-blue-50 border-blue-300'
+                }`}>
+                  <h3 className={`text-lg font-semibold mb-3 flex items-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    🏢 Current Company Profile
+                  </h3>
+                  <div className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} border-2 border-blue-500`}>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                          {companySettings.name}
+                        </h4>
+                        <p className={`text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                          {companySettings.size} • {companySettings.industry}
+                        </p>
+                        <p className={`text-xs mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                          {companySettings.specialty}
+                        </p>
+                      </div>
+                      <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'
+                      }`}>
+                        ACTIVE
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Basic Information */}
+                  <div className="space-y-4">
+                    <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      📋 Basic Information
+                    </h3>
+                    
+                    <div>
+                      <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Company Name
+                      </label>
+                      <input
+                        type="text"
+                        value={companySettings.name}
+                        onChange={(e) => setCompanySettings(prev => ({ ...prev, name: e.target.value }))}
+                        className={`w-full p-3 rounded-lg border ${
+                          darkMode 
+                            ? 'bg-gray-700 border-gray-600 text-white' 
+                            : 'bg-white border-gray-300 text-gray-900'
+                        }`}
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                          Company Size
+                        </label>
+                        <select
+                          value={companySettings.size}
+                          onChange={(e) => setCompanySettings(prev => ({ ...prev, size: e.target.value }))}
+                          className={`w-full p-3 rounded-lg border ${
+                            darkMode 
+                              ? 'bg-gray-700 border-gray-600 text-white' 
+                              : 'bg-white border-gray-300 text-gray-900'
+                          }`}
+                        >
+                          <option value="Startup">Startup (1-10)</option>
+                          <option value="Small">Small (11-50)</option>
+                          <option value="Medium">Medium (51-200)</option>
+                          <option value="Large">Large (201-1000)</option>
+                          <option value="Enterprise">Enterprise (1000+)</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                          Industry
+                        </label>
+                        <input
+                          type="text"
+                          value={companySettings.industry}
+                          onChange={(e) => setCompanySettings(prev => ({ ...prev, industry: e.target.value }))}
+                          className={`w-full p-3 rounded-lg border ${
+                            darkMode 
+                              ? 'bg-gray-700 border-gray-600 text-white' 
+                              : 'bg-white border-gray-300 text-gray-900'
+                          }`}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Specialty/Focus
+                      </label>
+                      <textarea
+                        value={companySettings.specialty}
+                        onChange={(e) => setCompanySettings(prev => ({ ...prev, specialty: e.target.value }))}
+                        rows={3}
+                        className={`w-full p-3 rounded-lg border resize-none ${
+                          darkMode 
+                            ? 'bg-gray-700 border-gray-600 text-white' 
+                            : 'bg-white border-gray-300 text-gray-900'
+                        }`}
+                      />
+                    </div>
+
+                    <div>
+                      <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                        Company Description
+                      </label>
+                      <textarea
+                        value={companySettings.description}
+                        onChange={(e) => setCompanySettings(prev => ({ ...prev, description: e.target.value }))}
+                        rows={4}
+                        className={`w-full p-3 rounded-lg border resize-none ${
+                          darkMode 
+                            ? 'bg-gray-700 border-gray-600 text-white' 
+                            : 'bg-white border-gray-300 text-gray-900'
+                        }`}
+                      />
+                    </div>
+                  </div>
+
+                  {/* External Data Sources */}
+                  <div className="space-y-4">
+                    <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      📊 External Data Sources
+                    </h3>
+                    
+                    <div className={`p-4 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+                      <div className="space-y-4">
+                        <div>
+                          <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            <Upload className="w-4 h-4 inline mr-2" />
+                            Upload Files (ZIP, PDF, Excel)
+                          </label>
+                          <input
+                            type="file"
+                            multiple
+                            accept=".zip,.pdf,.xlsx,.xls,.csv"
+                            onChange={(e) => {
+                              const files = Array.from(e.target.files || []);
+                              setCompanySettings(prev => ({
+                                ...prev,
+                                external_data: {
+                                  ...prev.external_data,
+                                  uploaded_files: files
+                                }
+                              }));
+                            }}
+                            className={`w-full p-3 rounded-lg border ${
+                              darkMode 
+                                ? 'bg-gray-600 border-gray-500 text-white' 
+                                : 'bg-white border-gray-300 text-gray-900'
+                            }`}
+                          />
+                          {companySettings.external_data.uploaded_files.length > 0 && (
+                            <div className="mt-2">
+                              <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                {companySettings.external_data.uploaded_files.length} file(s) selected
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        <div>
+                          <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            <Globe className="w-4 h-4 inline mr-2" />
+                            Website URLs (one per line)
+                          </label>
+                          <textarea
+                            value={companySettings.external_data.website_urls.join('\n')}
+                            onChange={(e) => {
+                              const urls = e.target.value.split('\n').filter(url => url.trim());
+                              setCompanySettings(prev => ({
+                                ...prev,
+                                external_data: {
+                                  ...prev.external_data,
+                                  website_urls: urls
+                                }
+                              }));
+                            }}
+                            rows={3}
+                            placeholder="https://example.com&#10;https://competitor.com"
+                            className={`w-full p-3 rounded-lg border resize-none ${
+                              darkMode 
+                                ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
+                                : 'bg-white border-gray-300 text-gray-900'
+                            }`}
+                          />
+                        </div>
+
+                        <div>
+                          <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                            <FileText className="w-4 h-4 inline mr-2" />
+                            Additional Data Sources
+                          </label>
+                          <textarea
+                            value={companySettings.external_data.data_sources.join('\n')}
+                            onChange={(e) => {
+                              const sources = e.target.value.split('\n').filter(source => source.trim());
+                              setCompanySettings(prev => ({
+                                ...prev,
+                                external_data: {
+                                  ...prev.external_data,
+                                  data_sources: sources
+                                }
+                              }));
+                            }}
+                            rows={3}
+                            placeholder="Industry reports&#10;Market research data&#10;Customer surveys"
+                            className={`w-full p-3 rounded-lg border resize-none ${
+                              darkMode 
+                                ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
+                                : 'bg-white border-gray-300 text-gray-900'
+                            }`}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`flex justify-end space-x-3 p-6 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+              <button
+                onClick={() => setShowCompanyDialog(false)}
+                className={`px-6 py-2 rounded-lg border ${
+                  darkMode 
+                    ? 'border-gray-600 text-gray-300 hover:bg-gray-700' 
+                    : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                } transition-colors`}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => setShowCompanyDialog(false)}
+                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+              >
+                Save Settings
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
