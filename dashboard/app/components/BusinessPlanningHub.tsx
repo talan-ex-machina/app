@@ -533,11 +533,11 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
       className="text-center space-y-6"
     >
       <div className="space-y-4">
-        <Building2 className={`w-16 h-16 mx-auto ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
-        <h2 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        <Building2 className={`w-20 h-20 mx-auto ${darkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+        <h2 className={`text-4xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
           Market Gap Strategy Assistant
         </h2>
-        <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
           Tell me about the business you want to start or improve
         </p>
       </div>
@@ -1710,18 +1710,18 @@ const renderMarketResearch = () => {
     return (
       <div className="space-y-6">
         <div className="text-center">
-          <Rocket className={`w-12 h-12 mx-auto mb-4 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
-          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <Rocket className={`w-16 h-16 mx-auto mb-6 ${darkMode ? 'text-green-400' : 'text-green-600'}`} />
+          <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Go-to-Market Strategy
           </h2>
-          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Create comprehensive product launch strategies with proven frameworks
           </p>
         </div>
 
         {/* Product Selection */}
         <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
-          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h3 className={`text-2xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             📦 Select Product/Service
           </h3>
           
@@ -1729,10 +1729,10 @@ const renderMarketResearch = () => {
           {availableProducts.length > 0 && (
             <div className="mb-6">
               <div className="flex items-center justify-between mb-4">
-                <label className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                <label className={`text-xl font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   🚀 Products from Innovation Analysis
                 </label>
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                <span className={`px-4 py-2 rounded-full text-sm font-medium ${
                   darkMode ? 'bg-green-900/30 text-green-400 border border-green-600' : 'bg-green-100 text-green-700 border border-green-200'
                 }`}>
                   {availableProducts.length} Products Available
@@ -2118,38 +2118,91 @@ const renderMarketResearch = () => {
 
             {/* Framework Elements */}
             {gtmPlan.framework_elements && (
-              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
-                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  ⚙️ Framework Analysis
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {Object.entries(gtmPlan.framework_elements).map(([key, value]) => (
-                    <div key={key} className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
-                      <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {key.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                      </h4>
-                      <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                        {value}
-                      </p>
-                    </div>
-                  ))}
+              <div className={`p-8 rounded-xl border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <div className="mb-6">
+                  <h3 className={`text-2xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                    ⚙️ Framework Analysis
+                    <span className={`ml-3 px-4 py-2 rounded-full text-sm font-medium ${
+                      darkMode ? 'bg-purple-600 text-purple-100' : 'bg-purple-100 text-purple-700'
+                    }`}>
+                      {gtmPlan.framework_name} Applied
+                    </span>
+                  </h3>
+                  <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                    Deep analysis of {gtmPlan.product_focus} using strategic framework elements tailored to your product&apos;s unique characteristics.
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {Object.entries(gtmPlan.framework_elements).map(([key, value], index) => {
+                    const elementIcons = {
+                      'market_segmentation': '🎯',
+                      'value_proposition': '💎',
+                      'positioning': '📍',
+                      'pricing_strategy': '💰',
+                      'distribution_channels': '🚛',
+                      'promotional_mix': '📢',
+                      'competitive_advantage': '🏆',
+                      'customer_journey': '🛤️',
+                      'product_strategy': '📦',
+                      'market_entry': '🚪',
+                      'scalability': '📈',
+                      'risk_mitigation': '🛡️'
+                    };
+                    
+                    const icon = elementIcons[key as keyof typeof elementIcons] || '⭐';
+                    
+                    return (
+                      <motion.div 
+                        key={key} 
+                        className={`p-6 rounded-xl border-2 transition-all duration-300 hover:shadow-lg ${
+                          darkMode ? 'bg-gray-800 border-gray-600 hover:border-gray-500' : 'bg-gray-50 border-gray-200 hover:border-gray-300'
+                        }`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <div className="flex items-start space-x-3 mb-4">
+                          <span className="text-2xl">{icon}</span>
+                          <div className="flex-1">
+                            <h4 className={`text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                              {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            </h4>
+                            <div className={`text-xs font-medium mb-3 ${
+                              darkMode ? 'text-blue-400' : 'text-blue-600'
+                            }`}>
+                              Framework Element • Product-Specific Analysis
+                            </div>
+                          </div>
+                        </div>
+                        <p className={`text-base leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                          {value}
+                        </p>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </div>
             )}
 
             {/* 5W1H Analysis */}
             {gtmPlan.w5h1_analysis && (
-              <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
-                <h3 className={`text-xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
-                  🔍 Strategic 5W1H Analysis
-                  <span className={`ml-3 px-3 py-1 rounded-full text-xs font-medium ${
-                    darkMode ? 'bg-blue-600 text-blue-100' : 'bg-blue-100 text-blue-700'
-                  }`}>
-                    Product-Specific Insights
-                  </span>
-                </h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {Object.entries(gtmPlan.w5h1_analysis).map(([question, answer]) => {
+              <div className={`p-8 rounded-xl border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-200'}`}>
+                <div className="mb-8">
+                  <h3 className={`text-2xl font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                    🔍 Strategic 5W1H Analysis
+                    <span className={`ml-3 px-4 py-2 rounded-full text-sm font-medium ${
+                      darkMode ? 'bg-blue-600 text-blue-100' : 'bg-blue-100 text-blue-700'
+                    }`}>
+                      Product-Specific Insights
+                    </span>
+                  </h3>
+                  <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                    Comprehensive strategic analysis based on your product&apos;s unique market position, derived from competitive research and market data analysis.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">{Object.entries(gtmPlan.w5h1_analysis).map(([question, answer]) => {
                     const questionConfig = {
                       who: { 
                         icon: '👥', 
@@ -2212,14 +2265,14 @@ const renderMarketResearch = () => {
                         </div>
                         
                         {/* Header */}
-                        <div className="relative z-10 mb-4">
-                          <div className="flex items-center mb-2">
-                            <span className="text-2xl mr-3">{config.icon}</span>
+                        <div className="relative z-10 mb-6">
+                          <div className="flex items-center mb-3">
+                            <span className="text-3xl mr-4">{config.icon}</span>
                             <div>
-                              <h4 className={`font-bold text-lg uppercase tracking-wide ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                              <h4 className={`font-bold text-xl uppercase tracking-wide ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                                 {config.title}
                               </h4>
-                              <p className={`text-xs font-medium ${
+                              <p className={`text-sm font-medium ${
                                 config.color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
                                 config.color === 'green' ? 'text-green-600 dark:text-green-400' :
                                 config.color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
@@ -2235,14 +2288,14 @@ const renderMarketResearch = () => {
                         
                         {/* Content */}
                         <div className="relative z-10">
-                          <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-200' : 'text-gray-700'} font-medium`}>
+                          <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-200' : 'text-gray-700'} font-medium`}>
                             {answer}
                           </p>
                         </div>
 
-                        {/* Insights Badge */}
-                        <div className="mt-4 pt-3 border-t border-gray-200 dark:border-gray-600">
-                          <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                        {/* Reasoning Badge */}
+                        <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
+                          <span className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium ${
                             config.color === 'blue' ? 'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-200' :
                             config.color === 'green' ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-200' :
                             config.color === 'purple' ? 'bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200' :
@@ -2250,7 +2303,7 @@ const renderMarketResearch = () => {
                             config.color === 'red' ? 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-200' :
                             'bg-yellow-100 text-yellow-700 dark:bg-yellow-800 dark:text-yellow-200'
                           }`}>
-                            ✨ AI-Generated Strategic Insight
+                            🧠 Based on market analysis & competitive research
                           </span>
                         </div>
                       </motion.div>
@@ -2388,25 +2441,25 @@ const renderMarketResearch = () => {
     return (
       <div className="space-y-6">
         <div className="text-center">
-          <PieChart className={`w-12 h-12 mx-auto mb-4 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} />
-          <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <PieChart className={`w-16 h-16 mx-auto mb-6 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`} />
+          <h2 className={`text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Market Simulation
           </h2>
-          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Run Monte Carlo simulations to predict market performance and ROI
           </p>
         </div>
 
         {/* Simulation Parameters */}
-        <div className={`p-6 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
-          <h3 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        <div className={`p-8 rounded-xl border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
+          <h3 className={`text-2xl font-semibold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             ⚙️ Simulation Parameters
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Product Type */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <label className={`block text-base font-medium mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 Product/Service Type
               </label>
               <input
@@ -2414,7 +2467,7 @@ const renderMarketResearch = () => {
                 value={simulationParams.product_type}
                 onChange={(e) => setSimulationParams(prev => ({ ...prev, product_type: e.target.value }))}
                 placeholder="e.g., SaaS platform, consulting service"
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-4 text-base rounded-lg border ${
                   darkMode 
                     ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' 
                     : 'bg-white border-gray-300 text-gray-900'
@@ -2424,14 +2477,14 @@ const renderMarketResearch = () => {
 
             {/* Market Size */}
             <div>
-              <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <label className={`block text-base font-medium mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                 Target Market Size ($)
               </label>
               <input
                 type="number"
                 value={simulationParams.target_market_size}
                 onChange={(e) => setSimulationParams(prev => ({ ...prev, target_market_size: Number(e.target.value) }))}
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-4 text-base rounded-lg border ${
                   darkMode 
                     ? 'bg-gray-800 border-gray-600 text-white' 
                     : 'bg-white border-gray-300 text-gray-900'
@@ -3011,22 +3064,22 @@ const renderMarketResearch = () => {
         <div className={`mb-6 p-4 rounded-lg ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'} shadow-lg`}>
           <div className="flex justify-between items-center">
             <div>
-              <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Business Planning Hub
               </h1>
-              <p className={`mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className={`mt-1 text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Company: {companySettings.name} • {companySettings.specialty}
               </p>
             </div>
             <button
               onClick={() => setShowCompanyDialog(true)}
-              className={`px-4 py-2 rounded-lg border ${
+              className={`px-6 py-3 text-lg rounded-lg border ${
                 darkMode 
                   ? 'border-gray-600 text-gray-300 hover:bg-gray-700' 
                   : 'border-gray-300 text-gray-700 hover:bg-gray-50'
               } transition-colors`}
             >
-              <Building2 className="w-4 h-4 inline mr-2" />
+              <Building2 className="w-5 h-5 inline mr-2" />
               Company Settings
             </button>
           </div>
