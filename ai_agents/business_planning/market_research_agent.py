@@ -24,39 +24,40 @@ class MarketResearchAgent:
 IMPORTANT: You MUST respond with ONLY a valid JSON object. No explanations, no markdown, just JSON.
 
 Focus on finding weaknesses and missed opportunities by the idol company that a new entrant can exploit. Also provide numeric and chart-friendly data for dashboard charts and big numbers.
-
+You should also provide a summary for each section that would be used for Text to Speech (TTS) narration it must not take more than 30 seconds to read.
 Return this exact JSON structure:
 {
   "market_overview": {
     "market_size": "value (in millions or billions)",
     "growth_rate": "value (in percent)",
     "key_trends": ["trend1", "trend2", ...],
-    "market_maturity": "value"
+    "market_maturity": "value",
+    "summary": "brief summary of market state"
   },
   "competitor_breakdown": [
-    {"name": "Competitor Name", "market_share": "number (percent)", "revenue": "number (in millions)", "growth_rate": "number (percent)"}
+    {"name": "Competitor Name", "market_share": "number (percent)", "revenue": "number (in millions)", "growth_rate": "number (percent)", "summary": "brief summary of their position"},
   ],
   "idol_company_analysis": {
     "name": "value",
     "strengths_to_avoid": [
-      {"strength": "description", "why_avoid": "how to differentiate", "market_impact": "high/medium/low"}
+      {"strength": "description", "why_avoid": "how to differentiate", "market_impact": "high/medium/low", "summary": "brief summary of strength"}
     ],
     "weaknesses_to_exploit": [
-      {"weakness": "description", "opportunity": "how to capitalize", "market_size": "number (in millions)", "difficulty": "high/medium/low"}
+      {"weakness": "description", "opportunity": "how to capitalize", "market_size": "number (in millions)", "difficulty": "high/medium/low", "summary": "brief summary of weakness"}
     ],
     "missed_opportunities": [
-      {"opportunity": "description", "market_potential": "number (in millions)", "why_missed": "reason", "how_to_capture": "strategy"}
+      {"opportunity": "description", "market_potential": "number (in millions)", "why_missed": "reason", "how_to_capture": "strategy", "summary": "brief summary of opportunity"}
     ],
     "market_share": "number (percent)"
   },
   "competitive_gaps": [
-    {"gap_title": "title", "description": "detailed description", "target_segment": "who benefits", "revenue_potential": "number (in millions)", "barriers_to_entry": "low/medium/high"}
+    {"gap_title": "title", "description": "detailed description", "target_segment": "who benefits", "revenue_potential": "number (in millions)", "barriers_to_entry": "low/medium/high", "summary": "brief summary of gap"}
   ],
   "top_trends": [
-    {"trend": "trend name", "impact": "high/medium/low", "growth_rate": "number (percent)"}
+    {"trend": "trend name", "impact": "high/medium/low", "growth_rate": "number (percent)", "summary": "brief summary of trend"}
   ],
   "strategic_recommendations": [
-    {"strategy": "recommendation", "rationale": "why this works", "timeline": "implementation time", "investment_needed": "number (in millions)"}
+    {"strategy": "recommendation", "rationale": "why this works", "timeline": "implementation time", "investment_needed": "number (in millions)", "summary": "brief summary of recommendation"}
   ]
 }"""
 

@@ -173,6 +173,15 @@ interface AnalysisResults {
       description: string,
       achievements: string[],
       takeaway: string,
+      how_we_can_do_better?: {
+      summary?: string,
+      technology_advantages?: [string],
+      estimated_savings?: {
+        time?: string,
+        cost?: string,
+        resources?: string
+      }
+  }
     }];
     primary_segments?: MarketSegment[];
     customer_personas?: CustomerPersona[];
@@ -257,7 +266,6 @@ export default function BusinessPlanningHub({ darkMode }: BusinessPlanningHubPro
 
   // TTS Functions
   const handleTTS = (cardId: string, text: string) => {
-    console.log('handleTTS clicked', cardId, text);
     if (!speechSynthesis) return;
 
     const currentTTS = ttsState[cardId];
@@ -784,29 +792,38 @@ const renderMarketResearch = () => {
       {/* Market KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-            📊 MARKET METRICS
+          <div className="flex justify-between items-start mb-1">
+            <div className={`text-xs font-semibold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+              📊 MARKET METRICS
+            </div>
           </div>
           <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Total Market Size</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_size ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
-            📈 GROWTH RATE
+          <div className="flex justify-between items-start mb-1">
+            <div className={`text-xs font-semibold ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+              📈 GROWTH RATE
+            </div>
+            
           </div>
           <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Annual Growth Rate</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.growth_rate ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
-            🎯 MARKET STAGE
+          <div className="flex justify-between items-start mb-1">
+            <div className={`text-xs font-semibold ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+              🎯 MARKET STAGE
+            </div>
           </div>
           <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Market Maturity Level</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data?.market_overview?.market_maturity ?? 'N/A'}</p>
         </div>
         <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-          <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
-            🏢 BENCHMARK SHARE
+          <div className="flex justify-between items-start mb-1">
+            <div className={`text-xs font-semibold ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+              🏢 BENCHMARK SHARE
+            </div>
           </div>
           <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{session.selectedCompany} Market Share</p>
           <p className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{data.idol_company_analysis?.market_share ?? 'N/A'}</p>
@@ -847,14 +864,19 @@ const renderMarketResearch = () => {
       )}
       {idolAnalysis.strengths_to_avoid && idolAnalysis.strengths_to_avoid.length > 0 && (
         <div>
-          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            {session.selectedCompany}&apos;s Strengths (Avoid Competing Directly)
-          </h4>
+          <div className="flex justify-between items-center mb-3">
+            <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              {session.selectedCompany}&apos;s Strengths (Avoid Competing Directly)
+            </h4>
+          </div>
           <ul className="space-y-2">
             {idolAnalysis.strengths_to_avoid.map((item: any, idx: number) => (
               <li key={idx} className={`p-4 rounded-lg border-l-4 border-orange-500 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
-                <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
-                  ⚠️ STRENGTH TO AVOID #{idx + 1}
+                <div className="flex justify-between items-start mb-2">
+                  <div className={`text-xs font-semibold ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                    ⚠️ STRENGTH TO AVOID #{idx + 1}
+                  </div>
+
                 </div>
                 <div className="mb-2">
                   <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Strength Description: </span>
@@ -932,17 +954,31 @@ const renderMarketResearch = () => {
       {/* Gaps Section */}
       {data.competitive_gaps && data.competitive_gaps.length > 0 && (
         <div>
-          <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Market Opportunities
-          </h4>
+          <div className="flex justify-between items-center mb-3">
+            <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              Market Opportunities
+            </h4>
+            <TTSButton 
+              cardId="market-opportunities" 
+              text={`Market opportunities analysis: ${data.competitive_gaps?.map(gap => `${gap.gap_title}. ${gap.description}. ${(gap as any).opportunity_size || (gap as any).revenue_potential ? `Market size: ${(gap as any).opportunity_size || (gap as any).revenue_potential}` : 'Size unknown'}. ${(gap as any).difficulty_level || (gap as any).barriers_to_entry ? `Entry difficulty: ${(gap as any).difficulty_level || (gap as any).barriers_to_entry}` : 'Difficulty unknown'}`).join('. ') || 'No market opportunities data available'}`}
+              title="Market Opportunities"
+            />
+          </div>
           <div className="space-y-3">
             {data.competitive_gaps.map((gap: MarketGap, index: number) => (
               <div
                 key={index}
                 className={`p-4 border-l-4 border-blue-500 rounded-lg ${darkMode ? 'border-gray-600 bg-gray-700' : 'border-gray-200 bg-white'}`}
               >
-                <div className={`text-xs font-semibold mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                  🎯 MARKET GAP #{index + 1}
+                <div className="flex justify-between items-start mb-2">
+                  <div className={`text-xs font-semibold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                    🎯 MARKET GAP #{index + 1}
+                  </div>
+                  <TTSButton 
+                    cardId={`gap-${index}`} 
+                    text={`Market gap ${index + 1}: ${gap.gap_title}. ${gap.description}. ${(gap as any).opportunity_size || (gap as any).revenue_potential ? `Market size: ${(gap as any).opportunity_size || (gap as any).revenue_potential}` : ''}. ${(gap as any).difficulty_level || (gap as any).barriers_to_entry ? `Entry difficulty: ${(gap as any).difficulty_level || (gap as any).barriers_to_entry}` : ''}`}
+                    title={`Market Gap ${index + 1}`}
+                  />
                 </div>
                 <div className="mb-2">
                   <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Opportunity Title: </span>
@@ -1098,6 +1134,7 @@ const renderMarketResearch = () => {
 
   const geoOpportunities = data.geographic_opportunities || [];
   console.log('Geographic Opportunities:', geoOpportunities);
+  console.log("Timeline Data:", timelineData);  
 
   return (
     <div className="space-y-6">
@@ -1114,80 +1151,271 @@ const renderMarketResearch = () => {
 
         <div className="space-y-4">
         <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-          Idol Company Evolution Timeline
+          📈 {session.selectedCompany} Evolution Timeline
         </h4>
-        <div className="relative">
-          {/* Timeline line */}
-          <div className={`absolute left-8 top-0 bottom-0 w-0.5 ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+        
+        {/* Enhanced Timeline Container */}
+        <div className={`relative p-6 rounded-xl ${darkMode ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700' : 'bg-gradient-to-br from-white to-gray-50 border border-gray-200'} shadow-lg`}>
+          {/* Timeline Progress Bar */}
+          <div className={`absolute left-6 top-0 bottom-0 w-1 ${darkMode ? 'bg-gradient-to-b from-blue-400 via-purple-500 to-green-400' : 'bg-gradient-to-b from-blue-600 via-purple-600 to-green-600'} rounded-full`}></div>
           
-          <div className="space-y-6">
+          <div className="space-y-8 ml-8">
             {timelineData?.map((event, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="relative flex items-start"
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                className="relative"
               >
-                {/* Timeline dot */}
-                <div className={`relative z-10 w-4 h-4 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'} mr-4 mt-1 flex-shrink-0`}>
-                  <div className={`absolute inset-0 rounded-full ${darkMode ? 'bg-blue-400' : 'bg-blue-600'} animate-ping opacity-75`}></div>
+                {/* Enhanced Timeline Dot with Year Badge */}
+                <div className="absolute -left-12 top-0 flex flex-col items-center">
+                  <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center ${
+                    index === 0 ? 'bg-gradient-to-r from-green-400 to-green-600' :
+                    index === timelineData.length - 1 ? 'bg-gradient-to-r from-blue-400 to-blue-600' :
+                    'bg-gradient-to-r from-purple-400 to-purple-600'
+                  } shadow-lg border-2 border-white dark:border-gray-800`}>
+                    <div className={`w-2 h-2 rounded-full bg-white`}></div>
+                    <div className={`absolute inset-0 rounded-full ${
+                      index === 0 ? 'bg-green-400' :
+                      index === timelineData.length - 1 ? 'bg-blue-400' :
+                      'bg-purple-400'
+                    } animate-ping opacity-30`}></div>
+                  </div>
+                  
+                  {/* Year Badge */}
+                  <div className={`mt-2 px-2 py-1 rounded-md text-xs font-bold shadow-sm ${
+                    darkMode ? 'bg-gray-700 text-blue-300 border border-gray-600' : 'bg-blue-100 text-blue-800 border border-blue-200'
+                  }`}>
+                    {event.year}
+                  </div>
                 </div>
                 
-                {/* Content */}
-                <div className={`flex-1 p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <div className={`text-xs font-semibold mb-3 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                    📅 MILESTONE #{index + 1}
-                  </div>
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Event Title: </span>
-                      <h5 className={`inline font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {/* Enhanced Content Card */}
+                <div className={`p-6 rounded-xl border-2 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] ${
+                  darkMode ? 'bg-gray-800 border-gray-600 hover:border-blue-500' : 'bg-white border-gray-200 hover:border-blue-400'
+                }`}>
+                  
+                  {/* Header Section */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-2 ${
+                        darkMode ? 'bg-blue-900 text-blue-300' : 'bg-blue-100 text-blue-800'
+                      }`}>
+                        📅 MILESTONE #{index + 1}
+                      </div>
+                      <h5 className={`text-lg font-bold leading-tight ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                         {event.title}
                       </h5>
                     </div>
-                    <div>
-                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Year: </span>
-                      <span className={`text-sm px-2 py-1 rounded font-bold ${darkMode ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-800'}`}>
-                        {event.year}
-                      </span>
+                    
+                    {/* Progress Indicator */}
+                    <div className={`text-right ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <div className={`text-2xl font-bold ${
+                        index === 0 ? 'text-green-500' :
+                        index === timelineData.length - 1 ? 'text-blue-500' :
+                        'text-purple-500'
+                      }`}>
+                        {(index + 1)}
+                      </div>
                     </div>
                   </div>
-                  <div className="mb-3">
-                    <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Historical Impact: </span>
-                    <p className={`text-sm mt-1 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  
+                  {/* Description */}
+                  <div className={`p-4 rounded-lg mb-4 ${darkMode ? 'bg-gray-700 border-l-4 border-gray-500' : 'bg-gray-50 border-l-4 border-gray-300'}`}>
+                    <div className={`text-xs font-medium mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      📋 Historical Impact
+                    </div>
+                    <p className={`text-sm leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                       {event.description}
                     </p>
                   </div>
+                  
+                  {/* Achievements Section - Enhanced */}
                   {event.achievements && event.achievements.length > 0 && (
-                    <div className="mb-3">
-                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Key Achievements ({event.achievements.length}): </span>
-                      <ul className="mt-1 space-y-1">
-                        {event.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="flex items-start">
-                            <span className={`text-xs mr-2 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>🏆</span>
-                            <span className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                              {achievement}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {event.takeaway && (
-                    <div className={`p-3 rounded-lg border-l-4 border-yellow-500 ${darkMode ? 'bg-gray-800' : 'bg-yellow-50'}`}>
-                      <div className={`text-xs font-semibold mb-1 ${darkMode ? 'text-yellow-400' : 'text-yellow-600'}`}>
-                        💡 STRATEGIC TAKEAWAY
+                    <div className={`p-5 rounded-xl mb-4 ${darkMode ? 'bg-gradient-to-r from-green-900/30 to-emerald-900/30 border border-green-800' : 'bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200'}`}>
+                      <div className="flex items-center mb-3">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${darkMode ? 'bg-green-800' : 'bg-green-200'}`}>
+                          <span className="text-green-600 font-bold">🏆</span>
+                        </div>
+                        <div>
+                          <h6 className={`font-bold ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+                            💰 Key Achievements & Technology Advantages
+                          </h6>
+                          <p className={`text-xs ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                            {event.achievements.length} strategic breakthrough{event.achievements.length > 1 ? 's' : ''}
+                          </p>
+                        </div>
                       </div>
-                      <span className={`text-xs font-medium ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>Business Lesson: </span>
-                      <p className={`text-sm inline ${darkMode ? 'text-yellow-200' : 'text-yellow-800'}`}>
-                        {event.takeaway}
-                      </p>
+                      
+                      <div className="grid gap-3">
+                        {event.achievements.map((achievement, achIndex) => (
+                          <motion.div
+                            key={achIndex}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 + achIndex * 0.05 }}
+                            className={`flex items-start p-3 rounded-lg ${darkMode ? 'bg-green-800/20 border border-green-700/50' : 'bg-white border border-green-200'}`}
+                          >
+                            <div className={`w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 ${darkMode ? 'bg-green-700' : 'bg-green-100'}`}>
+                              <span className="text-xs text-green-600 font-bold">✓</span>
+                            </div>
+                            <div className="flex-1">
+                              <p className={`text-sm font-medium leading-relaxed ${darkMode ? 'text-green-200' : 'text-green-800'}`}>
+                                {achievement}
+                              </p>
+                            </div>
+                            <div className={`px-2 py-1 rounded text-xs font-bold ${darkMode ? 'bg-green-600 text-white' : 'bg-green-200 text-green-800'}`}>
+                              #{achIndex + 1}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
                   )}
+                  
+                  {/* Strategic Takeaway Section - Enhanced */}
+                  {event.takeaway && (
+                    <div className={`p-5 rounded-xl mb-4 ${darkMode ? 'bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border border-yellow-800' : 'bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200'}`}>
+                      <div className="flex items-start">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${darkMode ? 'bg-yellow-800' : 'bg-yellow-200'}`}>
+                          <span className="text-xl">💡</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-2">
+                            <h6 className={`font-bold ${darkMode ? 'text-yellow-300' : 'text-yellow-800'}`}>
+                              Strategic Business Lesson
+                            </h6>
+                            <div className={`px-2 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-yellow-600 text-yellow-100' : 'bg-yellow-200 text-yellow-800'}`}>
+                              KEY INSIGHT
+                            </div>
+                          </div>
+                          <div className={`p-3 rounded-lg ${darkMode ? 'bg-yellow-800/20 border border-yellow-700/50' : 'bg-white border border-yellow-200'}`}>
+                            <p className={`text-sm font-medium italic leading-relaxed ${darkMode ? 'text-yellow-200' : 'text-yellow-900'}`}>
+                              &ldquo;{event.takeaway}&rdquo;
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* How We Can Do Better Section - Enhanced */}
+                  {event.how_we_can_do_better && (
+                    <div className={`p-5 rounded-xl ${darkMode ? 'bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-800' : 'bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200'}`}>
+                      <div className="flex items-start mb-4">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${darkMode ? 'bg-purple-800' : 'bg-purple-200'}`}>
+                          <span className="text-xl">🚀</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between mb-2">
+                            <h6 className={`font-bold ${darkMode ? 'text-purple-300' : 'text-purple-800'}`}>
+                              How We Can Do Better Today
+                            </h6>
+                            <div className={`px-2 py-1 rounded-full text-xs font-bold ${darkMode ? 'bg-purple-600 text-purple-100' : 'bg-purple-200 text-purple-800'}`}>
+                              COMPETITIVE ADVANTAGE
+                            </div>
+                          </div>
+                          
+                          {/* Summary */}
+                          <div className={`p-3 rounded-lg mb-4 ${darkMode ? 'bg-purple-800/20 border border-purple-700/50' : 'bg-white border border-purple-200'}`}>
+                            <p className={`text-sm leading-relaxed ${darkMode ? 'text-purple-200' : 'text-purple-900'}`}>
+                              {event.how_we_can_do_better.summary}
+                            </p>
+                          </div>
+
+                          {/* Technology Advantages */}
+                          {event.how_we_can_do_better.technology_advantages && event.how_we_can_do_better.technology_advantages.length > 0 && (
+                            <div className="mb-4">
+                              <h6 className={`text-xs font-bold mb-2 block ${darkMode ? 'text-purple-400' : 'text-purple-600'}`}>
+                                🔧 TECHNOLOGY ADVANTAGES
+                              </h6>
+                              <div className="grid gap-2">
+                                {event.how_we_can_do_better.technology_advantages.map((advantage, techIndex) => (
+                                  <div key={techIndex} className={`flex items-center p-2 rounded ${darkMode ? 'bg-purple-800/30' : 'bg-purple-100'}`}>
+                                    <div className={`w-4 h-4 rounded-full flex items-center justify-center mr-2 ${darkMode ? 'bg-purple-600' : 'bg-purple-300'}`}>
+                                      <span className="text-xs text-purple-800 font-bold">⚡</span>
+                                    </div>
+                                    <span className={`text-xs ${darkMode ? 'text-purple-200' : 'text-purple-800'}`}>
+                                      {advantage}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Estimated Savings - The Key Section */}
+                          {event.how_we_can_do_better.estimated_savings && (
+                            <div>
+                              <h6 className={`text-xs font-bold mb-3 block ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                                💰 ESTIMATED SAVINGS & EFFICIENCY GAINS
+                              </h6>
+                              <div className="grid grid-cols-3 gap-3">
+                                {/* Time Savings */}
+                                <div className={`p-3 rounded-lg text-center ${darkMode ? 'bg-green-900/30 border border-green-800' : 'bg-green-50 border border-green-200'}`}>
+                                  <div className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 ${darkMode ? 'bg-green-800' : 'bg-green-200'}`}>
+                                    <span className="text-green-600 text-sm">⏱️</span>
+                                  </div>
+                                  <div className={`text-xs font-medium mb-1 ${darkMode ? 'text-green-400' : 'text-green-600'}`}>
+                                    Time Saved
+                                  </div>
+                                  <div className={`text-sm font-bold ${darkMode ? 'text-green-300' : 'text-green-800'}`}>
+                                    {event.how_we_can_do_better.estimated_savings.time}
+                                  </div>
+                                </div>
+
+                                {/* Cost Savings */}
+                                <div className={`p-3 rounded-lg text-center ${darkMode ? 'bg-blue-900/30 border border-blue-800' : 'bg-blue-50 border border-blue-200'}`}>
+                                  <div className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 ${darkMode ? 'bg-blue-800' : 'bg-blue-200'}`}>
+                                    <span className="text-blue-600 text-sm">💵</span>
+                                  </div>
+                                  <div className={`text-xs font-medium mb-1 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                                    Cost Reduction
+                                  </div>
+                                  <div className={`text-sm font-bold ${darkMode ? 'text-blue-300' : 'text-blue-800'}`}>
+                                    {event.how_we_can_do_better.estimated_savings.cost}
+                                  </div>
+                                </div>
+
+                                {/* Resource Savings */}
+                                <div className={`p-3 rounded-lg text-center ${darkMode ? 'bg-orange-900/30 border border-orange-800' : 'bg-orange-50 border border-orange-200'}`}>
+                                  <div className={`w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2 ${darkMode ? 'bg-orange-800' : 'bg-orange-200'}`}>
+                                    <span className="text-orange-600 text-sm">📊</span>
+                                  </div>
+                                  <div className={`text-xs font-medium mb-1 ${darkMode ? 'text-orange-400' : 'text-orange-600'}`}>
+                                    Resource Efficiency
+                                  </div>
+                                  <div className={`text-sm font-bold ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
+                                    {event.how_we_can_do_better.estimated_savings.resources}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
                 </div>
               </motion.div>
             ))}
+          </div>
+          
+          {/* Timeline Summary Footer */}
+          <div className={`mt-8 p-4 rounded-lg ${darkMode ? 'bg-gray-700 border border-gray-600' : 'bg-gray-100 border border-gray-200'}`}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <div className={`w-3 h-3 rounded-full mr-2 ${darkMode ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+                <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  Total Evolution Period: {timelineData?.length || 0} Key Milestones
+                </span>
+              </div>
+              <div className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                Timeline Analysis Complete
+              </div>
+            </div>
           </div>
         </div>
       </div>

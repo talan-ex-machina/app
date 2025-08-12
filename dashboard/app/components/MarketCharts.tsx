@@ -147,7 +147,6 @@ const MarketCharts: React.FC<MarketChartsProps> = ({
   // TTS Button Component
   const TTSButton = ({ cardId, text, title }: { cardId: string; text: string; title: string }) => {
     if (!onTTSClick) return null;
-    console.log('MarketCharts TTSButton clicked:', cardId, text);
     
     const currentTTS = ttsState[cardId];
     const isPlaying = currentTTS?.isPlaying || false;
