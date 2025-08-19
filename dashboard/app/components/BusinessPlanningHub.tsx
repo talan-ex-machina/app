@@ -3065,7 +3065,7 @@ const renderMarketResearch = () => {
           <div className="flex justify-between items-center">
             <div>
               <h1 className={`text-3xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Business Planning Hub
+                Reverse the Market, Engineer the advantage.
               </h1>
               <p className={`mt-1 text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Company: {companySettings.name} • {companySettings.specialty}
@@ -3253,7 +3253,7 @@ const renderMarketResearch = () => {
                   {/* External Data Sources */}
                   <div className="space-y-4">
                     <h3 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      📊 External Data Sources
+                      📊 Internal Data Sources
                     </h3>
                     
                     <div className={`p-4 rounded-lg border ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>

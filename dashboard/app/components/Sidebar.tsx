@@ -15,14 +15,8 @@ import {
 
 const menuItems = [
   { icon: Home, label: 'Dashboard', active: true },
-  { icon: BarChart3, label: 'Analytics' },
-  { icon: Users, label: 'Clients' },
-  { icon: Briefcase, label: 'Projects' },
-  { icon: TrendingUp, label: 'Performance' },
-  { icon: Globe, label: 'Global Presence' },
-  { icon: Cpu, label: 'Technology' },
-  { icon: FileText, label: 'Reports' },
-  { icon: Settings, label: 'Settings' },
+  { icon: Users, label: 'FAQ'  }
+
 ];
 
 interface SidebarProps {
